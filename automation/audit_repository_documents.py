@@ -7,7 +7,7 @@ from pathlib import Path
 
 CONTROL = {"SHA-256 (conteúdo canónico)", "Commit de referência (versão anterior)"}
 REQUIRED = {"ID", "Projeto", "Repositório", "Tipo documental", "Fase", "Estado", "Versão", "SHA-256 (conteúdo canónico)", "Commit de referência (versão anterior)", "Data de criação", "Data de atualização", "Responsável", "Aprovador", "Origem", "Autoridade superior", "Cadeia de autoridade"}
-STATES = {"RASCUNHO", "EM_REVISAO", "APROVADO", "DEPRECADO", "REJEITADO", "PROPOSTO", "EM_CURSO", "BLOQUEADO", "CONCLUIDO"}
+STATES = {"RASCUNHO", "EM_REVISAO", "APROVADO", "DEPRECADO", "REJEITADO", "PROPOSTO", "EM_CURSO", "BLOQUEADO", "CONCLUIDO", "APROVACAO_CONDICIONAL_REGISTADA"}
 ID_RE = re.compile(r"^[A-Z0-9À-Þ]+(?:-[A-Z0-9À-Þ]+)*$")
 HASH_RE = re.compile(r"^[0-9a-f]{64}$")
 SKIP = {".git", ".governanca-master", "node_modules", ".venv", "venv", "__pycache__", "site-packages", "dados", "data", "vendor", "build", "dist"}
