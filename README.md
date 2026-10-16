@@ -8,8 +8,8 @@
 | **Tipo documental** | README |
 | **Fase** | G0 — Governação e entrada |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | cdcd09663837dd1af377cfdbe84fcdfd56647cca46eadbe9eb078548abaf2976 |
+| **Versão** | 1.0.3 |
+| **SHA-256 (conteúdo canónico)** | HASH_PENDING |
 | **Commit de referência (versão anterior)** | [e5e2875e63e1594c461487227150d1f1832cbf3b](https://github.com/carlos-andrade/CONSORCIO/commit/e5e2875e63e1594c461487227150d1f1832cbf3b) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -24,7 +24,7 @@
 
 ## Estado
 
-O projeto está na fase de adoção controlada da governação. A auditoria documental automatizada está instalada e a revisão G2 de requisitos, arquitetura, dados, privacidade e riscos foi registada em [GOVERNANCA/revisao-requisitos-arquitetura-dados-privacidade-riscos.md](GOVERNANCA/revisao-requisitos-arquitetura-dados-privacidade-riscos.md). A revisão permanece EM_REVISAO; não existe declaração de conformidade integral e a aprovação formal do proprietário continua pendente.
+O projeto está na fase de adoção controlada da governação. A auditoria documental automatizada está instalada, a revisão G2 permanece EM_REVISAO e o runbook de operação diária/recuperação está em [GOVERNANCA/runbook-operacao-diaria-recuperacao.md](GOVERNANCA/runbook-operacao-diaria-recuperacao.md). As execuções #47 e #48 validaram a geração de evidência e a auditoria documental; falta comprovar uma execução agendada e ensaiar recuperação. Não existe declaração de conformidade integral e a aprovação formal do proprietário continua pendente.
 
 ## Objetivo do projeto
 
@@ -60,8 +60,15 @@ A automação é de validação e deteção: **não reescreve automaticamente o 
 - Adoção explícita da governação central: documentada.
 - Cabeçalho e hash canónico do README: normalizados e validados na execução #40.
 - Workflow diário: configurado no repositório.
-- Auditoria documental: execução #40 confirmou 5 documentos PASS, 0 WARN e 0 FAIL; 2 testes unitários passaram.
+- Auditoria documental: execução #48 confirmou 6 documentos PASS, 0 WARN e 0 FAIL; 2 testes unitários passaram.
 - Aprovação formal da conformidade global: pendente de evidência e revisão humana.
+
+## Operação e recuperação
+
+- Workflow: [validação documental diária](.github/workflows/governanca-diaria.yml).
+- Runbook: [operação diária, evidências e recuperação](GOVERNANCA/runbook-operacao-diaria-recuperacao.md).
+- Evidências recentes: [execução #47 — manifesto válido](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38894368824) e [execução #48 — auditoria limpa](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38894424857).
+- A execução agendada e o ensaio formal de recuperação ainda estão pendentes; G4 não está concluída.
 
 ## Roadmap
 
@@ -71,7 +78,7 @@ A automação é de validação e deteção: **não reescreve automaticamente o 
 | G1 | Inventariar documentos, código e dados | EM_REVISAO |
 | G2 | Rever requisitos, arquitetura, dados, privacidade e riscos | EM_REVISAO |
 | G3 | Normalizar documentos e validar alterações | CONCLUIDO |
-| G4 | Verificar execução diária, relatórios e recuperação | PENDENTE |
+| G4 | Verificar execução diária, relatórios e recuperação | EM_REVISAO |
 | G5 | Aceitação e autorização explícitas | PENDENTE |
 | G6 | Encerramento documentado quando os critérios forem cumpridos | PENDENTE |
 
