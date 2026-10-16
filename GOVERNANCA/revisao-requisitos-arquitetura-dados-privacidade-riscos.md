@@ -9,7 +9,7 @@
 | **Fase** | G2 — Desenho |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | HASH_PENDENTE |
+| **SHA-256 (conteúdo canónico)** | d291128185f8857f91570ef29dd4c8d100a8e8c9fe750400168405fca03cec14 |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
