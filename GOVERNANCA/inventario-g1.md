@@ -9,7 +9,7 @@
 | **Fase** | G1 — Viabilidade e inventário |
 | **Estado** | CONCLUIDO |
 | **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | HASH_PENDENTE |
+| **SHA-256 (conteúdo canónico)** | 32cd4c536cbae99cb4d5dba6d78b0e25683d043eaf606c12bf1a2ddd9913e370 |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
