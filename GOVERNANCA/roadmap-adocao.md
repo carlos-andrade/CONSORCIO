@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO |
 | **Fase** | G0–G6 |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.1.2 |
-| **SHA-256 (conteúdo canónico)** | 6e18b5a88b193834ca878bd1ab1218efa68eb9ad6d6c10f85691585940507eac |
+| **Versão** | 1.1.3 |
+| **SHA-256 (conteúdo canónico)** | bcab918325138314c38d1181b0c70a80a9a675a894c86f4d5f15efb36d6d2a9a |
 | **Commit de referência (versão anterior)** | [5789d1bbad87432e77f3cad7a4a40c4797cb130f](https://github.com/carlos-andrade/CONSORCIO/commit/5789d1bbad87432e77f3cad7a4a40c4797cb130f) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -29,7 +29,7 @@ A política local de governação, `GOVERNANCA.md` versão 1.0.2, foi aprovada e
 
 ## Estado atual
 
-G0 foi concluído no âmbito atual: propósito documental/analítico, beneficiário/utilizador-alvo, proprietário, papéis funcionais e política local aprovada estão documentados. G1 foi concluído com inventário e priorização em [CONSORCIO-INV-G1-001](inventario-g1.md). G2 foi aprovado formalmente em 2026-10-16 para a baseline documental/analítica, através da decisão [CONSORCIO-DEC-G2-001](decisao-aprovacao-g2.md) e revisão técnica v1.0.1. A aprovação não conclui G4, G5 ou G6. G4 permanece em revisão até existir evidência real de evento `schedule` bem-sucedido e de um ensaio controlado de recuperação. A aprovação condicional de lançamento consta em [CONSORCIO-DEC-G5-001](decisao-aprovacao-condicional-lancamento.md), mas não comprova prontidão nem publicação. G5 e G6 permanecem pendentes.
+G0 foi concluído no âmbito atual: propósito documental/analítico, beneficiário/utilizador-alvo, proprietário, papéis funcionais e política local aprovada estão documentados. G1 foi concluído com inventário e priorização em [CONSORCIO-INV-G1-001](inventario-g1.md). G2 foi aprovado formalmente em 2026-10-16 para a baseline documental/analítica, através da decisão [CONSORCIO-DEC-G2-001](decisao-aprovacao-g2.md) e revisão técnica v1.0.2. A estrutura inicial foi criada e documentada em [ESTRUTURA.md](../ESTRUTURA.md); a validação pós-alteração ainda está em curso. A aprovação não conclui G4, G5 ou G6. G4 permanece em revisão até existir evidência real de evento `schedule` bem-sucedido e de um ensaio controlado de recuperação. A aprovação condicional de lançamento consta em [CONSORCIO-DEC-G5-001](decisao-aprovacao-condicional-lancamento.md), mas não comprova prontidão nem publicação. G5 e G6 permanecem pendentes.
 
 ## Fases e critérios de saída
 
@@ -38,7 +38,7 @@ G0 foi concluído no âmbito atual: propósito documental/analítico, beneficiá
 | G0 — Entrada | Propósito, beneficiário, responsável e autoridade | Política local aprovada; âmbito, beneficiário, proprietário e papéis documentados | CONCLUIDO |
 | G1 — Viabilidade e inventário | Enumerar documentos e dependências | [Inventário técnico](inventario-g1.md) concluído e desvios priorizados | CONCLUIDO |
 | G2 — Desenho | Requisitos, arquitetura, dados, privacidade, riscos e testes | Baseline conservadora aprovada e decisão formal registada; execução de testes de negócio continua condicionada à implementação | CONCLUIDO |
-| G3 — Construção validada | Normalizar documentação e rever alterações | Diferenças auditáveis, testes concluídos, hashes corretos e auditoria limpa | CONCLUIDO |
+| G3 — Construção validada | Criar a estrutura inicial e validar os artefactos resultantes | Estrutura remota verificada, hashes corretos, testes e auditoria limpa após alterações | EM_CURSO |
 | G4 — Prontidão operacional | Observabilidade, recuperação, segurança e suporte | Execução agendada confirmada, evidências verificadas e recuperação ensaiada | EM_REVISAO |
 | G5 — Lançamento | Autorização explícita e observação | Aprovação condicional registada; conclusão dos gates, prontidão operacional e evidência de publicação ainda obrigatórias | PENDENTE |
 | G6 — Encerramento | Aceitação, arquivo, transferência e lições | Critérios finais cumpridos e encerramento registado | PENDENTE |
@@ -78,11 +78,11 @@ A auditoria usa UTF-8, normaliza finais de linha para LF e calcula o SHA-256 can
 
 ## Resultado
 
-A política local está aprovada; G0 e G1 foram concluídos para o âmbito documental/analítico e o inventário técnico está registado. G2 mantém revisão formal da baseline conservadora; G3 permanece concluído. G4 depende de execução `schedule` e ensaio controlado de recuperação. G5/G6 permanecem pendentes. A auditoria #94 foi limpa com 10 PASS, 0 WARN e 0 FAIL. O teste #95/#96 foi documentado como inconclusivo; o cron diário original está restaurado. Esta evidência não substitui execução `schedule`, ensaio de recuperação, publicação ou aceitação final.
+A política local está aprovada; G0 e G1 foram concluídos para o âmbito documental/analítico. G2 foi formalmente aprovado pela decisão CONSORCIO-DEC-G2-001. G3 está em curso para criação e validação da estrutura inicial. G4 depende de execução `schedule` e ensaio controlado de recuperação. G5/G6 permanecem pendentes. A auditoria #110 foi limpa com 11 PASS, 0 WARN e 0 FAIL antes da criação da estrutura; a auditoria pós-estrutura ainda deve ser verificada. O teste #95/#96 foi inconclusivo e o cron diário original está restaurado.
 
 ## Próxima Ação
 
-Validar formalmente a baseline G2 v1.0.1; comprovar uma execução schedule bem-sucedida; realizar e registar ensaio de recuperação operacional; preservar evidências; só então avaliar G5/G6.
+Concluir a auditoria pós-estrutura, verificar hashes e o diff remoto; só depois marcar a subfase estrutural de G3 como validada. Em paralelo, comprovar uma execução schedule bem-sucedida e realizar/registar ensaio de recuperação antes de avaliar G5/G6.
 
 ## Histórico de alterações
 
@@ -101,3 +101,4 @@ Validar formalmente a baseline G2 v1.0.1; comprovar uma execução schedule bem-
 | 1.1.0 | 2026-10-16 | Atualização da evidência para a auditoria limpa #88; estados G0/G1 e bloqueios G2/G4/G5/G6 consolidados | Execução #88: 10 PASS, 0 WARN, 0 FAIL |
 | 1.1.1 | 2026-10-16 | Registo da auditoria #94 e do teste de scheduler inconclusivo, com cron restaurado | Execuções #94–#96 |
 | 1.1.2 | 2026-10-16 | Registo da aprovação formal de G2 e preservação dos bloqueios G4–G6 | CONSORCIO-DEC-G2-001 |
+| 1.1.3 | 2026-10-16 | Registo da criação da estrutura inicial e reabertura controlada de G3 até auditoria pós-alteração | ESTRUTURA.md e commits de estrutura |
