@@ -47,6 +47,15 @@ Fixar resultados esperados e validações negativas antes da implementação do 
 | TC-CST-012 | Taxa de período igual ou inferior a -100% | Rejeitar taxa inválida | ESPECIFICADO |
 | TC-CST-013 | Lista de taxas vazia | Rejeitar cenário sem hipóteses explícitas | ESPECIFICADO |
 
+
+## Casos adicionais — comparação de planos
+
+| ID | Entrada/condição | Resultado esperado | Estado |
+|---|---|---|---|
+| TC-CST-014 | Dois cenários sintéticos com mesmo crédito, prazo e data-base, custos completos | Ranking crescente por custo total, com posições explícitas | ESPECIFICADO |
+| TC-CST-015 | Crédito ou número de parcelas divergente | Bloquear comparação até normalização | ESPECIFICADO |
+| TC-CST-016 | Qualquer custo material desconhecido | Bloquear ranking parcial | ESPECIFICADO |
+
 ## Implementação inicial
 
 Foi adicionada uma bateria de testes unitários em [test_calculadora_custos.py](../tests/test_calculadora_custos.py). O estado de execução só será confirmado após a conclusão bem-sucedida do workflow CI.
