@@ -9,12 +9,12 @@
 | **Fase** | G3 — Construção controlada |
 | **Estado** | EM_CURSO |
 | **Versão** | 1.0.7 |
-| **SHA-256 (conteúdo canónico)** | 4bb9aa9df1bef4915d9f50d895f307610d84377504414998185ac3701ce1e162 |
+| **SHA-256 (conteúdo canónico)** | bcd2ab63d7b26c0b72da3b977c643ec195c50c12bea2b7b56a42cf7c454b69fd |
 | **Commit de referência (versão anterior)** | [e5e2875e63e1594c461487227150d1f1832cbf3b](https://github.com/carlos-andrade/CONSORCIO/commit/e5e2875e63e1594c461487227150d1f1832cbf3b) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
 | **Responsável** | Responsável pelo projeto CONSORCIO |
-| **Aprovador** | Pendente de registo formal |
+| **Aprovador** | Proprietário do projeto — decisão G2 registada em 2026-10-16 |
 | **Origem** | Documento inicial e instrução de adoção do projeto |
 | **Autoridade superior** | [GOVERNANCA.md](GOVERNANCA.md) e [repositório GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
 | **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
