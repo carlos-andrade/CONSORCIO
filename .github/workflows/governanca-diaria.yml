@@ -2,8 +2,7 @@ name: GOVERNANCA — validação documental diária
 
 on:
   schedule:
-    # Teste temporário de scheduler; reverter após a primeira execução schedule.
-    - cron: "*/5 * * * *"
+    - cron: "25 6 * * *"
   workflow_dispatch:
   push:
     branches: [main]
