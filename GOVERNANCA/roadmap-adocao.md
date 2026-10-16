@@ -9,7 +9,7 @@
 | **Fase** | G0–G6 |
 | **Estado** | EM_CURSO |
 | **Versão** | 1.1.5 |
-| **SHA-256 (conteúdo canónico)** | 8c1ef08cb4dcfc69c00d288411ca6d29800bffd14cbf4ecd4879be2ee4aca824 |
+| **SHA-256 (conteúdo canónico)** | bd803f615663433b0dff73097d6ba6eaf76cb2ff40992a737c9a8a97aa719a0c |
 | **Commit de referência (versão anterior)** | [5789d1bbad87432e77f3cad7a4a40c4797cb130f](https://github.com/carlos-andrade/CONSORCIO/commit/5789d1bbad87432e77f3cad7a4a40c4797cb130f) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -81,7 +81,7 @@ A auditoria usa UTF-8, normaliza finais de linha para LF e calcula o SHA-256 can
 
 ## Resultado
 
-A política local está aprovada; G0 e G1 foram concluídos para o âmbito documental/analítico. G2 foi formalmente aprovado pela decisão CONSORCIO-DEC-G2-001. G3 está em curso para criação e validação da estrutura inicial. G4 depende de execução `schedule` e ensaio controlado de recuperação. G5/G6 permanecem pendentes. A auditoria pós-estrutura [#117](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38906302112) terminou com 12 PASS, 0 WARN e 0 FAIL; os hashes canónicos dos documentos Markdown foram reconciliados e a árvore remota foi verificada. A primeira fatia analítica foi publicada em três artefactos: modelo de custos v1.0.0, esquema JSON e dez casos de referência especificados; estes casos ainda não são testes executados. O teste #95/#96 foi inconclusivo e o cron diário original está restaurado.
+A política local está aprovada; G0 e G1 foram concluídos para o âmbito documental/analítico. G2 foi formalmente aprovado pela decisão CONSORCIO-DEC-G2-001. G3 está em curso para criação e validação da estrutura inicial. G4 depende de execução `schedule` e ensaio controlado de recuperação. G5/G6 permanecem pendentes. A auditoria pós-estrutura [#117](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38906302112) terminou com 12 PASS, 0 WARN e 0 FAIL; os hashes canónicos dos documentos Markdown foram reconciliados e a árvore remota foi verificada. A primeira fatia analítica foi publicada em três artefactos: [modelo de custos v1.0.0](../MODELOS/custos/modelo-custo-consorcio.md), [esquema JSON](../DADOS/esquemas/consorcio-custo.schema.json) e [dez casos de referência especificados](../TESTES/casos-referencia-custos.md). Os primeiros runs #122/#123 falharam na reconciliação inicial dos hashes e os documentos foram corrigidos; a execução #124 e a auditoria deste roadmap ainda precisam de confirmação. O teste #95/#96 foi inconclusivo e o cron diário original está restaurado.
 
 ## Próxima Ação
 
@@ -106,4 +106,4 @@ Primeira fatia de G3 publicada: esquema JSON, especificação de custo total e d
 | 1.1.2 | 2026-10-16 | Registo da aprovação formal de G2 e preservação dos bloqueios G4–G6 | CONSORCIO-DEC-G2-001 |
 | 1.1.3 | 2026-10-16 | Registo da criação da estrutura inicial e reabertura controlada de G3 até auditoria pós-alteração | ESTRUTURA.md e commits de estrutura |
 | 1.1.4 | 2026-10-16 | Auditoria pós-estrutura limpa e hashes reconciliados; subfase estrutural validada | Execução #117: 12 PASS, 0 WARN, 0 FAIL |
-| 1.1.5 | 2026-10-16 | Definição do primeiro esquema de custos, modelo analítico e dez casos de referência; validação de negócio ainda pendente | Artefactos G3 publicados; workflow pós-commit pendente |
+| 1.1.5 | 2026-10-16 | Definição do primeiro esquema de custos, modelo analítico e dez casos de referência; validação de negócio ainda pendente | Modelo/esquema/casos publicados; hashes corrigidos após falhas #122/#123; confirmação de auditoria pendente |
