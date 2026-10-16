@@ -8,8 +8,8 @@
 | **Tipo documental** | RUNBOOK |
 | **Fase** | G4 — Prontidão operacional |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | bd2420eff0841e37a02795a22969b975239999c861193077111c868ec95197e3 |
+| **Versão** | 1.0.2 |
+| **SHA-256 (conteúdo canónico)** | HASH_PENDING |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -44,7 +44,7 @@ Validar a operação do workflow `.github/workflows/governanca-diaria.yml`, pres
 - Manifesto `GOVERNANCA/evidencia-execucao.json`, com evento, commit, ator, ID, tentativa e resultado dos testes/auditoria.
 - URL permanente da execução do GitHub Actions e registo de incidentes quando aplicável.
 
-O manifesto e os relatórios são artefactos da execução e não substituem o log de execução. Os artefactos expiram após 90 dias, salvo arquivo manual aprovado. Não colocar segredos, tokens, credenciais ou dados pessoais desnecessários nos relatórios.
+Evidência histórica de recuperação documental: a execução [#38](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893724597) falhou por divergência de hash após alteração documental; a correção foi seguida de execuções limpas, incluindo [#40](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893795182). Isto comprova correção de uma falha de auditoria documental, mas não substitui um ensaio controlado de falha de runner/upload. O manifesto e os relatórios são artefactos da execução e não substituem o log de execução. Os artefactos expiram após 90 dias, salvo arquivo manual aprovado. Não colocar segredos, tokens, credenciais ou dados pessoais desnecessários nos relatórios.
 
 ## Recuperação
 
@@ -87,6 +87,8 @@ O manifesto e os relatórios são artefactos da execução e não substituem o l
 
 - [Workflow operacional](../.github/workflows/governanca-diaria.yml)
 - [Histórico de execuções](https://github.com/carlos-andrade/CONSORCIO/actions/workflows/governanca-diaria.yml)
+- [Execução #38 — falha de auditoria usada como evidência de recuperação](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893724597)
+- [Execução #40 — validação limpa após correção](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893795182)
 - [Roadmap de adoção](roadmap-adocao.md)
 
 ## Validação
@@ -95,8 +97,8 @@ O workflow define execução diária às 06:25 UTC, execução manual, concorrê
 
 ## Resultado
 
-Procedimento de operação e recuperação documentado e validado por execuções acionadas por push. Estado EM_REVISAO até existir evidência de execução agendada, revisão dos artefactos e ensaio de recuperação documentado.
+Procedimento de operação e recuperação documentado. Existe evidência de recuperação de uma falha de integridade documental (#38 → #40), mas não foi executado um ensaio controlado de falha operacional. Estado EM_REVISAO até existir evidência de execução agendada e ensaio formal de recuperação.
 
 ## Próxima Ação
 
-Observar uma execução `schedule` bem-sucedida e executar/registar um ensaio de recuperação, preservando a evidência original e o histórico de falhas.
+Observar uma execução `schedule` bem-sucedida e executar/registar um ensaio controlado de recuperação operacional, preservando a evidência original e o histórico de falhas.
