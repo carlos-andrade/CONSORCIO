@@ -9,7 +9,7 @@
 | **Fase** | G2 — Desenho |
 | **Estado** | APROVADO |
 | **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | ca5eb1b2227f2821a176313bfa2f6b6c073d03d2da05a3b5dea2872fb72f8460 |
+| **SHA-256 (conteúdo canónico)** | 4558e4febc5cfcc67f29c4c7fa619ca7353ed095d4d995cce849d3cbd7163447 |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
