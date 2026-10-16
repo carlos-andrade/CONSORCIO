@@ -73,7 +73,7 @@ jobs:
           os.makedirs('GOVERNANCA', exist_ok=True)
           with open('GOVERNANCA/evidencia-execucao.json', 'w', encoding='utf-8') as f:
               json.dump(payload, f, ensure_ascii=False, indent=2)
-              f.write('\\n')
+              f.write('\n')
           PY
       - name: Guardar relatórios e manifesto da execução
         if: always()
