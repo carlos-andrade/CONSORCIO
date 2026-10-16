@@ -8,8 +8,8 @@
 | **Tipo documental** | RELATORIO_DE_ENCERRAMENTO |
 | **Fase** | G6 — Encerramento |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.5 |
-| **SHA-256 (conteúdo canónico)** | f0fb5fc899f42e0e5cc6759f6b5e971b69fca298e9d249d0c23b177cd83675ed |
+| **Versão** | 1.0.6 |
+| **SHA-256 (conteúdo canónico)** | HASH_PENDENTE |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -44,6 +44,7 @@ O presente relatório consolida a evidência técnica disponível, identifica la
 | EVD-011 | Inventário G1 — CONSORCIO-INV-G1-001 | Inventário documental/técnico concluído; desvios priorizados; G0/G1 registados como concluídos para o âmbito atual | Não comprova prontidão operacional nem lançamento |
 | EVD-012 | Auditoria documental — execução #82 | `success`; 10 PASS, 0 WARN, 0 FAIL; testes unitários aprovados; manifesto e artefacto gerados | Evidência histórica; não substitui a auditoria final mais recente |
 | EVD-013 | Auditoria documental — execução #88 | `success`; 10 PASS, 0 WARN, 0 FAIL; testes unitários aprovados; manifesto e artefacto gerados; commit `6b24410b39bbce6e75e648326e78f467cc27f072` | Evento `push`; não comprova execução `schedule`, recuperação operacional, publicação ou aceitação final |
+| EVD-014 | Teste de scheduler e recuperação de configuração — execuções #95/#96 | #95 falhou na validação de sintaxe YAML durante alteração temporária do cron; configuração corrigida e #96 passou por `push`; cron diário original restaurado no commit `35075a126edae261da58ce98116517cdb0ae4b3d` | Não surgiu evento `schedule`; o ensaio foi inconclusivo e não satisfaz G4 |
 
 ## 3. Estado dos gates para encerramento
 
@@ -113,11 +114,11 @@ Esta declaração não deve ser preenchida ou atribuída automaticamente. Se os 
 
 ## Resultado
 
-O pacote de evidências disponível está consolidado neste relatório. O estado correto é **APROVAÇÃO CONDICIONAL DE LANÇAMENTO REGISTADA — G4/G5/G6 PENDENTES**. A execução [#88](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38901648930) terminou com 10 PASS, 0 WARN e 0 FAIL, com testes unitários aprovados e manifesto gerado. O histórico consultado contém 88 execuções, todas por `push`, sem evento `schedule`. Não marcar o CONSORCIO como lançado ou encerrado até que prontidão, publicação, arquivo e aceitação estejam comprovados.
+O pacote de evidências disponível está consolidado neste relatório. O estado correto é **APROVAÇÃO CONDICIONAL DE LANÇAMENTO REGISTADA — G4/G5/G6 PENDENTES**. A execução [#94](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38901886731) terminou com 10 PASS, 0 WARN e 0 FAIL, com testes unitários aprovados e manifesto gerado. Depois disso, o teste temporário de scheduler (#95/#96) foi inconclusivo e o cron diário foi restaurado. Não existe evidência de evento `schedule` nem ensaio de recuperação operacional aceite. Não marcar o CONSORCIO como lançado ou encerrado até que prontidão, publicação, arquivo e aceitação estejam comprovados.
 
 ## Estado
 
-O relatório de encerramento permanece em revisão. A aprovação condicional de lançamento e a aprovação formal da política local estão registadas, mas não equivalem a aceitação final. G0 e G1 estão CONCLUIDOS para o âmbito atual; G2 e G4 permanecem EM_REVISAO; G5 e G6 permanecem PENDENTES. A auditoria #88 está limpa, mas os gates operacionais não foram simulados nem aprovados automaticamente.
+O relatório de encerramento permanece em revisão. A aprovação condicional de lançamento e a aprovação formal da política local estão registadas, mas não equivalem a aceitação final. G0 e G1 estão CONCLUIDOS para o âmbito atual; G2 e G4 permanecem EM_REVISAO; G5 e G6 permanecem PENDENTES. A auditoria #94 está limpa; o teste temporário #95/#96 foi documentado como inconclusivo. Os gates operacionais não foram aprovados automaticamente.
 
 ## Evidências
 
@@ -146,3 +147,4 @@ Validar formalmente a baseline G2 v1.0.1; comprovar execução agendada e ensaio
 | 1.0.3 | 2026-10-16 | Atualização da evidência para a auditoria limpa #72 | 9 PASS, 0 WARN, 0 FAIL |
 | 1.0.4 | 2026-10-16 | Atualização de G0/G1, registo da baseline G2 e auditoria limpa #82 | Inventário G1, revisão G2 v1.0.1 e execução #82 |
 | 1.0.5 | 2026-10-16 | Atualização do pacote de evidências para auditoria limpa #88 | Execução #88: 10 PASS, 0 WARN, 0 FAIL |
+| 1.0.6 | 2026-10-16 | Registo do teste inconclusivo de scheduler e atualização da auditoria #94 | Execuções #94–#96; cron diário restaurado |
