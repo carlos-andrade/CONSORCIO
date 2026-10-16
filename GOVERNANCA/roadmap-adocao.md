@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO |
 | **Fase** | G0–G6 |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.1.3 |
-| **SHA-256 (conteúdo canónico)** | 85dcf0e51ca77412c4a8292e1e032a85b17c4c79df8bbeaf430b617288c93b3b |
+| **Versão** | 1.1.4 |
+| **SHA-256 (conteúdo canónico)** | 953d090ae7bcb73cd22dfa78dc11757f3b34bc98fb632c2b2d15906786210b5c |
 | **Commit de referência (versão anterior)** | [5789d1bbad87432e77f3cad7a4a40c4797cb130f](https://github.com/carlos-andrade/CONSORCIO/commit/5789d1bbad87432e77f3cad7a4a40c4797cb130f) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -78,11 +78,11 @@ A auditoria usa UTF-8, normaliza finais de linha para LF e calcula o SHA-256 can
 
 ## Resultado
 
-A política local está aprovada; G0 e G1 foram concluídos para o âmbito documental/analítico. G2 foi formalmente aprovado pela decisão CONSORCIO-DEC-G2-001. G3 está em curso para criação e validação da estrutura inicial. G4 depende de execução `schedule` e ensaio controlado de recuperação. G5/G6 permanecem pendentes. A auditoria #110 foi limpa com 11 PASS, 0 WARN e 0 FAIL antes da criação da estrutura; a auditoria pós-estrutura ainda deve ser verificada. O teste #95/#96 foi inconclusivo e o cron diário original está restaurado.
+A política local está aprovada; G0 e G1 foram concluídos para o âmbito documental/analítico. G2 foi formalmente aprovado pela decisão CONSORCIO-DEC-G2-001. G3 está em curso para criação e validação da estrutura inicial. G4 depende de execução `schedule` e ensaio controlado de recuperação. G5/G6 permanecem pendentes. A auditoria pós-estrutura [#117](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38906302112) terminou com 12 PASS, 0 WARN e 0 FAIL; os hashes canónicos dos documentos Markdown foram reconciliados e a árvore remota foi verificada. O teste #95/#96 foi inconclusivo e o cron diário original está restaurado.
 
 ## Próxima Ação
 
-Concluir a auditoria pós-estrutura, verificar hashes e o diff remoto; só depois marcar a subfase estrutural de G3 como validada. Em paralelo, comprovar uma execução schedule bem-sucedida e realizar/registar ensaio de recuperação antes de avaliar G5/G6.
+Subfase de criação da estrutura inicial validada pela auditoria #117 e verificação remota. Continuar G3 com requisitos específicos, modelos e casos de teste incrementais; não declarar módulos de negócio implementados. Em paralelo, comprovar uma execução schedule bem-sucedida e realizar/registar ensaio de recuperação antes de avaliar G5/G6.
 
 ## Histórico de alterações
 
@@ -102,3 +102,4 @@ Concluir a auditoria pós-estrutura, verificar hashes e o diff remoto; só depoi
 | 1.1.1 | 2026-10-16 | Registo da auditoria #94 e do teste de scheduler inconclusivo, com cron restaurado | Execuções #94–#96 |
 | 1.1.2 | 2026-10-16 | Registo da aprovação formal de G2 e preservação dos bloqueios G4–G6 | CONSORCIO-DEC-G2-001 |
 | 1.1.3 | 2026-10-16 | Registo da criação da estrutura inicial e reabertura controlada de G3 até auditoria pós-alteração | ESTRUTURA.md e commits de estrutura |
+| 1.1.4 | 2026-10-16 | Auditoria pós-estrutura limpa e hashes reconciliados; subfase estrutural validada | Execução #117: 12 PASS, 0 WARN, 0 FAIL |
