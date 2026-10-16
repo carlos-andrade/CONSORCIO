@@ -19,16 +19,38 @@
 | **Autoridade superior** | [GOVERNANCA.md](../GOVERNANCA.md) |
 | **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
 
-## Objetivo
+## Contexto Histórico
 
-Guardar relatórios diários, resultados de validação e evidências verificáveis da adoção da governação.
+Este diretório foi criado para guardar relatórios de validação e evidências verificáveis do projeto.
 
-## Registos
+## Estado
 
-- [Relatório diário de conformidade](relatorio-diario.md) — gerado pelo workflow diário, quando executado.
-- Relatórios devem distinguir PASS, WARN, FAIL e UNKNOWN, listar documentos analisados e registar limitações.
-- O relatório é evidência técnica gerada, não aprovação humana nem certificação legal.
+O registo e a ligação para o relatório estão definidos. Os relatórios de cada execução são, por defeito, publicados como artefactos de GitHub Actions; não são automaticamente confirmados em Git para evitar commits sem revisão.
+
+## Evidências
+
+- [Política de governação](../GOVERNANCA.md)
+- [Workflow diário](../.github/workflows/governanca-diaria.yml)
+- [Relatório diário](relatorio-diario.md), quando publicado por execução
+
+## Validação
+
+Este diretório é analisado pelo auditor estático. O relatório gerado deve ser verificado quanto à validade dos dados, aos estados PASS/WARN/FAIL/UNKNOWN e às limitações da execução.
+
+## Resultado
+
+Repositório de evidências preparado; a conformidade global do projeto não fica aprovada por este registo.
+
+## Próxima Ação
+
+Executar a auditoria diária, rever o artefacto de relatório e resolver os desvios por prioridade de risco.
 
 ## Retenção
 
-Os registos publicados no Git permanecem sujeitos ao histórico do repositório e às regras de retenção aplicáveis. Não incluir segredos, dados pessoais desnecessários ou informação confidencial nos relatórios.
+Os artefactos de execução têm retenção configurada de 90 dias. Não incluir segredos, dados pessoais desnecessários ou informação confidencial nos relatórios.
+
+## Histórico de alterações
+
+| Versão | Data | Alteração | Evidência |
+|---|---|---|---|
+| 1.0.0 | 2026-10-16 | Criação do registo de evidências e governação | Commit de atualização no GitHub |
