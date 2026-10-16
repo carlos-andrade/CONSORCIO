@@ -38,7 +38,6 @@ jobs:
           python-version: "3.12"
       - name: Auditar documentos
         id: audit
-        continue-on-error: true
         run: |
           python automation/audit_repository_documents.py \
             --repo-root . \
@@ -55,8 +54,3 @@ jobs:
             GOVERNANCA/relatorio-diario.json
           if-no-files-found: warn
           retention-days: 90
-      - name: Falhar perante erros documentais
-        if: steps.audit.outcome == 'failure'
-        run: |
-          echo "::error::A auditoria encontrou falhas documentais. Consultar os artefactos desta execução."
-          exit 1
