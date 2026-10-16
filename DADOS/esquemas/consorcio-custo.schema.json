@@ -151,6 +151,36 @@
           }
         }
       }
+    },
+    "adjustment_scenario": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Cenário opcional de sensibilidade, não uma previsão contratual.",
+      "required": [
+        "application_basis",
+        "period_rates",
+        "installment_count"
+      ],
+      "properties": {
+        "application_basis": {
+          "const": "TOTAL_KNOWN_COST",
+          "description": "Cada taxa é aplicada ao custo total-base conhecido; não implica que o contrato real use esta base."
+        },
+        "period_rates": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "number",
+            "exclusiveMinimum": -1
+          },
+          "description": "Taxas explícitas por período como frações decimais; cada uma deve ser superior a -1."
+        },
+        "installment_count": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Número de parcelas usado apenas para calcular média indicativa."
+        }
+      }
     }
   }
 }
