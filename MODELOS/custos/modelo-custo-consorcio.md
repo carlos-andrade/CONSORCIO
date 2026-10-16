@@ -125,6 +125,15 @@ A função `compare_cost_scenarios` compara cenários apenas quando todos têm c
 
 Cada cenário deve ter `scenario_id`, `as_of_date`, `source_classification` e todas as entradas do cálculo. O ranking é estritamente matemático por custo total conhecido; não considera qualidade da administradora, probabilidade de contemplação, reajustes contratuais não modelados, liquidez ou adequação individual. Não constitui recomendação financeira.
 
+
+## 11. Proveniência mínima e classificação
+
+- `FACTO`: exige referência identificável à fonte e data de observação ISO (`AAAA-MM-DD`); sem estes campos, a comparação é rejeitada.
+- `HIPOTESE`: exige uma lista não vazia de pressupostos explícitos.
+- `SINTETICO`: deve permanecer claramente rotulado como dado ilustrativo, não como observação de mercado.
+- Todos os cenários comparados exigem identificador não vazio e data-base ISO válida.
+- A existência de uma referência não prova, por si só, a autenticidade ou autorização da fonte; a revisão humana continua necessária.
+
 ## Estado
 
 EM_REVISAO — especificação inicial; não está aprovada para uso decisório.
