@@ -8,8 +8,8 @@
 | **Tipo documental** | RELATORIO_DE_ENCERRAMENTO |
 | **Fase** | G6 — Encerramento |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.3 |
-| **SHA-256 (conteúdo canónico)** | fb5b93f1ac9c3eb8a7f42a948ed5381ecd97cff00394d841e7c9480e8bdb6487 |
+| **Versão** | 1.0.4 |
+| **SHA-256 (conteúdo canónico)** | HASH_PENDENTE |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -41,14 +41,16 @@ O presente relatório consolida a evidência técnica disponível, identifica la
 | EVD-008 | Política `GOVERNANCA.md` v1.0.3 | Política local formalmente aprovada pelo proprietário em 2026-10-16; define autoridade, gates, evidência e proibição de aprovação automática | A aprovação da política não conclui por si só G0 nem os restantes gates |
 | EVD-009 | Integridade documental | Hashes canónicos e auditorias de commits anteriores registados nos documentos de governação | Uma auditoria limpa não substitui aprovação formal, teste de recuperação ou aceitação do produto |
 | EVD-010 | Auditoria documental — execução #72 | `success`; 9 PASS, 0 WARN, 0 FAIL; testes unitários aprovados; manifesto e artefacto gerados | Auditoria estática; não comprova execução `schedule`, ensaio de recuperação, lançamento ou aceitação final |
+| EVD-011 | Inventário G1 — CONSORCIO-INV-G1-001 | Inventário documental/técnico concluído; desvios priorizados; G0/G1 registados como concluídos para o âmbito atual | Não comprova prontidão operacional nem lançamento |
+| EVD-012 | Auditoria documental — execução #82 | `success`; 10 PASS, 0 WARN, 0 FAIL; testes unitários aprovados; manifesto e artefacto gerados | Validou o commit `059d7f664c36718db961df17f193ef679023f8bb`, antes da atualização mais recente do README; a auditoria final após o último commit ainda é necessária |
 
 ## 3. Estado dos gates para encerramento
 
 | Gate | Estado atual | Evidência/lacuna | Condição para fecho |
 |---|---|---|---|
-| G0 — Entrada e governação | EM_REVISAO | Política local formalmente aprovada; restantes critérios de entrada por confirmar | Confirmar objetivo, beneficiário, proprietário, responsável e autoridade normativa aplicável |
-| G1 — Viabilidade e inventário | EM_REVISAO | Inventário e documentação existentes; revisão final não formalizada neste dossiê | Confirmar âmbito, alternativas, custos, dependências, riscos e valor esperado |
-| G2 — Desenho | EM_REVISAO | Revisão técnica publicada; DEC-001 a DEC-006 por decidir | Resolver decisões bloqueadoras e aceitar formalmente requisitos, arquitetura, dados, privacidade e riscos |
+| G0 — Entrada e governação | CONCLUIDO | Política local aprovada; objetivo documental/analítico, beneficiário, proprietário e papéis funcionais registados | Reabrir se houver mudança material de âmbito |
+| G1 — Viabilidade e inventário | CONCLUIDO | Inventário técnico e priorização de desvios em [CONSORCIO-INV-G1-001](inventario-g1.md) | Reabrir se houver expansão de âmbito ou novas dependências |
+| G2 — Desenho | EM_REVISAO | Baseline conservadora e DEC-001 a DEC-006 registadas na revisão v1.0.1 | Validar formalmente a baseline e critérios de aceitação antes de declarar G2 concluído |
 | G3 — Construção validada | CONCLUIDO | Auditorias e testes documentais recentes com resultado limpo | Preservar o relatório e manifesto correspondentes como evidência do escopo verificado |
 | G4 — Prontidão operacional | EM_REVISAO | Workflow e runbook presentes; execução agendada e ensaio de recuperação não comprovados | Capturar execução `schedule` bem-sucedida, verificar artefactos e executar recuperação controlada documentada |
 | G5 — Lançamento | PENDENTE | Aprovação condicional do proprietário registada; não há prova de cumprimento das condições nem de publicação | Cumprir os gates anteriores, comprovar prontidão operacional e guardar evidência verificável de publicação |
@@ -110,17 +112,19 @@ Esta declaração não deve ser preenchida ou atribuída automaticamente. Se os 
 
 ## Resultado
 
-O pacote de evidências disponível está consolidado neste relatório. O estado correto é **APROVAÇÃO CONDICIONAL DE LANÇAMENTO REGISTADA — GATES E ACEITAÇÃO FINAL PENDENTES**. A execução [#72](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38900452064) terminou com 9 PASS, 0 WARN e 0 FAIL na auditoria documental, com testes unitários aprovados. O resultado valida a documentação no commit auditado, não a prontidão operacional, lançamento ou aceitação final. Não marcar o CONSORCIO como lançado ou encerrado até que as condições aplicáveis estejam satisfeitas e comprovadas.
+O pacote de evidências disponível está consolidado neste relatório. O estado correto é **APROVAÇÃO CONDICIONAL DE LANÇAMENTO REGISTADA — G4/G5/G6 PENDENTES**. A execução [#82](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38901445077) terminou com 10 PASS, 0 WARN e 0 FAIL, com testes unitários aprovados, incluindo inventário G1 e revisão G2 v1.0.1. Esta auditoria antecede a atualização mais recente do README. O histórico continua sem evento `schedule`; não marcar o CONSORCIO como lançado ou encerrado até que prontidão, publicação, arquivo e aceitação estejam comprovados.
 
 ## Estado
 
-O relatório de encerramento permanece em revisão. A aprovação condicional de lançamento e a aprovação formal da política local estão registadas, mas não equivalem a aceitação final. G0 está EM_REVISAO; G1, G2 e G4 permanecem EM_REVISAO; G5 e G6 permanecem PENDENTES.
+O relatório de encerramento permanece em revisão. A aprovação condicional de lançamento e a aprovação formal da política local estão registadas, mas não equivalem a aceitação final. G0 e G1 estão CONCLUIDOS para o âmbito atual; G2 e G4 permanecem EM_REVISAO; G5 e G6 permanecem PENDENTES.
 
 ## Evidências
 
 - [Decisão formal de aprovação da política local](aprovacao-politica-governanca.md).
 - [Decisão condicional de lançamento](decisao-aprovacao-condicional-lancamento.md).
-- [Roadmap atualizado v1.0.7](roadmap-adocao.md).
+- [Roadmap atualizado v1.0.9](roadmap-adocao.md).
+- [Inventário técnico G1](inventario-g1.md).
+- [Revisão G2 v1.0.1](revisao-requisitos-arquitetura-dados-privacidade-riscos.md).
 - [Auditoria documental #67](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38899337978), que detetou os avisos corrigidos nesta revisão.
 
 ## Validação
@@ -129,7 +133,7 @@ A revisão atualiza referências desatualizadas à aprovação da política e à
 
 ## Próxima Ação
 
-Resolver as decisões DEC-001 a DEC-006, completar a validação de G0/G1/G2, comprovar execução agendada e ensaio de recuperação, e só depois avaliar G5/G6.
+Validar formalmente a baseline G2 v1.0.1; comprovar execução agendada e ensaio de recuperação; preservar artefactos finais e só depois avaliar G5/G6.
 
 ## Histórico de alterações
 
@@ -139,3 +143,4 @@ Resolver as decisões DEC-001 a DEC-006, completar a validação de G0/G1/G2, co
 | 1.0.1 | 2026-10-16 | Atualização após registo da aprovação condicional de lançamento; aceitação final continua pendente | Decisão CONSORCIO-DEC-G5-001 e execução #60 |
 | 1.0.2 | 2026-10-16 | Correção de referências de estado e inclusão das secções de governação exigidas | Auditoria #67 e decisões G0/G5 registadas |
 | 1.0.3 | 2026-10-16 | Atualização da evidência para a auditoria limpa #72 | 9 PASS, 0 WARN, 0 FAIL |
+| 1.0.4 | 2026-10-16 | Atualização de G0/G1, registo da baseline G2 e auditoria limpa #82 | Inventário G1, revisão G2 v1.0.1 e execução #82 |
