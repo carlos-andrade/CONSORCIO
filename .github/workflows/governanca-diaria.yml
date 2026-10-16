@@ -2,15 +2,13 @@ name: GOVERNANCA — validação documental diária
 
 on:
   schedule:
-    # GitHub Actions utiliza UTC; executar diariamente às 06:25 UTC.
     - cron: "25 6 * * *"
   workflow_dispatch:
   push:
     branches: [main]
     paths:
-      - "README.md"
-      - "GOVERNANCA.md"
-      - "GOVERNANCA/**"
+      - "**/*.md"
+      - "automation/audit_repository_documents.py"
       - ".github/workflows/governanca-diaria.yml"
 
 permissions:
@@ -24,30 +22,30 @@ jobs:
   validar-governanca:
     runs-on: ubuntu-latest
     steps:
-      - name: Obter CONSORCIO
+      - name: Checkout CONSORCIO
         uses: actions/checkout@v4
         with:
           ref: main
-
-      - name: Obter regras normativas vigentes
+      - name: Checkout GOVERNANCA — fonte normativa
         uses: actions/checkout@v4
         with:
           repository: carlos-andrade/GOVERNANCA
           ref: main
           path: .governanca-master
-
       - name: Configurar Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
-      - name: Inventariar e validar documentos
+      - name: Auditar documentos
         id: audit
         continue-on-error: true
         run: |
-          python .governanca-master/automation/audit_repository_documents.py             --repo-root .             --governance-root .governanca-master             --report GOVERNANCA/relatorio-diario.md             --json GOVERNANCA/relatorio-diario.json
-
-      - name: Publicar relatório de auditoria como artefacto
+          python automation/audit_repository_documents.py \
+            --repo-root . \
+            --governance-root .governanca-master \
+            --report GOVERNANCA/relatorio-diario.md \
+            --json GOVERNANCA/relatorio-diario.json
+      - name: Guardar relatórios da execução
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -57,9 +55,8 @@ jobs:
             GOVERNANCA/relatorio-diario.json
           if-no-files-found: warn
           retention-days: 90
-
-      - name: Falhar execução se houver erros de governação
+      - name: Falhar perante erros documentais
         if: steps.audit.outcome == 'failure'
         run: |
-          echo "::error::A auditoria documental encontrou falhas. Consultar o relatório de auditoria nos artefactos desta execução."
+          echo "::error::A auditoria encontrou falhas documentais. Consultar os artefactos desta execução."
           exit 1
