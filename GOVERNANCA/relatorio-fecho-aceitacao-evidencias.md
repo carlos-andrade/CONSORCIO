@@ -8,8 +8,8 @@
 | **Tipo documental** | RELATORIO_DE_ENCERRAMENTO |
 | **Fase** | G6 — Encerramento |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | 359a0cf7621912d98c8dca3326ac6da01a7e2dda18098db4e4d36a534bfe7a1f |
+| **Versão** | 1.0.3 |
+| **SHA-256 (conteúdo canónico)** | HASH_PLACEHOLDER |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -40,6 +40,7 @@ O presente relatório consolida a evidência técnica disponível, identifica la
 | EVD-007 | Runbook operacional v1.0.2 | Procedimento diário e recuperação documentados | G4 requer evidência de execução agendada e ensaio de recuperação controlado, além de revisão humana |
 | EVD-008 | Política `GOVERNANCA.md` v1.0.3 | Política local formalmente aprovada pelo proprietário em 2026-10-16; define autoridade, gates, evidência e proibição de aprovação automática | A aprovação da política não conclui por si só G0 nem os restantes gates |
 | EVD-009 | Integridade documental | Hashes canónicos e auditorias de commits anteriores registados nos documentos de governação | Uma auditoria limpa não substitui aprovação formal, teste de recuperação ou aceitação do produto |
+| EVD-010 | Auditoria documental — execução #72 | `success`; 9 PASS, 0 WARN, 0 FAIL; testes unitários aprovados; manifesto e artefacto gerados | Auditoria estática; não comprova execução `schedule`, ensaio de recuperação, lançamento ou aceitação final |
 
 ## 3. Estado dos gates para encerramento
 
@@ -71,6 +72,7 @@ O fecho só pode ser marcado `ACEITE` depois de cada item obrigatório ter evid�
 ## 5. Pacote de evidências e referências
 
 1. [Execução #56 — auditoria documental e testes](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38894829559).
+2. [Execução #72 — auditoria limpa após correção dos avisos](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38900452064).
 2. [Workflow de validação diária](../.github/workflows/governanca-diaria.yml).
 3. [Roadmap de adoção G0–G6](roadmap-adocao.md).
 4. [Revisão G2 — requisitos, arquitetura, dados, privacidade e riscos](revisao-requisitos-arquitetura-dados-privacidade-riscos.md).
@@ -108,7 +110,7 @@ Esta declaração não deve ser preenchida ou atribuída automaticamente. Se os 
 
 ## Resultado
 
-O pacote de evidências disponível está consolidado neste relatório. O estado correto é **APROVAÇÃO CONDICIONAL DE LANÇAMENTO REGISTADA — GATES E ACEITAÇÃO FINAL PENDENTES**. A execução #60 terminou com 6 PASS, 2 WARN e 0 FAIL na auditoria documental; os avisos não equivalem a aprovação global. Não marcar o CONSORCIO como lançado ou encerrado até que as condições aplicáveis estejam satisfeitas e comprovadas.
+O pacote de evidências disponível está consolidado neste relatório. O estado correto é **APROVAÇÃO CONDICIONAL DE LANÇAMENTO REGISTADA — GATES E ACEITAÇÃO FINAL PENDENTES**. A execução [#72](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38900452064) terminou com 9 PASS, 0 WARN e 0 FAIL na auditoria documental, com testes unitários aprovados. O resultado valida a documentação no commit auditado, não a prontidão operacional, lançamento ou aceitação final. Não marcar o CONSORCIO como lançado ou encerrado até que as condições aplicáveis estejam satisfeitas e comprovadas.
 
 ## Estado
 
@@ -136,3 +138,4 @@ Resolver as decisões DEC-001 a DEC-006, completar a validação de G0/G1/G2, co
 | 1.0.0 | 2026-10-16 | Consolidação inicial do estado de fecho, evidências e critérios de aceitação | Execução #56 e documentos de governação do repositório |
 | 1.0.1 | 2026-10-16 | Atualização após registo da aprovação condicional de lançamento; aceitação final continua pendente | Decisão CONSORCIO-DEC-G5-001 e execução #60 |
 | 1.0.2 | 2026-10-16 | Correção de referências de estado e inclusão das secções de governação exigidas | Auditoria #67 e decisões G0/G5 registadas |
+| 1.0.3 | 2026-10-16 | Atualização da evidência para a auditoria limpa #72 | 9 PASS, 0 WARN, 0 FAIL |
