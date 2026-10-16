@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO |
 | **Fase** | G0–G6 |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.0.7 |
-| **SHA-256 (conteúdo canónico)** | 6a155658cf5083b0f72aeedb2200752c3520e6d85b32819fe5005ce7bc29db3e |
+| **Versão** | 1.0.8 |
+| **SHA-256 (conteúdo canónico)** | HASH_PLACEHOLDER |
 | **Commit de referência (versão anterior)** | [5789d1bbad87432e77f3cad7a4a40c4797cb130f](https://github.com/carlos-andrade/CONSORCIO/commit/5789d1bbad87432e77f3cad7a4a40c4797cb130f) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -66,14 +66,15 @@ O workflow não atualiza automaticamente todos os conteúdos, porque uma altera�
 - [Decisão formal — aprovação condicional de lançamento](decisao-aprovacao-condicional-lancamento.md)
 - [Relatório de fecho — aceitação e evidências](relatorio-fecho-aceitacao-evidencias.md)
 - [Execução #57 — validação após registo da decisão de lançamento](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38896595277)
+- [Execução #72 — auditoria limpa após correção dos avisos](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38900452064)
 
 ## Validação
 
-A auditoria usa UTF-8, normaliza finais de linha para LF e calcula o SHA-256 canónico excluindo apenas as duas linhas de controlo definidas pela norma mestre. Verifica cabeçalhos, campos obrigatórios, estados, versões, datas, IDs duplicados, hash declarado e secções de governação. Não altera documentos auditados. A execução #61 validou com sucesso a alteração do relatório de fecho anterior; a alteração atual requer uma nova execução após o commit.
+A auditoria usa UTF-8, normaliza finais de linha para LF e calcula o SHA-256 canónico excluindo apenas as duas linhas de controlo definidas pela norma mestre. Verifica cabeçalhos, campos obrigatórios, estados, versões, datas, IDs duplicados, hash declarado e secções de governação. Não altera documentos auditados. A execução [#72](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38900452064) validou a correção dos dois avisos: 9 documentos PASS, 0 WARN, 0 FAIL, testes unitários aprovados e manifesto gerado. O artefacto `consorcio-governanca-72` está disponível com retenção até 2027-01-14.
 
 ## Resultado
 
-A política de governação local foi formalmente aprovada e a decisão está registada. G0 fica EM_REVISAO enquanto se confirma o conjunto completo de critérios de entrada; não declarar o gate fechado apenas por causa da aprovação da política. G3 permanece concluído. G1/G2/G4 ainda carecem de revisão/evidência especificada. G5/G6 permanecem pendentes.
+A política de governação local foi formalmente aprovada e a decisão está registada. G0 fica EM_REVISAO enquanto se confirma o conjunto completo de critérios de entrada; não declarar o gate fechado apenas por causa da aprovação da política. G3 permanece concluído. G1/G2/G4 ainda carecem de revisão/evidência especificada. G5/G6 permanecem pendentes. A auditoria documental #72 passou com 9 PASS, 0 WARN e 0 FAIL; este resultado técnico não altera os estados dos gates.
 
 ## Próxima Ação
 
@@ -91,3 +92,4 @@ Confirmar objetivo, beneficiário, responsável e autoridade normativa para comp
 | 1.0.5 | 2026-10-16 | Reforço de evidências e runbook; G4 em validação operacional | Execuções #47 e #48 |
 | 1.0.6 | 2026-10-16 | Registo da aprovação condicional de lançamento sem alterar os estados pendentes dos gates | Decisão CONSORCIO-DEC-G5-001 e execução #57 |
 | 1.0.7 | 2026-10-16 | Registo da aprovação formal da política local e atualização honesta do estado de G0 | Decisão CONSORCIO-DEC-G0-001 |
+| 1.0.8 | 2026-10-16 | Registo da correção dos dois avisos documentais e auditoria limpa | Execução #72: 9 PASS, 0 WARN, 0 FAIL |
