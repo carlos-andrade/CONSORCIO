@@ -144,5 +144,48 @@ class CostCalculatorTests(unittest.TestCase):
             ])
 
 
+    def test_comparison_rejects_invalid_date(self):
+        from MODELOS.custos.calculadora_custos import compare_cost_scenarios
+        base = {
+            "as_of_date": "not-a-date", "source_classification": "SINTETICO",
+            "credit_amount": 1000, "installment_count": 10,
+            "administration_fee_rate_total": "0.1", "reserve_fund_rate_total": "0.02",
+            "insurance_total": 0, "other_charges_total": 0,
+        }
+        with self.assertRaisesRegex(ValueError, "as_of_date must be an ISO date"):
+            compare_cost_scenarios(scenarios=[
+                {**base, "scenario_id": "A"},
+                {**base, "scenario_id": "B"},
+            ])
+
+    def test_fact_scenarios_require_source_reference_and_observation_date(self):
+        from MODELOS.custos.calculadora_custos import compare_cost_scenarios
+        base = {
+            "as_of_date": "2026-10-16", "source_classification": "FACTO",
+            "credit_amount": 1000, "installment_count": 10,
+            "administration_fee_rate_total": "0.1", "reserve_fund_rate_total": "0.02",
+            "insurance_total": 0, "other_charges_total": 0,
+        }
+        with self.assertRaisesRegex(ValueError, "requires source_reference"):
+            compare_cost_scenarios(scenarios=[
+                {**base, "scenario_id": "A"},
+                {**base, "scenario_id": "B"},
+            ])
+
+    def test_hypothesis_scenarios_require_explicit_assumptions(self):
+        from MODELOS.custos.calculadora_custos import compare_cost_scenarios
+        base = {
+            "as_of_date": "2026-10-16", "source_classification": "HIPOTESE",
+            "credit_amount": 1000, "installment_count": 10,
+            "administration_fee_rate_total": "0.1", "reserve_fund_rate_total": "0.02",
+            "insurance_total": 0, "other_charges_total": 0,
+        }
+        with self.assertRaisesRegex(ValueError, "requires explicit assumptions"):
+            compare_cost_scenarios(scenarios=[
+                {**base, "scenario_id": "A"},
+                {**base, "scenario_id": "B"},
+            ])
+
+
 if __name__ == "__main__":
     unittest.main()
