@@ -9,7 +9,7 @@
 | **Fase** | G3 — Construção controlada |
 | **Estado** | EM_CURSO |
 | **Versão** | 1.0.7 |
-| **SHA-256 (conteúdo canónico)** | bcd2ab63d7b26c0b72da3b977c643ec195c50c12bea2b7b56a42cf7c454b69fd |
+| **SHA-256 (conteúdo canónico)** | dff3500304ed6eb91068e4a2f1bc60947902e7421919e98bcf6cc22458bdec02 |
 | **Commit de referência (versão anterior)** | [e5e2875e63e1594c461487227150d1f1832cbf3b](https://github.com/carlos-andrade/CONSORCIO/commit/e5e2875e63e1594c461487227150d1f1832cbf3b) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
