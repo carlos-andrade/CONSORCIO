@@ -23,6 +23,10 @@
 
 O projeto adotou a governação central através de documentação no repositório CONSORCIO e de um workflow diário em GitHub Actions.
 
+## Estado
+
+A automação está instalada; a conformidade documental continua parcial até à correção dos avisos e à aceitação dos resultados.
+
 ## Estado atual
 
 A integração inicial foi criada. A auditoria completa e a conformidade documental ficam dependentes da primeira execução, da inspeção dos relatórios e da remediação dos resultados FAIL/WARN.
