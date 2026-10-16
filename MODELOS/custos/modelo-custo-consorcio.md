@@ -105,6 +105,19 @@ Cada execução futura do modelo deve reportar: versão do modelo; entradas e un
 - Distinguir custo total conhecido, parcela média indicativa e cenário de lance.
 - Manter rastreabilidade para cada entrada e impedir afirmações de execução transacional.
 
+
+## 9. Cenário explícito de reajuste (sensibilidade)
+
+A função `project_adjustment_scenario` aplica uma sequência de taxas informadas pelo utilizador, em períodos sucessivos, sobre o custo total-base fornecido. É uma análise de sensibilidade matemática, não uma previsão contratual. Não é aplicada automaticamente à estimativa-base.
+
+- Só pode ser calculada quando o custo total-base é conhecido.
+- Cada taxa deve ser explicitamente fornecida e ser superior a -100%.
+- A função compõe as taxas sucessivamente sobre o total-base; não presume que esta base corresponde ao mecanismo de reajuste de qualquer contrato real.
+- Antes de comparar com uma oferta, confirmar índice, periodicidade, data-base e componentes efetivamente reajustados no contrato.
+- O resultado é rotulado `SENSITIVITY_ONLY` e deve ser separado do custo-base.
+
+Exemplo sintético: base de R$ 1.000,00 e taxas de 10% e 5% em dois períodos resultam em R$ 1.100,00 e depois R$ 1.155,00. O exemplo ilustra apenas composição matemática.
+
 ## Estado
 
 EM_REVISAO — especificação inicial; não está aprovada para uso decisório.
