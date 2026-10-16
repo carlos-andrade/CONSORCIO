@@ -1,2 +1,78 @@
 # CONSORCIO
-O consórcio no Brasil é uma modalidade de compra baseada na união de pessoas (físicas ou jurídicas) em um grupo com o objetivo de poupar em conjunto para aquisição de bens ou serviços, sem cobrança de juros.
+
+| Campo | Valor |
+|---|---|
+| **ID** | CONSORCIO-README-001 |
+| **Projeto** | CONSORCIO |
+| **Repositório** | [carlos-andrade/CONSORCIO](https://github.com/carlos-andrade/CONSORCIO) |
+| **Tipo documental** | README |
+| **Fase** | G0 — Governação e entrada |
+| **Estado** | EM_CURSO |
+| **Versão** | 1.0.0 |
+| **SHA-256 (conteúdo canónico)** | A_CALCULAR_PELO_WORKFLOW |
+| **Commit de referência (versão anterior)** | [e5e2875e63e1594c461487227150d1f1832cbf3b](https://github.com/carlos-andrade/CONSORCIO/commit/e5e2875e63e1594c461487227150d1f1832cbf3b) |
+| **Data de criação** | 2026-10-16 |
+| **Data de atualização** | 2026-10-16 |
+| **Responsável** | Responsável pelo projeto CONSORCIO |
+| **Aprovador** | Pendente de registo formal |
+| **Origem** | Documento inicial e instrução de adoção do projeto |
+| **Autoridade superior** | [GOVERNANCA.md](GOVERNANCA.md) e [repositório GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+| **Rastreabilidade** | [.github/workflows/governanca-diaria.yml](.github/workflows/governanca-diaria.yml) |
+| **Objetivo** | Documentar o propósito do projeto e a forma de execução da governação |
+| **Dependências** | Repositório GOVERNANCA e GitHub Actions |
+
+## Objetivo do projeto
+
+O consórcio no Brasil é uma modalidade de compra baseada na união de pessoas físicas ou jurídicas em grupo para aquisição de bens ou serviços, com contribuições periódicas e regras contratuais próprias. Embora não tenha juros remuneratórios como um empréstimo tradicional, o consórcio pode incluir taxa de administração, fundo de reserva, seguros e outros encargos previstos no contrato. A análise económica deve considerar todos os custos e condições de contemplação.
+
+O projeto CONSORCIO destina-se a estudar, documentar e avaliar estruturas, custos, riscos, estratégias e decisões relacionadas com consórcios, com base em fontes verificáveis e pressupostos explícitos.
+
+## Governação obrigatória
+
+Toda a governação do projeto é gerida pela fonte normativa central:
+
+- [Repositório GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA)
+- [Constituição do Sistema de Governança](https://github.com/carlos-andrade/GOVERNANCA/blob/main/CONSTITUICAO.md)
+- [Norma de cabeçalho documental padrão](https://github.com/carlos-andrade/GOVERNANCA/blob/main/CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md)
+- [Política de governação do CONSORCIO](GOVERNANCA.md)
+
+As regras devem ser interpretadas segundo o estado registado de cada artefacto mestre. A Constituição da GOVERNANCA está identificada como proposta para revisão, enquanto a norma de cabeçalho v1.0.3 está identificada como aprovada. A adoção desta governação não equivale a uma declaração de conformidade integral do projeto.
+
+## Atualização e validação automáticas
+
+O workflow [GOVERNANCA — validação documental diária](.github/workflows/governanca-diaria.yml) está configurado para:
+
+1. Executar diariamente às 06:25 UTC e também em execução manual ou após alterações relevantes na branch `main`.
+2. Consultar a versão corrente da branch `main` de GOVERNANCA, sem copiar as normas para criar uma fonte paralela.
+3. Inventariar ficheiros documentais e validar cabeçalhos, estados, metadados, integridade SHA-256, identificadores e referências.
+4. Gerar relatório Markdown e JSON com resultados PASS, WARN, FAIL e UNKNOWN.
+5. Guardar relatórios como artefactos da execução e falhar quando forem identificados erros de conformidade.
+
+A automação é de validação e deteção: **não reescreve automaticamente o conteúdo substantivo de todos os documentos, não inventa aprovações e não faz commits automáticos**. A correção é efetuada de forma controlada, preservando conteúdo e histórico. Para forçar uma validação, abrir o separador Actions e executar o workflow manualmente.
+
+## Estado de implementação
+
+- Adoção explícita da governação central: documentada.
+- Cabeçalho normalizado do README: incluído; o hash canónico deve ser confirmado pelo workflow.
+- Workflow diário: configurado no repositório.
+- Auditoria integral: depende da execução do workflow e da resolução dos desvios encontrados.
+- Aprovação formal da conformidade global: pendente de evidência e revisão humana.
+
+## Roadmap
+
+| Fase | Atividade | Estado |
+|---|---|---|
+| G0 | Definir propósito, autoridade e âmbito | EM_CURSO |
+| G1 | Inventariar documentos, código e dados | PENDENTE DE AUDITORIA |
+| G2 | Rever requisitos, arquitetura, privacidade e riscos | PENDENTE |
+| G3 | Normalizar documentos e validar alterações | PENDENTE |
+| G4 | Verificar execução diária, relatórios e recuperação | PENDENTE |
+| G5 | Aceitação e autorização explícitas | PENDENTE |
+| G6 | Encerramento documentado quando os critérios forem cumpridos | PENDENTE |
+
+## Histórico de alterações
+
+| Versão | Data | Alteração | Evidência |
+|---|---|---|---|
+| 1.0.0 | 2026-10-16 | Cabeçalho normalizado, referência normativa e mecanismo de validação descritos | Commit de atualização no GitHub |
