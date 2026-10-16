@@ -45,6 +45,16 @@ Fixar resultados esperados e validações negativas antes da implementação do 
 - O arredondamento monetário é aplicado apenas à apresentação; os cálculos internos devem preservar precisão decimal adequada.
 - Nenhum caso pode chamar APIs financeiras, enviar pagamentos, executar lances ou usar dados pessoais reais.
 
+## Estado
+
+EM_CURSO — casos especificados; execução automatizada pendente.
+
+## Evidências
+
+- [Modelo analítico de custos](../MODELOS/custos/modelo-custo-consorcio.md)
+- [Esquema JSON de custos](../DADOS/esquemas/consorcio-custo.schema.json)
+- [Baseline G2 aprovada](../GOVERNANCA/decisao-aprovacao-g2.md)
+
 ## Validação
 
 Casos especificados para orientar futura implementação. Execução automatizada pendente.
