@@ -1,0 +1,65 @@
+name: GOVERNANCA — validação documental diária
+
+on:
+  schedule:
+    # GitHub Actions utiliza UTC; executar diariamente às 06:25 UTC.
+    - cron: "25 6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "README.md"
+      - "GOVERNANCA.md"
+      - "GOVERNANCA/**"
+      - ".github/workflows/governanca-diaria.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: governanca-diaria-main
+  cancel-in-progress: false
+
+jobs:
+  validar-governanca:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter CONSORCIO
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Obter regras normativas vigentes
+        uses: actions/checkout@v4
+        with:
+          repository: carlos-andrade/GOVERNANCA
+          ref: main
+          path: .governanca-master
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Inventariar e validar documentos
+        id: audit
+        continue-on-error: true
+        run: |
+          python .governanca-master/automation/audit_repository_documents.py             --repo-root .             --governance-root .governanca-master             --report GOVERNANCA/relatorio-diario.md             --json GOVERNANCA/relatorio-diario.json
+
+      - name: Publicar relatório de auditoria como artefacto
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: consorcio-governanca-${{ github.run_number }}
+          path: |
+            GOVERNANCA/relatorio-diario.md
+            GOVERNANCA/relatorio-diario.json
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Falhar execução se houver erros de governação
+        if: steps.audit.outcome == 'failure'
+        run: |
+          echo "::error::A auditoria documental encontrou falhas. Consultar o relatório de auditoria nos artefactos desta execução."
+          exit 1
