@@ -9,7 +9,7 @@
 | **Fase** | G3 — Construção controlada |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | 263f7d5a5c91c209edf8480865068cf12c22eb30fb8ec822447c78d5c09a31d5 |
+| **SHA-256 (conteúdo canónico)** | 55a6309cf03b12f21b654cda96495e8d54363829572705550e85dbf67155d7ed |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
