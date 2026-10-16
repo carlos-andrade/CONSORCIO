@@ -8,7 +8,7 @@
 | **Tipo documental** | PLANO |
 | **Fase** | G0–G6 |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.1.7 |
+| **Versão** | 1.1.8 |
 | **SHA-256 (conteúdo canónico)** | 3a46809bb88ab4b53632950a6ad444968824c08c48e539433f56dc9f6eda9ce0 |
 | **Commit de referência (versão anterior)** | [5789d1bbad87432e77f3cad7a4a40c4797cb130f](https://github.com/carlos-andrade/CONSORCIO/commit/5789d1bbad87432e77f3cad7a4a40c4797cb130f) |
 | **Data de criação** | 2026-10-16 |
@@ -29,7 +29,7 @@ A política local de governação, `GOVERNANCA.md` versão 1.0.2, foi aprovada e
 
 ## Estado atual
 
-G0 foi concluído no âmbito atual: propósito documental/analítico, beneficiário/utilizador-alvo, proprietário, papéis funcionais e política local aprovada estão documentados. G1 foi concluído com inventário e priorização em [CONSORCIO-INV-G1-001](inventario-g1.md). G2 foi aprovado formalmente em 2026-10-16 para a baseline documental/analítica, através da decisão [CONSORCIO-DEC-G2-001](decisao-aprovacao-g2.md) e revisão técnica v1.0.2. A estrutura inicial foi criada e documentada em [ESTRUTURA.md](../ESTRUTURA.md). Em G3 foram adicionados o [modelo analítico de custos](../MODELOS/custos/modelo-custo-consorcio.md), o [esquema JSON](../DADOS/esquemas/consorcio-custo.schema.json), os [casos de referência](../TESTES/casos-referencia-custos.md), a [calculadora determinística](../MODELOS/custos/calculadora_custos.py) e a [bateria unitária](../tests/test_calculadora_custos.py). A execução CI [#136](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38911783657) passou: 12 testes unitários executados, 14 PASS, 0 WARN e 0 FAIL na auditoria documental. A aprovação não conclui G4, G5 ou G6. G4 permanece em revisão até existir evidência real de evento `schedule` bem-sucedido e de um ensaio controlado de recuperação. A aprovação condicional de lançamento consta em [CONSORCIO-DEC-G5-001](decisao-aprovacao-condicional-lancamento.md), mas não comprova prontidão nem publicação. G5 e G6 permanecem pendentes.
+G0 foi concluído no âmbito atual: propósito documental/analítico, beneficiário/utilizador-alvo, proprietário, papéis funcionais e política local aprovada estão documentados. G1 foi concluído com inventário e priorização em [CONSORCIO-INV-G1-001](inventario-g1.md). G2 foi aprovado formalmente em 2026-10-16 para a baseline documental/analítica, através da decisão [CONSORCIO-DEC-G2-001](decisao-aprovacao-g2.md) e revisão técnica v1.0.2. A estrutura inicial foi criada e documentada em [ESTRUTURA.md](../ESTRUTURA.md). Em G3 foram adicionados o [modelo analítico de custos](../MODELOS/custos/modelo-custo-consorcio.md), o [esquema JSON](../DADOS/esquemas/consorcio-custo.schema.json), os [casos de referência](../TESTES/casos-referencia-custos.md), a [calculadora determinística](../MODELOS/custos/calculadora_custos.py) e a [bateria unitária](../tests/test_calculadora_custos.py). A execução CI [#138](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38911977036) passou: 12 testes unitários executados, 14 PASS, 0 WARN e 0 FAIL na auditoria documental. A expansão seguinte adiciona cenário matemático de sensibilidade a reajustes, 3 testes adicionais e TC-CST-011 a TC-CST-013; a validação desta alteração aguarda workflow. A aprovação não conclui G4, G5 ou G6. G4 permanece em revisão até existir evidência real de evento `schedule` bem-sucedido e de um ensaio controlado de recuperação. A aprovação condicional de lançamento consta em [CONSORCIO-DEC-G5-001](decisao-aprovacao-condicional-lancamento.md), mas não comprova prontidão nem publicação. G5 e G6 permanecem pendentes.
 
 ## Fases e critérios de saída
 
@@ -87,7 +87,7 @@ A política local está aprovada; G0 e G1 foram concluídos para o âmbito docum
 
 ## Próxima Ação
 
-Execução #136 limpa: 12 testes unitários aprovados e auditoria documental com 14 PASS, 0 WARN, 0 FAIL. Continuar a ampliar a cobertura de regressão e a documentar cenários de reajuste, prazos e componentes desconhecidos; manter o modelo EM_REVISAO até aprovação humana. Em paralelo, comprovar uma execução schedule bem-sucedida e realizar/registar ensaio de recuperação antes de avaliar G5/G6.
+Execução #138 limpa: 12 testes unitários aprovados e auditoria documental com 14 PASS, 0 WARN, 0 FAIL. A nova subfase adiciona cenário de sensibilidade para reajustes com taxas explícitas e testes de limites; aguardar CI, reconciliar hashes e manter o modelo EM_REVISAO até aprovação humana. Em paralelo, comprovar uma execução schedule bem-sucedida e realizar/registar ensaio de recuperação antes de avaliar G5/G6.
 
 ## Histórico de alterações
 
