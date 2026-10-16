@@ -9,13 +9,15 @@
 | **Fase** | G0–G6 |
 | **Estado** | EM_CURSO |
 | **Versão** | 1.0.7 |
-| **SHA-256 (conteúdo canónico)** | c66f34ad12561c0d73f2e4479dbafc7bb9107a8234e41e3d5c25e9bfdf8c8dcb |
+| **SHA-256 (conteúdo canónico)** | 6a155658cf5083b0f72aeedb2200752c3520e6d85b32819fe5005ce7bc29db3e |
 | **Commit de referência (versão anterior)** | [5789d1bbad87432e77f3cad7a4a40c4797cb130f](https://github.com/carlos-andrade/CONSORCIO/commit/5789d1bbad87432e77f3cad7a4a40c4797cb130f) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
 | **Responsável** | Responsável pelo projeto CONSORCIO |
 | **Aprovador** | Política local aprovada; aprovação global e restantes gates sujeitos a critérios e evidências |
 | **Origem** | Adoção da fonte normativa GOVERNANCA |
+| **Autoridade superior** | [GOVERNANCA.md](../GOVERNANCA.md) e [Constituição GOV-001 — proposta para revisão](https://github.com/carlos-andrade/GOVERNANCA/blob/main/CONSTITUICAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
 
 ## Contexto Histórico
 
