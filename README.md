@@ -9,7 +9,7 @@
 | **Fase** | G0 — Governação e entrada |
 | **Estado** | EM_CURSO |
 | **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | A_CALCULAR_PELO_WORKFLOW |
+| **SHA-256 (conteúdo canónico)** | PENDENTE_DE_CALCULO |
 | **Commit de referência (versão anterior)** | [e5e2875e63e1594c461487227150d1f1832cbf3b](https://github.com/carlos-andrade/CONSORCIO/commit/e5e2875e63e1594c461487227150d1f1832cbf3b) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
