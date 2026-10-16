@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO |
 | **Fase** | G0–G6 |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.1.4 |
-| **SHA-256 (conteúdo canónico)** | 0d09316d9bfb110cb12e37912a7885fe45ee296bcab501c7accbe00e1635caec |
+| **Versão** | 1.1.5 |
+| **SHA-256 (conteúdo canónico)** | 8c1ef08cb4dcfc69c00d288411ca6d29800bffd14cbf4ecd4879be2ee4aca824 |
 | **Commit de referência (versão anterior)** | [5789d1bbad87432e77f3cad7a4a40c4797cb130f](https://github.com/carlos-andrade/CONSORCIO/commit/5789d1bbad87432e77f3cad7a4a40c4797cb130f) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -29,7 +29,7 @@ A política local de governação, `GOVERNANCA.md` versão 1.0.2, foi aprovada e
 
 ## Estado atual
 
-G0 foi concluído no âmbito atual: propósito documental/analítico, beneficiário/utilizador-alvo, proprietário, papéis funcionais e política local aprovada estão documentados. G1 foi concluído com inventário e priorização em [CONSORCIO-INV-G1-001](inventario-g1.md). G2 foi aprovado formalmente em 2026-10-16 para a baseline documental/analítica, através da decisão [CONSORCIO-DEC-G2-001](decisao-aprovacao-g2.md) e revisão técnica v1.0.2. A estrutura inicial foi criada e documentada em [ESTRUTURA.md](../ESTRUTURA.md); a validação pós-alteração ainda está em curso. A aprovação não conclui G4, G5 ou G6. G4 permanece em revisão até existir evidência real de evento `schedule` bem-sucedido e de um ensaio controlado de recuperação. A aprovação condicional de lançamento consta em [CONSORCIO-DEC-G5-001](decisao-aprovacao-condicional-lancamento.md), mas não comprova prontidão nem publicação. G5 e G6 permanecem pendentes.
+G0 foi concluído no âmbito atual: propósito documental/analítico, beneficiário/utilizador-alvo, proprietário, papéis funcionais e política local aprovada estão documentados. G1 foi concluído com inventário e priorização em [CONSORCIO-INV-G1-001](inventario-g1.md). G2 foi aprovado formalmente em 2026-10-16 para a baseline documental/analítica, através da decisão [CONSORCIO-DEC-G2-001](decisao-aprovacao-g2.md) e revisão técnica v1.0.2. A estrutura inicial foi criada e documentada em [ESTRUTURA.md](../ESTRUTURA.md). Em G3 foram adicionados o [modelo analítico de custos](../MODELOS/custos/modelo-custo-consorcio.md), o [esquema JSON](../DADOS/esquemas/consorcio-custo.schema.json) e os [casos de referência](../TESTES/casos-referencia-custos.md); a auditoria pós-alteração permanece pendente até conclusão do workflow. A aprovação não conclui G4, G5 ou G6. G4 permanece em revisão até existir evidência real de evento `schedule` bem-sucedido e de um ensaio controlado de recuperação. A aprovação condicional de lançamento consta em [CONSORCIO-DEC-G5-001](decisao-aprovacao-condicional-lancamento.md), mas não comprova prontidão nem publicação. G5 e G6 permanecem pendentes.
 
 ## Fases e critérios de saída
 
@@ -38,7 +38,7 @@ G0 foi concluído no âmbito atual: propósito documental/analítico, beneficiá
 | G0 — Entrada | Propósito, beneficiário, responsável e autoridade | Política local aprovada; âmbito, beneficiário, proprietário e papéis documentados | CONCLUIDO |
 | G1 — Viabilidade e inventário | Enumerar documentos e dependências | [Inventário técnico](inventario-g1.md) concluído e desvios priorizados | CONCLUIDO |
 | G2 — Desenho | Requisitos, arquitetura, dados, privacidade, riscos e testes | Baseline conservadora aprovada e decisão formal registada; execução de testes de negócio continua condicionada à implementação | CONCLUIDO |
-| G3 — Construção validada | Criar a estrutura inicial e validar os artefactos resultantes | Estrutura remota verificada, hashes corretos, testes e auditoria limpa após alterações | EM_CURSO |
+| G3 — Construção validada | Criar a estrutura inicial, definir esquemas, modelos e casos de referência; validar os artefactos | Esquema JSON parseável, hashes corretos, testes de referência executados e auditoria limpa após alterações | EM_CURSO |
 | G4 — Prontidão operacional | Observabilidade, recuperação, segurança e suporte | Execução agendada confirmada, evidências verificadas e recuperação ensaiada | EM_REVISAO |
 | G5 — Lançamento | Autorização explícita e observação | Aprovação condicional registada; conclusão dos gates, prontidão operacional e evidência de publicação ainda obrigatórias | PENDENTE |
 | G6 — Encerramento | Aceitação, arquivo, transferência e lições | Critérios finais cumpridos e encerramento registado | PENDENTE |
@@ -56,6 +56,9 @@ O workflow não atualiza automaticamente todos os conteúdos, porque uma altera�
 - [README do projeto](../README.md)
 - [Inventário G1 e desvios priorizados](inventario-g1.md)
 - [Revisão G2](revisao-requisitos-arquitetura-dados-privacidade-riscos.md)
+- [Modelo de custos CONSORCIO-MOD-CUSTO-001](../MODELOS/custos/modelo-custo-consorcio.md)
+- [Esquema JSON de custos](../DADOS/esquemas/consorcio-custo.schema.json)
+- [Casos de referência de custos](../TESTES/casos-referencia-custos.md)
 - [Workflow de validação](../.github/workflows/governanca-diaria.yml)
 - [Auditor estático](../automation/audit_repository_documents.py)
 - [Execução #35 — deteção da divergência](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893569303)
@@ -78,11 +81,11 @@ A auditoria usa UTF-8, normaliza finais de linha para LF e calcula o SHA-256 can
 
 ## Resultado
 
-A política local está aprovada; G0 e G1 foram concluídos para o âmbito documental/analítico. G2 foi formalmente aprovado pela decisão CONSORCIO-DEC-G2-001. G3 está em curso para criação e validação da estrutura inicial. G4 depende de execução `schedule` e ensaio controlado de recuperação. G5/G6 permanecem pendentes. A auditoria pós-estrutura [#117](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38906302112) terminou com 12 PASS, 0 WARN e 0 FAIL; os hashes canónicos dos documentos Markdown foram reconciliados e a árvore remota foi verificada. O teste #95/#96 foi inconclusivo e o cron diário original está restaurado.
+A política local está aprovada; G0 e G1 foram concluídos para o âmbito documental/analítico. G2 foi formalmente aprovado pela decisão CONSORCIO-DEC-G2-001. G3 está em curso para criação e validação da estrutura inicial. G4 depende de execução `schedule` e ensaio controlado de recuperação. G5/G6 permanecem pendentes. A auditoria pós-estrutura [#117](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38906302112) terminou com 12 PASS, 0 WARN e 0 FAIL; os hashes canónicos dos documentos Markdown foram reconciliados e a árvore remota foi verificada. A primeira fatia analítica foi publicada em três artefactos: modelo de custos v1.0.0, esquema JSON e dez casos de referência especificados; estes casos ainda não são testes executados. O teste #95/#96 foi inconclusivo e o cron diário original está restaurado.
 
 ## Próxima Ação
 
-Subfase de criação da estrutura inicial validada pela auditoria #117 e verificação remota. Continuar G3 com requisitos específicos, modelos e casos de teste incrementais; não declarar módulos de negócio implementados. Em paralelo, comprovar uma execução schedule bem-sucedida e realizar/registar ensaio de recuperação antes de avaliar G5/G6.
+Primeira fatia de G3 publicada: esquema JSON, especificação de custo total e dez casos de referência especificados. Validar hashes e JSON, obter auditoria limpa do workflow pós-commit e, depois, implementar o motor determinístico e executar os casos; não declarar testes de negócio executados nem módulos de negócio concluídos. Em paralelo, comprovar uma execução schedule bem-sucedida e realizar/registar ensaio de recuperação antes de avaliar G5/G6.
 
 ## Histórico de alterações
 
@@ -103,3 +106,4 @@ Subfase de criação da estrutura inicial validada pela auditoria #117 e verific
 | 1.1.2 | 2026-10-16 | Registo da aprovação formal de G2 e preservação dos bloqueios G4–G6 | CONSORCIO-DEC-G2-001 |
 | 1.1.3 | 2026-10-16 | Registo da criação da estrutura inicial e reabertura controlada de G3 até auditoria pós-alteração | ESTRUTURA.md e commits de estrutura |
 | 1.1.4 | 2026-10-16 | Auditoria pós-estrutura limpa e hashes reconciliados; subfase estrutural validada | Execução #117: 12 PASS, 0 WARN, 0 FAIL |
+| 1.1.5 | 2026-10-16 | Definição do primeiro esquema de custos, modelo analítico e dez casos de referência; validação de negócio ainda pendente | Artefactos G3 publicados; workflow pós-commit pendente |
