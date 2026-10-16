@@ -134,3 +134,52 @@ def project_adjustment_scenario(*, base_total_cost: Any, period_rates: list[Any]
         "installment_count": installment_count,
         "assumption": "Each explicit rate is compounded on the full base total once per period; this is not a contract forecast.",
     }
+
+
+def compare_cost_scenarios(*, scenarios: list[dict[str, Any]]) -> dict[str, Any]:
+    """Compare fully specified plans only when credit, term, date and evidence class match."""
+    if not isinstance(scenarios, list) or len(scenarios) < 2:
+        raise ValueError("at least two scenarios are required")
+    required = {"scenario_id", "as_of_date", "source_classification", "credit_amount", "installment_count"}
+    normalized = []
+    for index, scenario in enumerate(scenarios):
+        if not isinstance(scenario, dict):
+            raise ValueError(f"scenarios[{index}] must be an object")
+        missing = sorted(required - scenario.keys())
+        if missing:
+            raise ValueError(f"scenarios[{index}] missing required fields: {', '.join(missing)}")
+        if scenario["source_classification"] not in {"FACTO", "HIPOTESE", "SINTETICO"}:
+            raise ValueError(f"scenarios[{index}] has invalid source_classification")
+        calc_args = {key: scenario.get(key) for key in (
+            "credit_amount", "installment_count", "administration_fee_rate_total",
+            "reserve_fund_rate_total", "insurance_total", "other_charges_total",
+            "entry_or_bid_scenario",
+        )}
+        result = calculate_costs(**calc_args)
+        if result["complete_total_cost"] is None:
+            raise ValueError(f"scenario {scenario['scenario_id']} has unknown material cost components")
+        normalized.append({
+            "scenario_id": str(scenario["scenario_id"]),
+            "as_of_date": str(scenario["as_of_date"]),
+            "source_classification": scenario["source_classification"],
+            "credit_amount": result["credit_amount"],
+            "installment_count": result["installment_count"],
+            "total_cost": result["complete_total_cost"],
+            "average_installment": result["average_installment"],
+        })
+    basis_fields = ("credit_amount", "installment_count", "as_of_date", "source_classification")
+    reference = normalized[0]
+    for item in normalized[1:]:
+        differences = [field for field in basis_fields if item[field] != reference[field]]
+        if differences:
+            raise ValueError("scenarios are not comparable; normalize: " + ", ".join(differences))
+    ranked = sorted(normalized, key=lambda item: Decimal(item["total_cost"]))
+    return {
+        "comparison_status": "COMPARABLE",
+        "basis": {field: reference[field] for field in basis_fields},
+        "ranking": [
+            {**item, "rank": rank}
+            for rank, item in enumerate(ranked, start=1)
+        ],
+        "note": "Ranking compares known totals only under identical credit, term, date and evidence classification; it is not a recommendation.",
+    }
