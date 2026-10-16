@@ -10,6 +10,7 @@ Scope: deterministic calculations only; no transactions, real bids, or personal 
 from __future__ import annotations
 
 from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
+from datetime import date
 from typing import Any
 
 
@@ -148,8 +149,25 @@ def compare_cost_scenarios(*, scenarios: list[dict[str, Any]]) -> dict[str, Any]
         missing = sorted(required - scenario.keys())
         if missing:
             raise ValueError(f"scenarios[{index}] missing required fields: {', '.join(missing)}")
+        if not str(scenario["scenario_id"]).strip():
+            raise ValueError(f"scenarios[{index}] scenario_id must not be empty")
         if scenario["source_classification"] not in {"FACTO", "HIPOTESE", "SINTETICO"}:
             raise ValueError(f"scenarios[{index}] has invalid source_classification")
+        try:
+            date.fromisoformat(str(scenario["as_of_date"]))
+        except (TypeError, ValueError):
+            raise ValueError(f"scenarios[{index}] as_of_date must be an ISO date") from None
+        if scenario["source_classification"] == "FACTO":
+            if not str(scenario.get("source_reference") or "").strip():
+                raise ValueError(f"scenario {scenario['scenario_id']} FACTO requires source_reference")
+            try:
+                date.fromisoformat(str(scenario.get("source_observed_at") or ""))
+            except (TypeError, ValueError):
+                raise ValueError(f"scenario {scenario['scenario_id']} FACTO requires ISO source_observed_at") from None
+        if scenario["source_classification"] == "HIPOTESE":
+            assumptions = scenario.get("assumptions")
+            if not isinstance(assumptions, list) or not any(str(item).strip() for item in assumptions):
+                raise ValueError(f"scenario {scenario['scenario_id']} HIPOTESE requires explicit assumptions")
         calc_args = {key: scenario.get(key) for key in (
             "credit_amount", "installment_count", "administration_fee_rate_total",
             "reserve_fund_rate_total", "insurance_total", "other_charges_total",
