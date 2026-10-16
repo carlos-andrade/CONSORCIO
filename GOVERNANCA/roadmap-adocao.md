@@ -8,9 +8,9 @@
 | **Tipo documental** | PLANO |
 | **Fase** | G0–G6 |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | e67d77640e511c582cbd7c0c642709add18e1a2d368e663cffde403bcdc6f682 |
-| **Commit de referência (versão anterior)** | N/A — documento inicial |
+| **Versão** | 1.0.1 |
+| **SHA-256 (conteúdo canónico)** | 0ec5ece54a2fa0346e52e4967a9e3ac5499ae10324007914f2ced20c46c3d061 |
+| **Commit de referência (versão anterior)** | [ad5d3b3c53b38aed0ebe3886ccacc6528b6efbe2](https://github.com/carlos-andrade/CONSORCIO/commit/ad5d3b3c53b38aed0ebe3886ccacc6528b6efbe2) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
 | **Responsável** | Responsável pelo projeto CONSORCIO |
@@ -29,7 +29,7 @@ A automação está instalada; a conformidade documental continua parcial até �
 
 ## Estado atual
 
-A integração inicial foi criada. A auditoria completa e a conformidade documental ficam dependentes da primeira execução, da inspeção dos relatórios e da remediação dos resultados FAIL/WARN.
+A execução [#31](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38892039556) concluiu com sucesso: 4 documentos PASS, 0 WARN e 0 FAIL; os 2 testes unitários passaram. A normalização dos quatro hashes principais está concluída. G1 continua pendente de revisão formal do relatório e priorização documentada; G0 permanece dependente da aprovação formal do proprietário.
 
 ## Fases e critérios de saída
 
