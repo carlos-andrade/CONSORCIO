@@ -8,8 +8,8 @@
 | **Tipo documental** | REVISAO_TECNICA |
 | **Fase** | G2 — Desenho |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | bd4dbb745ea755c67208c49ab9f3a4ee93ec8a3d760ce4b6925d85db8add8451 |
+| **Versão** | 1.0.1 |
+| **SHA-256 (conteúdo canónico)** | HASH_PENDENTE |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -133,12 +133,12 @@ Risco residual só pode ser reduzido depois de existir evidência de implementa�
 
 | ID | Decisão | Estado |
 |---|---|---|
-| DEC-001 | Confirmar se o projeto é apenas estudo/apoio à decisão ou se prevê aplicação | Pendente do proprietário |
-| DEC-002 | Identificar utilizadores e decisões concretas suportadas | Pendente do proprietário |
-| DEC-003 | Aprovar fontes de dados e frequência de atualização | Pendente |
-| DEC-004 | Confirmar se haverá dados pessoais reais | Pendente do proprietário |
-| DEC-005 | Nomear responsáveis por dados, privacidade, operação e revisão independente | Pendente |
-| DEC-006 | Definir ambiente, orçamento, disponibilidade e recuperação, caso exista produto operacional | Pendente |
+| DEC-001 | Âmbito: estudo documental/analítico e apoio à decisão; sem aplicação transacional neste ciclo | Resolvida para o âmbito atual; expansão exige nova decisão de âmbito |
+| DEC-002 | Utilizador-alvo: proprietário/responsável do projeto; decisões suportadas: comparar custos, encargos, prazos, regras contratuais e cenários de consórcio | Resolvida para o âmbito atual; requisitos adicionais passam por controlo de alterações |
+| DEC-003 | Fontes: primárias/oficiais e documentos autorizados; registar emissor, URL/referência, licença/uso permitido, data de publicação/captura, período de referência e hash. Atualização por estudo/relatório; não assumir ingestão automática | Resolvida como política-base; cada fonte concreta ainda requer validação de licença e disponibilidade |
+| DEC-004 | Não recolher nem armazenar dados pessoais reais, documentos de identidade, dados bancários ou de crédito; usar dados públicos, agregados ou sintéticos | Resolvida como exclusão de âmbito; alteração exige revisão de privacidade e segurança |
+| DEC-005 | Proprietário: decisões de âmbito/aceitação; responsável do projeto: documentação, roadmap e evidências; responsável técnico: automação/testes; revisão especializada de privacidade/jurídica antes de qualquer expansão para dados pessoais ou operação. Papéis definidos por função, sem inventar nomeações individuais | Resolvida por atribuição funcional mínima para o âmbito documental; nomeações nominais obrigatórias se houver operação/produto |
+| DEC-006 | Ambiente operacional, orçamento, SLA e recuperação de produto: não aplicável enquanto o âmbito permanecer documental/analítico e não existir serviço de negócio publicado | Não aplicável ao âmbito atual; reabrir antes de aprovar qualquer produto operacional |
 
 ## 10. Conclusão e estado do gate
 
@@ -165,10 +165,11 @@ Linha de base de desenho registada; riscos e decisões em aberto explicitados; G
 
 ## Próxima Ação
 
-Resolver DEC-001 a DEC-006, atribuir responsáveis e prazos, atualizar a linha de base e executar novamente a auditoria documental.
+Validar formalmente a linha de base de âmbito/decisões definida na versão 1.0.1; só reabrir DEC-003/005/006 se surgir fonte, integração, dados pessoais ou produto operacional novo.
 
 ## Histórico de alterações
 
 | Versão | Data | Alteração | Evidência |
 |---|---|---|---|
 | 1.0.0 | 2026-10-16 | Criação da revisão G2 de requisitos, arquitetura, dados, privacidade e riscos | Commit inicial deste documento |
+| 1.0.1 | 2026-10-16 | Resolução conservadora das DEC-001–006 para o âmbito documental/analítico; sem expansão de produto ou dados pessoais | Mandato do proprietário para resolver pendências; alterações registadas para validação formal |
