@@ -9,7 +9,7 @@
 | **Fase** | G6 — Encerramento |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | fd221eae9ac622ccdc1dd61d7846e0ae16a2f9dbe3cb8cd2fad77697163e6e4a |
+| **SHA-256 (conteúdo canónico)** | 359a0cf7621912d98c8dca3326ac6da01a7e2dda18098db4e4d36a534bfe7a1f |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
