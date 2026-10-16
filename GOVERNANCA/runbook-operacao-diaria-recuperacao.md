@@ -8,8 +8,8 @@
 | **Tipo documental** | RUNBOOK |
 | **Fase** | G4 — Prontidão operacional |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | 001c0dc3ec5802f3d766aae2281667caade48db92d4095ab22af93c351cc0346 |
+| **Versão** | 1.0.3 |
+| **SHA-256 (conteúdo canónico)** | HASH_PENDENTE |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -90,10 +90,11 @@ Evidência histórica de recuperação documental: a execução [#38](https://gi
 - [Execução #38 — falha de auditoria usada como evidência de recuperação](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893724597)
 - [Execução #40 — validação limpa após correção](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893795182)
 - [Roadmap de adoção](roadmap-adocao.md)
+- [Inventário G1 e desvios priorizados](inventario-g1.md)
 
 ## Validação
 
-O workflow define execução diária às 06:25 UTC, execução manual, concorrência sem cancelamento, limite de 15 minutos e upload do relatório e manifesto mesmo quando os passos de teste/auditoria falham. As execuções [#47](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38894368824) e [#48](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38894424857) confirmaram a serialização válida do manifesto e auditoria limpa (6 PASS, 0 WARN, 0 FAIL; 2 testes unitários aprovados). Ambas foram acionadas por `push`; a execução `schedule` e o ensaio formal de recuperação continuam pendentes.
+O workflow define execução diária às 06:25 UTC, execução manual, concorrência sem cancelamento, limite de 15 minutos e upload do relatório e manifesto mesmo quando os passos de teste/auditoria falham. As execuções [#47](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38894368824) e [#48](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38894424857) confirmaram a serialização válida do manifesto. A execução [#82](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38901445077) validou a documentação com 10 PASS, 0 WARN, 0 FAIL e testes unitários aprovados. As execuções consultadas são acionadas por `push`; não existe evidência de evento `schedule` nem de ensaio formal de recuperação operacional.
 
 ## Resultado
 
@@ -101,4 +102,4 @@ Procedimento de operação e recuperação documentado. Existe evidência de rec
 
 ## Próxima Ação
 
-Observar uma execução `schedule` bem-sucedida e executar/registar um ensaio controlado de recuperação operacional, preservando a evidência original e o histórico de falhas.
+Observar uma execução `schedule` bem-sucedida e executar/registar um ensaio controlado de recuperação operacional, preservando a evidência original e o histórico de falhas. A auditoria documental limpa não substitui estes dois controlos.
