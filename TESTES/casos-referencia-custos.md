@@ -38,6 +38,15 @@ Fixar resultados esperados e validações negativas antes da implementação do 
 | TC-CST-009 | Lance analítico informado | Mostrar separadamente como cenário de liquidez; não executar nem somar automaticamente ao custo contratual | ESPECIFICADO |
 | TC-CST-010 | Comparação com prazo/base de taxas diferentes | Bloquear ranking direto ou exigir normalização explícita | ESPECIFICADO |
 
+
+## Casos adicionais — cenário de reajuste
+
+| ID | Entrada/condição | Resultado esperado | Estado |
+|---|---|---|---|
+| TC-CST-011 | Base=1000; taxas explícitas 10% e 5%; N=10 | Total projetado=1155,00; média=115,50; rótulo SENSITIVITY_ONLY | ESPECIFICADO |
+| TC-CST-012 | Taxa de período igual ou inferior a -100% | Rejeitar taxa inválida | ESPECIFICADO |
+| TC-CST-013 | Lista de taxas vazia | Rejeitar cenário sem hipóteses explícitas | ESPECIFICADO |
+
 ## Implementação inicial
 
 Foi adicionada uma bateria de testes unitários em [test_calculadora_custos.py](../tests/test_calculadora_custos.py). O estado de execução só será confirmado após a conclusão bem-sucedida do workflow CI.
