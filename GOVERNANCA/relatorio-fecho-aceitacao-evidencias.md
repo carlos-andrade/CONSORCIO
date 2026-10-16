@@ -8,8 +8,8 @@
 | **Tipo documental** | RELATORIO_DE_ENCERRAMENTO |
 | **Fase** | G6 — Encerramento |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | 456db5cb3524a7dddf216772ece93999b055ac14e7ab37dd576baf15dd3dfe7f |
+| **Versão** | 1.0.2 |
+| **SHA-256 (conteúdo canónico)** | fd221eae9ac622ccdc1dd61d7846e0ae16a2f9dbe3cb8cd2fad77697163e6e4a |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -35,22 +35,22 @@ O presente relatório consolida a evidência técnica disponível, identifica la
 | EVD-002 | Auditoria da execução #56 | 6 PASS, 0 WARN, 0 FAIL; 2 testes unitários aprovados, conforme resumo de execução registado | Auditoria documental estática, não certificação integral do projeto |
 | EVD-003 | Artefacto da execução #56 | `consorcio-governanca-56`, artefacto associado à execução #56 | Retenção configurada de 90 dias; arquivo de longo prazo não comprovado |
 | EVD-004 | Workflow `.github/workflows/governanca-diaria.yml` | `schedule` definido para `25 6 * * *`, `workflow_dispatch` e `push` configurados | As últimas 56 execuções observadas foram acionadas por `push`; não foi localizada execução com evento `schedule` |
-| EVD-005 | Roadmap de adoção v1.0.5 | G3 `CONCLUIDO`; G0 `EM_CURSO`; G1/G2/G4 `EM_REVISAO`; G5/G6 `PENDENTE` | Estados dos gates impedem encerramento global |
+| EVD-005 | Roadmap de adoção v1.0.5 | G3 `CONCLUIDO`; G0 `EM_REVISAO`; G1/G2/G4 `EM_REVISAO`; G5/G6 `PENDENTE` | Estados dos gates impedem encerramento global |
 | EVD-006 | Revisão G2 v1.0.0 | Requisitos, arquitetura proposta, dados, privacidade e riscos documentados | DEC-001 a DEC-006 e critérios de aceitação G2 continuam dependentes de decisão/validação humana |
 | EVD-007 | Runbook operacional v1.0.2 | Procedimento diário e recuperação documentados | G4 requer evidência de execução agendada e ensaio de recuperação controlado, além de revisão humana |
-| EVD-008 | Política `GOVERNANCA.md` v1.0.2 | Define autoridade, gates, evidência e proibição de aprovação automática | Aprovação formal do proprietário permanece pendente |
+| EVD-008 | Política `GOVERNANCA.md` v1.0.3 | Política local formalmente aprovada pelo proprietário em 2026-10-16; define autoridade, gates, evidência e proibição de aprovação automática | A aprovação da política não conclui por si só G0 nem os restantes gates |
 | EVD-009 | Integridade documental | Hashes canónicos e auditorias de commits anteriores registados nos documentos de governação | Uma auditoria limpa não substitui aprovação formal, teste de recuperação ou aceitação do produto |
 
 ## 3. Estado dos gates para encerramento
 
 | Gate | Estado atual | Evidência/lacuna | Condição para fecho |
 |---|---|---|---|
-| G0 — Entrada e governação | EM_CURSO | Política definida; aprovação formal pendente | Registar aprovação do proprietário e validar a autoridade normativa aplicável |
+| G0 — Entrada e governação | EM_REVISAO | Política local formalmente aprovada; restantes critérios de entrada por confirmar | Confirmar objetivo, beneficiário, proprietário, responsável e autoridade normativa aplicável |
 | G1 — Viabilidade e inventário | EM_REVISAO | Inventário e documentação existentes; revisão final não formalizada neste dossiê | Confirmar âmbito, alternativas, custos, dependências, riscos e valor esperado |
 | G2 — Desenho | EM_REVISAO | Revisão técnica publicada; DEC-001 a DEC-006 por decidir | Resolver decisões bloqueadoras e aceitar formalmente requisitos, arquitetura, dados, privacidade e riscos |
 | G3 — Construção validada | CONCLUIDO | Auditorias e testes documentais recentes com resultado limpo | Preservar o relatório e manifesto correspondentes como evidência do escopo verificado |
 | G4 — Prontidão operacional | EM_REVISAO | Workflow e runbook presentes; execução agendada e ensaio de recuperação não comprovados | Capturar execução `schedule` bem-sucedida, verificar artefactos e executar recuperação controlada documentada |
-| G5 — Lançamento | PENDENTE | Não há registo de aprovação formal de lançamento nem prova de publicação | Aprovação humana explícita e evidência verificável de publicação, após satisfazer os gates anteriores |
+| G5 — Lançamento | PENDENTE | Aprovação condicional do proprietário registada; não há prova de cumprimento das condições nem de publicação | Cumprir os gates anteriores, comprovar prontidão operacional e guardar evidência verificável de publicação |
 | G6 — Encerramento | PENDENTE | Não há termo de aceitação final concluído | Aceitação explícita do proprietário, arquivo de evidências, transferência de responsabilidades e lições aprendidas |
 
 ## 4. Critérios de aceitação final
@@ -110,9 +110,29 @@ Esta declaração não deve ser preenchida ou atribuída automaticamente. Se os 
 
 O pacote de evidências disponível está consolidado neste relatório. O estado correto é **APROVAÇÃO CONDICIONAL DE LANÇAMENTO REGISTADA — GATES E ACEITAÇÃO FINAL PENDENTES**. A execução #60 terminou com 6 PASS, 2 WARN e 0 FAIL na auditoria documental; os avisos não equivalem a aprovação global. Não marcar o CONSORCIO como lançado ou encerrado até que as condições aplicáveis estejam satisfeitas e comprovadas.
 
+## Estado
+
+O relatório de encerramento permanece em revisão. A aprovação condicional de lançamento e a aprovação formal da política local estão registadas, mas não equivalem a aceitação final. G0 está EM_REVISAO; G1, G2 e G4 permanecem EM_REVISAO; G5 e G6 permanecem PENDENTES.
+
+## Evidências
+
+- [Decisão formal de aprovação da política local](aprovacao-politica-governanca.md).
+- [Decisão condicional de lançamento](decisao-aprovacao-condicional-lancamento.md).
+- [Roadmap atualizado v1.0.7](roadmap-adocao.md).
+- [Auditoria documental #67](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38899337978), que detetou os avisos corrigidos nesta revisão.
+
+## Validação
+
+A revisão atualiza referências desatualizadas à aprovação da política e à situação de G0, acrescenta as secções normalizadas requeridas e mantém explícitas as lacunas de prontidão operacional, decisões G2 e aceitação final. O hash canónico será validado pela execução de CI após o commit.
+
+## Próxima Ação
+
+Resolver as decisões DEC-001 a DEC-006, completar a validação de G0/G1/G2, comprovar execução agendada e ensaio de recuperação, e só depois avaliar G5/G6.
+
 ## Histórico de alterações
 
 | Versão | Data | Alteração | Evidência |
 |---|---|---|---|
 | 1.0.0 | 2026-10-16 | Consolidação inicial do estado de fecho, evidências e critérios de aceitação | Execução #56 e documentos de governação do repositório |
 | 1.0.1 | 2026-10-16 | Atualização após registo da aprovação condicional de lançamento; aceitação final continua pendente | Decisão CONSORCIO-DEC-G5-001 e execução #60 |
+| 1.0.2 | 2026-10-16 | Correção de referências de estado e inclusão das secções de governação exigidas | Auditoria #67 e decisões G0/G5 registadas |
