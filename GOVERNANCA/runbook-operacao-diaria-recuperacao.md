@@ -9,7 +9,7 @@
 | **Fase** | G4 — Prontidão operacional |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.0.3 |
-| **SHA-256 (conteúdo canónico)** | HASH_PENDENTE |
+| **SHA-256 (conteúdo canónico)** | dc255bb628fbedd061f9f776135b905f6f5e92d76a5ceb5395c31abdc2379e0d |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
