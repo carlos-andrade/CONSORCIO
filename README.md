@@ -6,10 +6,10 @@
 | **Projeto** | CONSORCIO |
 | **Repositório** | [carlos-andrade/CONSORCIO](https://github.com/carlos-andrade/CONSORCIO) |
 | **Tipo documental** | README |
-| **Fase** | G0 — Governação e entrada |
+| **Fase** | G3 — Construção controlada |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.0.6 |
-| **SHA-256 (conteúdo canónico)** | 8a39fb0eaab50561869f6567208ae5bbd5a2eee6f8c025fb4a93c145e735041c |
+| **Versão** | 1.0.7 |
+| **SHA-256 (conteúdo canónico)** | 03a5d493306016380fb5ca05824bb59e36a67b4ad6d69673664ed76f57005133 |
 | **Commit de referência (versão anterior)** | [e5e2875e63e1594c461487227150d1f1832cbf3b](https://github.com/carlos-andrade/CONSORCIO/commit/e5e2875e63e1594c461487227150d1f1832cbf3b) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -24,7 +24,11 @@
 
 ## Estado
 
-O projeto está na fase de adoção controlada da governação. A auditoria documental automatizada está instalada, a revisão G2 permanece EM_REVISAO e o runbook de operação diária/recuperação está em [GOVERNANCA/runbook-operacao-diaria-recuperacao.md](GOVERNANCA/runbook-operacao-diaria-recuperacao.md). A aprovação formal da política local foi registada em CONSORCIO-DEC-G0-001. O inventário G1 está concluído; a revisão G2 contém uma baseline conservadora e DEC-001–006 resolvidas para o âmbito documental/analítico, aguardando validação formal. G4 ainda exige execução schedule e ensaio controlado de recuperação. Não existe declaração de conformidade integral.
+O projeto está na fase de adoção controlada da governação. A auditoria documental automatizada está instalada e a decisão CONSORCIO-DEC-G2-001 aprovou formalmente a baseline documental/analítica. A estrutura inicial do projeto está descrita em [ESTRUTURA.md](ESTRUTURA.md), com diretórios separados para governação, dados, modelos, análises, relatórios e testes. Os módulos de negócio ainda não estão implementados. G4 continua a exigir evidência de execução agendada bem-sucedida e ensaio controlado de recuperação; não existe declaração de conformidade integral.
+
+## Estrutura inicial
+
+Consultar [ESTRUTURA.md](ESTRUTURA.md) para o mapa de diretórios, respetivos objetivos, limites de segurança e critérios de aceitação.
 
 ## Objetivo do projeto
 
