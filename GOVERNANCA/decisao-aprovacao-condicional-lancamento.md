@@ -8,8 +8,8 @@
 | **Tipo documental** | DECISAO_FORMAL |
 | **Fase** | G5 — Lançamento |
 | **Estado** | APROVACAO_CONDICIONAL_REGISTADA |
-| **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | 34fdc304ea53249e94cfbfd10ccea3fd8c21b682da137ecd738c004bd038a2cd |
+| **Versão** | 1.0.1 |
+| **SHA-256 (conteúdo canónico)** | c87de6e8d4a8ecfcfca4d1449e3eb5dcd74172e0bf1c75c529e2433e4073cb02 |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -58,8 +58,31 @@ A execução #57 terminou com sucesso na auditoria documental e nos testes unit�
 - **Encerramento / G6:** PENDENTE.
 - **Próximo passo:** cumprir e validar as condições de lançamento, atualizar o roadmap com evidências concretas e só então avaliar a transição de estado.
 
+## Estado
+
+A autorização condicional de lançamento foi registada por declaração explícita do proprietário. O estado desta decisão não significa que o lançamento esteja autorizado a prosseguir antes do cumprimento das condições, nem que G5 ou G6 estejam concluídos.
+
+## Evidências
+
+- Declaração formal do proprietário reproduzida nesta decisão.
+- [Roadmap de adoção G0–G6](roadmap-adocao.md).
+- [Auditoria da execução #67](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38899337978), que identificou avisos documentais sem falhas bloqueantes.
+
+## Validação
+
+A decisão é uma autorização humana condicional. A verificação automatizada valida estrutura e integridade documental, não cumprimento das condições de lançamento. A versão 1.0.1 acrescenta as secções normalizadas exigidas e mantém o conteúdo da autorização original.
+
+## Resultado
+
+Autorização condicional registada. G5 permanece PENDENTE até ao cumprimento dos gates, prontidão operacional e evidência de publicação. G6 permanece PENDENTE até à aceitação final e arquivo.
+
+## Próxima Ação
+
+Cumprir as condições de G5 e manter o projeto aberto até haver evidência suficiente para decisão de lançamento.
+
 ## Histórico de alterações
 
 | Versão | Data | Alteração | Evidência |
 |---|---|---|---|
 | 1.0.0 | 2026-10-16 | Registo da autorização condicional de lançamento expressa pelo proprietário | Declaração formal recebida nesta conversa |
+| 1.0.1 | 2026-10-16 | Normalização das secções e confirmação dos limites da autorização condicional | Auditoria documental #67 |
