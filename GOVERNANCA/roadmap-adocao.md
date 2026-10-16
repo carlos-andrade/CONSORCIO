@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO |
 | **Fase** | G0–G6 |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.0.4 |
-| **SHA-256 (conteúdo canónico)** | 0e6acf7e5a6b8b63183e21870423cd1633da5496c454d64973cdfcec211fe684 |
+| **Versão** | 1.0.5 |
+| **SHA-256 (conteúdo canónico)** | HASH_PENDING |
 | **Commit de referência (versão anterior)** | [5789d1bbad87432e77f3cad7a4a40c4797cb130f](https://github.com/carlos-andrade/CONSORCIO/commit/5789d1bbad87432e77f3cad7a4a40c4797cb130f) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -39,13 +39,13 @@ A execução [#35](https://github.com/carlos-andrade/CONSORCIO/actions/runs/3889
 | G1 — Viabilidade e inventário | Enumerar documentos e dependências | Relatório inspecionado e desvios priorizados | EM_REVISAO |
 | G2 — Desenho | Requisitos, arquitetura, dados, privacidade, riscos e testes | Revisão G2 validada, decisões bloqueadoras resolvidas e critérios aceites | EM_REVISAO |
 | G3 — Construção validada | Normalizar documentação e rever alterações | Diferenças auditáveis, testes concluídos, hashes corretos e auditoria limpa | CONCLUIDO |
-| G4 — Prontidão operacional | Observabilidade, recuperação, segurança e suporte | Execução diária confirmada e falhas tratadas | PENDENTE |
+| G4 — Prontidão operacional | Observabilidade, recuperação, segurança e suporte | Execução agendada confirmada, evidências verificadas e recuperação ensaiada | EM_REVISAO |
 | G5 — Lançamento | Autorização explícita e observação | Aprovação humana e evidência de publicação | PENDENTE |
 | G6 — Encerramento | Aceitação, arquivo, transferência e lições | Critérios finais cumpridos e encerramento registado | PENDENTE |
 
 ## Política de atualização diária
 
-O workflow em [governanca-diaria.yml](../.github/workflows/governanca-diaria.yml) consulta a branch main de GOVERNANCA diariamente às 06:25 UTC e valida localmente os documentos Markdown do projeto. Os relatórios são produzidos por execução e publicados como artefactos de GitHub Actions.
+O workflow em [governanca-diaria.yml](../.github/workflows/governanca-diaria.yml) consulta a branch main de GOVERNANCA diariamente às 06:25 UTC e valida localmente os documentos Markdown do projeto. Os relatórios e o manifesto JSON de execução são produzidos por execução e publicados como artefactos de GitHub Actions com retenção de 90 dias. O workflow aplica limite de 15 minutos e tenta preservar evidências mesmo quando testes/auditoria falham.
 
 O workflow não atualiza automaticamente todos os conteúdos, porque uma alteração cega pode alterar significado, inventar aprovação ou criar referências SHA circulares. As correções ocorrem em lotes pequenos, com revisão de diffs e nova validação. A automação atualiza a validação e os relatórios e deteta alterações no mestre normativo.
 
@@ -59,6 +59,9 @@ O workflow não atualiza automaticamente todos os conteúdos, porque uma altera�
 - [Execução #35 — deteção da divergência](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893569303)
 - [Execução #36 — auditoria limpa após correção G2](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893652381)
 - [Execução #40 — auditoria limpa após normalização documental](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893795182)
+- [Execução #47 — manifesto JSON válido e artefacto de três ficheiros](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38894368824)
+- [Execução #48 — seis documentos PASS, zero avisos/falhas](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38894424857)
+- [Runbook de operação e recuperação](runbook-operacao-diaria-recuperacao.md)
 
 ## Validação
 
@@ -66,11 +69,11 @@ A auditoria usa UTF-8, normaliza finais de linha para LF e calcula o SHA-256 can
 
 ## Resultado
 
-A normalização documental e a revisão dos diffs estão concluídas para este lote. A execução #40 ficou limpa (5 PASS, 0 WARN, 0 FAIL; 2 testes unitários aprovados). Isto conclui G3, mas não implica aprovação global, nem encerra G0, G1, G2 ou os gates posteriores.
+G3 está concluída. A operação G4 foi reforçada com manifesto JSON de execução e artefacto de três ficheiros; a execução #48 confirmou 6 PASS, 0 WARN, 0 FAIL e 2 testes unitários aprovados. Todas as execuções recentes observadas foram acionadas por push; ainda não há evidência de evento schedule nem ensaio formal de recuperação. G4 permanece EM_REVISAO e não existe aprovação global.
 
 ## Próxima Ação
 
-Resolver DEC-001 a DEC-006 com o proprietário, completar a revisão formal de G1/G2 e registar as aprovações antes de avançar para G4.
+Observar e registar uma execução schedule bem-sucedida; executar um ensaio de recuperação documentado; verificar artefactos e retenção; depois completar a revisão formal de G4. Resolver DEC-001 a DEC-006 e as aprovações G0/G1/G2 em paralelo, sem declarar conformidade global.
 
 ## Histórico de alterações
 
@@ -81,3 +84,4 @@ Resolver DEC-001 a DEC-006 com o proprietário, completar a revisão formal de G
 | 1.0.2 | 2026-10-16 | Registo da revisão G2 e atualização dos estados, evidências e próximos passos | Commit anterior |
 | 1.0.3 | 2026-10-16 | Atualização da auditoria, correção do hash G2 e progresso de normalização documental | Execuções #35 e #36 |
 | 1.0.4 | 2026-10-16 | Registo da normalização final, revisão de diffs e conclusão de G3 | Execução #40 |
+| 1.0.5 | 2026-10-16 | Reforço de evidências e runbook; G4 em validação operacional | Execuções #47 e #48 |
