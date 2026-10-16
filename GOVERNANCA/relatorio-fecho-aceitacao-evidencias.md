@@ -7,23 +7,23 @@
 | **Repositório** | [carlos-andrade/CONSORCIO](https://github.com/carlos-andrade/CONSORCIO) |
 | **Tipo documental** | RELATORIO_DE_ENCERRAMENTO |
 | **Fase** | G6 — Encerramento |
-| **Estado** | BLOQUEADO_POR_ACEITACAO_E_GATES |
-| **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | 807cf46b3f321154d614e7c4f0a59414fdb43ade083cb6431753f11022d294fc |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.1 |
+| **SHA-256 (conteúdo canónico)** | 456db5cb3524a7dddf216772ece93999b055ac14e7ab37dd576baf15dd3dfe7f |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
 | **Responsável** | Responsável pelo projeto CONSORCIO |
-| **Aprovador** | Pendente de aceitação formal pelo proprietário |
+| **Aprovador** | Aprovação condicional de lançamento registada; aceitação final pendente |
 | **Origem** | Pedido de encerramento com aceitação e evidências completas |
 | **Autoridade superior** | [GOVERNANCA.md](../GOVERNANCA.md) e [GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
 | **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
 
 ## 1. Decisão de encerramento
 
-**Resultado: encerramento final NÃO aprovado; G6 permanece pendente.**
+**Resultado: aprovação condicional de lançamento registada; encerramento final não aprovado; G5 e G6 permanecem pendentes.**
 
-O pedido para encerrar com aceitação foi recebido. O repositório não contém, no momento desta revisão, uma declaração inequívoca do proprietário que aceite formalmente o resultado final do CONSORCIO, nem evidência de que todos os gates anteriores foram satisfeitos. Não se declara aceitação em nome do proprietário, não se converte uma instrução de trabalho em assinatura de aceitação e não se declara lançamento/publicação concluídos sem evidência.
+O proprietário emitiu uma aprovação condicional de lançamento, registada em [CONSORCIO-DEC-G5-001](decisao-aprovacao-condicional-lancamento.md). Essa decisão autoriza o lançamento apenas depois da conclusão e validação dos gates aplicáveis e da confirmação da prontidão operacional. Não é uma aceitação final do resultado nem prova de que o lançamento ocorreu; as condições e a aceitação final permanecem pendentes.
 
 O presente relatório consolida a evidência técnica disponível, identifica lacunas e define o conjunto mínimo necessário para uma decisão final auditável. É um relatório de fecho preparado, não um termo de aceitação concluído.
 
@@ -80,9 +80,13 @@ O fecho só pode ser marcado `ACEITE` depois de cada item obrigatório ter evid�
 
 O artefacto da execução #56 deve ser descarregado e preservado antes de expirar a retenção de 90 dias. Este relatório não afirma que o artefacto foi arquivado externamente.
 
-## 6. Decisão formal do proprietário — por preencher
+## 6. Decisão formal do proprietário — lançamento condicional registado; aceitação final pendente
 
-**Decisão:** `PENDENTE`
+**Decisão de lançamento:** `APROVAÇÃO CONDICIONAL — REGISTADA`.
+
+A decisão consta em [CONSORCIO-DEC-G5-001](decisao-aprovacao-condicional-lancamento.md) e não substitui o termo de aceitação final.
+
+**Decisão de aceitação final:** `PENDENTE`.
 
 **Declaração necessária para aceitação final:**
 
@@ -104,10 +108,11 @@ Esta declaração não deve ser preenchida ou atribuída automaticamente. Se os 
 
 ## Resultado
 
-O pacote de evidências disponível está consolidado neste relatório. O estado correto é **FECHO BLOQUEADO — ACEITAÇÃO FORMAL E GATES PENDENTES**. Não é conforme com a política de governação marcar o CONSORCIO como aceite ou encerrado até que as condições acima estejam satisfeitas e comprovadas.
+O pacote de evidências disponível está consolidado neste relatório. O estado correto é **APROVAÇÃO CONDICIONAL DE LANÇAMENTO REGISTADA — GATES E ACEITAÇÃO FINAL PENDENTES**. A execução #60 terminou com 6 PASS, 2 WARN e 0 FAIL na auditoria documental; os avisos não equivalem a aprovação global. Não marcar o CONSORCIO como lançado ou encerrado até que as condições aplicáveis estejam satisfeitas e comprovadas.
 
 ## Histórico de alterações
 
 | Versão | Data | Alteração | Evidência |
 |---|---|---|---|
 | 1.0.0 | 2026-10-16 | Consolidação inicial do estado de fecho, evidências e critérios de aceitação | Execução #56 e documentos de governação do repositório |
+| 1.0.1 | 2026-10-16 | Atualização após registo da aprovação condicional de lançamento; aceitação final continua pendente | Decisão CONSORCIO-DEC-G5-001 e execução #60 |
