@@ -146,7 +146,7 @@ EM_REVISAO — especificação inicial; não está aprovada para uso decisório.
 
 ## Validação
 
-O documento define fórmulas e limites para revisão. A implementação inicial existe em [calculadora_custos.py](calculadora_custos.py) e os testes unitários estão em [test_calculadora_custos.py](../../tests/test_calculadora_custos.py). A execução CI e a revisão humana deste modelo ainda são necessárias; a aprovação G2 não equivale a aprovação deste modelo.
+O documento define fórmulas e limites para revisão. A implementação inicial existe em [calculadora_custos.py](calculadora_custos.py) e os testes unitários estão em [test_calculadora_custos.py](../../tests/test_calculadora_custos.py). Os testes unitários cobrem o motor e os testes estruturais inspecionam partes críticas do contrato JSON Schema; ainda não existe um validador completo de instâncias JSON Schema no CI. A revisão humana continua necessária; a aprovação G2 não equivale a aprovação deste modelo.
 
 ## Resultado
 
