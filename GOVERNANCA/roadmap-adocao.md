@@ -8,7 +8,7 @@
 | **Tipo documental** | PLANO |
 | **Fase** | G0–G6 |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.2.3 |
+| **Versão** | 1.2.4 |
 | **SHA-256 (conteúdo canónico)** | c7de7e757a41be1e7bd39daa4590d5e29d71fdbaabb2a74272e663aa5d5cdd52 |
 | **Commit de referência (versão anterior)** | [5789d1bbad87432e77f3cad7a4a40c4797cb130f](https://github.com/carlos-andrade/CONSORCIO/commit/5789d1bbad87432e77f3cad7a4a40c4797cb130f) |
 | **Data de criação** | 2026-10-16 |
@@ -87,7 +87,7 @@ A política local está aprovada; G0 e G1 foram concluídos para o âmbito docum
 
 ## Próxima Ação
 
-Execução #146 limpa: 15 testes unitários aprovados e auditoria documental com 13 PASS, 0 WARN, 0 FAIL. Execução #152 limpa: 18 testes unitários aprovados e auditoria documental com 13 PASS, 0 WARN, 0 FAIL. Comparação bloqueia crédito, prazo, data-base ou classificação divergentes e custos materiais desconhecidos. Execução CI [#160](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38921194194) passou: 21 testes unitários, 13 PASS, 0 WARN e 0 FAIL. Regras de proveniência FACTO/HIPOTESE/SINTETICO foram testadas e a auditoria documental está limpa. Manter o modelo EM_REVISAO até aprovação humana. Em paralelo, comprovar uma execução schedule bem-sucedida e realizar/registar ensaio de recuperação antes de avaliar G5/G6.
+Execução #146 limpa: 15 testes unitários aprovados e auditoria documental com 13 PASS, 0 WARN, 0 FAIL. Execução #152 limpa: 18 testes unitários aprovados e auditoria documental com 13 PASS, 0 WARN, 0 FAIL. Comparação bloqueia crédito, prazo, data-base ou classificação divergentes e custos materiais desconhecidos. Execução CI [#160](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38921194194) passou: 21 testes unitários, 13 PASS, 0 WARN e 0 FAIL. A subfase seguinte preserva referências de fonte na saída e adiciona quatro testes estruturais do esquema JSON; estes testes não equivalem a validação completa de instâncias e a nova execução CI está pendente. Em paralelo, comprovar uma execução schedule bem-sucedida e realizar/registar ensaio de recuperação antes de avaliar G5/G6.
 
 ## Histórico de alterações
 
