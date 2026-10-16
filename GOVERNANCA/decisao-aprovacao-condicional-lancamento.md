@@ -9,7 +9,7 @@
 | **Fase** | G5 — Lançamento |
 | **Estado** | APROVACAO_CONDICIONAL_REGISTADA |
 | **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | c87de6e8d4a8ecfcfca4d1449e3eb5dcd74172e0bf1c75c529e2433e4073cb02 |
+| **SHA-256 (conteúdo canónico)** | edb76c520940c781627960174f349f86a2a5cbc6841dca22a3062d946dad8632 |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
