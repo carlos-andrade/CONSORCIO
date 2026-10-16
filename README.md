@@ -71,6 +71,26 @@ A automação é de validação e deteção: **não reescreve automaticamente o 
 | G5 | Aceitação e autorização explícitas | PENDENTE |
 | G6 | Encerramento documentado quando os critérios forem cumpridos | PENDENTE |
 
+## Evidências
+
+- Governação central: [GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA).
+- Política de adoção: [GOVERNANCA.md](GOVERNANCA.md).
+- Workflow diário: [governanca-diaria.yml](.github/workflows/governanca-diaria.yml).
+- Primeira auditoria executada: [GitHub Actions run 6](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38888136512).
+- Pendência de remediação documental: [issue #1](https://github.com/carlos-andrade/CONSORCIO/issues/1).
+
+## Validação
+
+A validação automatizada é estática e de leitura. A última execução confirmada analisou quatro documentos, com 0 falhas bloqueantes e 4 avisos: os quatro documentos ainda precisam de valores SHA-256 canónicos válidos, e há secções de governação opcionais por completar em alguns ficheiros. Este resultado não representa conformidade total.
+
+## Resultado
+
+A governação central está referenciada, e o workflow diário foi executado com sucesso operacional. A conformidade documental permanece pendente até a resolução dos avisos e uma nova execução sem pendências ou com exceções justificadas.
+
+## Próxima Ação
+
+Resolver a [issue #1](https://github.com/carlos-andrade/CONSORCIO/issues/1), calcular os hashes canónicos conforme a norma GOVERNANCA e repetir a auditoria.
+
 ## Histórico de alterações
 
 | Versão | Data | Alteração | Evidência |
