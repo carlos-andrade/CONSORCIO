@@ -8,8 +8,8 @@
 | **Tipo documental** | POLITICA |
 | **Fase** | G0 — Governação e entrada |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | 8787e941988afeae9cc816256c97d4b7c44b3eb3909ed54caca5de9bfdd9a915 |
+| **Versão** | 1.0.2 |
+| **SHA-256 (conteúdo canónico)** | e0fcd397097cb8ced561de21dfb6b693d6d7ea71722e02e6876a47144cb03fee |
 | **Commit de referência (versão anterior)** | [6fc6e6accfa675f4b76c122e3471b5c290e4bfbc](https://github.com/carlos-andrade/CONSORCIO/commit/6fc6e6accfa675f4b76c122e3471b5c290e4bfbc) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -97,7 +97,7 @@ Cada exceção deve registar a regra afetada, motivo, risco residual, controlos 
 
 Alterações à fonte normativa central são governadas no repositório GOVERNANCA, não neste repositório. Quando a norma mestre muda, o CONSORCIO deve avaliar impacto, registar a versão/commit consultado, atualizar os controlos aplicáveis e executar novamente a validação. Se a fonte mestre estiver indisponível ou ambígua, o estado é `UNKNOWN`, não `PASS`.
 
-## 10. Evidências e rastreabilidade
+## Evidências
 
 - [Fonte normativa GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA).
 - [Constituição GOV-001 — proposta para revisão](https://github.com/carlos-andrade/GOVERNANCA/blob/main/CONSTITUICAO.md).
@@ -111,7 +111,7 @@ G0 foi definido documentalmente: fonte normativa, hierarquia de precedência, pa
 
 ## Validação
 
-A política é coerente com a distinção entre norma aprovada e proposta para revisão na fonte central. A implementação operacional é validada pelo workflow; a validação documental integral e os hashes canónicos continuam sujeitos à issue #1.
+A política é coerente com a distinção entre norma aprovada e proposta para revisão na fonte central. A implementação operacional foi validada pelo workflow; os quatro hashes canónicos foram recalculados e confirmados. Permanece um aviso documental residual em tratamento, e a aprovação formal pelo proprietário continua pendente.
 
 ## Resultado
 
