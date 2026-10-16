@@ -8,7 +8,7 @@
 | **Tipo documental** | PLANO |
 | **Fase** | G0–G6 |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.2.4 |
+| **Versão** | 1.2.5 |
 | **SHA-256 (conteúdo canónico)** | 3eb1fdb5edcc5f35e2fdc3c1cd9f1e224e67330f5856300d28751e121ef4e3a0 |
 | **Commit de referência (versão anterior)** | [5789d1bbad87432e77f3cad7a4a40c4797cb130f](https://github.com/carlos-andrade/CONSORCIO/commit/5789d1bbad87432e77f3cad7a4a40c4797cb130f) |
 | **Data de criação** | 2026-10-16 |
@@ -87,7 +87,7 @@ A política local está aprovada; G0 e G1 foram concluídos para o âmbito docum
 
 ## Próxima Ação
 
-Execução #146 limpa: 15 testes unitários aprovados e auditoria documental com 13 PASS, 0 WARN, 0 FAIL. Execução #152 limpa: 18 testes unitários aprovados e auditoria documental com 13 PASS, 0 WARN, 0 FAIL. Comparação bloqueia crédito, prazo, data-base ou classificação divergentes e custos materiais desconhecidos. Execução CI [#160](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38921194194) passou: 21 testes unitários, 13 PASS, 0 WARN e 0 FAIL. A subfase seguinte preserva referências de fonte na saída e adiciona quatro testes estruturais do esquema JSON; estes testes não equivalem a validação completa de instâncias e a nova execução CI está pendente. Em paralelo, comprovar uma execução schedule bem-sucedida e realizar/registar ensaio de recuperação antes de avaliar G5/G6.
+Execução #146 limpa: 15 testes unitários aprovados e auditoria documental com 13 PASS, 0 WARN, 0 FAIL. Execução #152 limpa: 18 testes unitários aprovados e auditoria documental com 13 PASS, 0 WARN, 0 FAIL. Comparação bloqueia crédito, prazo, data-base ou classificação divergentes e custos materiais desconhecidos. Execução CI [#160](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38921194194) passou: 21 testes unitários, 13 PASS, 0 WARN e 0 FAIL. A execução CI [#166](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38921826122) passou: 26 testes unitários, 13 PASS, 0 WARN e 0 FAIL. A comparação preserva a referência e a data da fonte. Os testes do esquema são estruturais, não um validador completo de instâncias JSON Schema. Em paralelo, comprovar uma execução schedule bem-sucedida e realizar/registar ensaio de recuperação antes de avaliar G5/G6.
 
 ## Histórico de alterações
 
