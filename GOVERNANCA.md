@@ -33,6 +33,11 @@ A Constituição da GOVERNANCA encontra-se identificada no repositório mestre c
 
 A política de adoção e o workflow foram adicionados como base operacional. A conformidade global do projeto só poderá ser declarada depois de inventário e auditoria individual de todos os documentos e outros artefactos aplicáveis.
 
+## Evidências
+
+- [Primeiro relatório de auditoria automatizada](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38888136512).
+- [Registo de remediação — issue #1](https://github.com/carlos-andrade/CONSORCIO/issues/1).
+
 ## Regras obrigatórias de execução
 
 1. A lei aplicável, contratos vinculativos e políticas formalmente aprovadas têm precedência sobre padrões, procedimentos, recomendações e exemplos.
