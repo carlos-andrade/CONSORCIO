@@ -9,7 +9,7 @@
 | **Fase** | G0–G6 |
 | **Estado** | EM_CURSO |
 | **Versão** | 1.1.8 |
-| **SHA-256 (conteúdo canónico)** | 3a46809bb88ab4b53632950a6ad444968824c08c48e539433f56dc9f6eda9ce0 |
+| **SHA-256 (conteúdo canónico)** | 5dd9ef118201113f0a637783a0caeaee9365b28ec0d88a68a044f9ae11956b78 |
 | **Commit de referência (versão anterior)** | [5789d1bbad87432e77f3cad7a4a40c4797cb130f](https://github.com/carlos-andrade/CONSORCIO/commit/5789d1bbad87432e77f3cad7a4a40c4797cb130f) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
