@@ -8,8 +8,8 @@
 | **Tipo documental** | RUNBOOK |
 | **Fase** | G4 — Prontidão operacional |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | 012424ec2ebed8ea26cc77f2546a5f414afd5aaac573db38b589c7d87532a4a7 |
+| **Versão** | 1.0.1 |
+| **SHA-256 (conteúdo canónico)** | HASH_PENDING |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -91,12 +91,12 @@ O manifesto e os relatórios são artefactos da execução e não substituem o l
 
 ## Validação
 
-O workflow define execução diária às 06:25 UTC, execução manual, concorrência sem cancelamento, limite de 15 minutos e upload do relatório e manifesto mesmo quando os passos de teste/auditoria falham. A validação de uma execução real com esta versão e a confirmação do evento `schedule` são obrigatórias antes de declarar G4 concluída.
+O workflow define execução diária às 06:25 UTC, execução manual, concorrência sem cancelamento, limite de 15 minutos e upload do relatório e manifesto mesmo quando os passos de teste/auditoria falham. As execuções [#47](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38894368824) e [#48](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38894424857) confirmaram a serialização válida do manifesto e auditoria limpa (6 PASS, 0 WARN, 0 FAIL; 2 testes unitários aprovados). Ambas foram acionadas por `push`; a execução `schedule` e o ensaio formal de recuperação continuam pendentes.
 
 ## Resultado
 
-Procedimento de operação e recuperação documentado. Estado provisório EM_REVISAO até à validação pós-commit, evidência de execução agendada e ensaio de recuperação.
+Procedimento de operação e recuperação documentado e validado por execuções acionadas por push. Estado EM_REVISAO até existir evidência de execução agendada, revisão dos artefactos e ensaio de recuperação documentado.
 
 ## Próxima Ação
 
-Validar a nova execução do workflow, confirmar o artefacto com três ficheiros e observar uma execução `schedule`; depois executar e registar um ensaio de recuperação sem adulterar a evidência original.
+Observar uma execução `schedule` bem-sucedida e executar/registar um ensaio de recuperação, preservando a evidência original e o histórico de falhas.
