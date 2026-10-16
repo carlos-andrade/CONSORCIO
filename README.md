@@ -8,8 +8,8 @@
 | **Tipo documental** | README |
 | **Fase** | G0 — Governação e entrada |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.0.5 |
-| **SHA-256 (conteúdo canónico)** | 97f791e5a564dac13cda0fdc17ff9967b6950c2fec14494cd72bd4c37f565311 |
+| **Versão** | 1.0.6 |
+| **SHA-256 (conteúdo canónico)** | HASH_PENDENTE |
 | **Commit de referência (versão anterior)** | [e5e2875e63e1594c461487227150d1f1832cbf3b](https://github.com/carlos-andrade/CONSORCIO/commit/e5e2875e63e1594c461487227150d1f1832cbf3b) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -71,7 +71,7 @@ A automação é de validação e deteção: **não reescreve automaticamente o 
 - Workflow: [validação documental diária](.github/workflows/governanca-diaria.yml).
 - Runbook: [operação diária, evidências e recuperação](GOVERNANCA/runbook-operacao-diaria-recuperacao.md).
 - Evidências recentes: [execução #47 — manifesto válido](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38894368824) e [execução #48 — auditoria limpa](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38894424857).
-- O histórico consultado contém 88 execuções até à auditoria #88, todas por push; a execução schedule e o ensaio formal de recuperação ainda estão pendentes. G4 não está concluída.
+- A auditoria #94 foi limpa. O teste temporário de scheduler em #95/#96 foi inconclusivo, a configuração foi corrigida e o cron diário original foi restaurado; ainda não há evento schedule nem ensaio formal de recuperação comprovados. G4 não está concluída.
 
 ## Roadmap
 
