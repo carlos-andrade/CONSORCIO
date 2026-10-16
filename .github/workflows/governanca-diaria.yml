@@ -37,7 +37,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Testes unitários do auditor
-        run: python -m unittest tests/test_audit_repository_documents.py -v
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
       - name: Auditar documentos
         id: audit
         run: |
