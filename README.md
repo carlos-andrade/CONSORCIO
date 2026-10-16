@@ -24,7 +24,7 @@
 
 ## Estado
 
-O projeto está na fase inicial de adoção da governação. A validação automática está instalada, mas não existe ainda declaração de conformidade integral.
+O projeto está na fase inicial de adoção da governação. A validação automática está instalada, mas não existe ainda declaração de conformidade integral. A política de autoridade e governação está definida em [GOVERNANCA.md](GOVERNANCA.md); a aprovação formal do proprietário do projeto continua pendente.
 
 ## Objetivo do projeto
 
