@@ -8,8 +8,8 @@
 | **Tipo documental** | README |
 | **Fase** | G0 — Governação e entrada |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.0.4 |
-| **SHA-256 (conteúdo canónico)** | 84bd5400af39b46e3259816c058677e2a8a93608a407db3c87520d20970d7dd8 |
+| **Versão** | 1.0.5 |
+| **SHA-256 (conteúdo canónico)** | HASH_PENDENTE |
 | **Commit de referência (versão anterior)** | [e5e2875e63e1594c461487227150d1f1832cbf3b](https://github.com/carlos-andrade/CONSORCIO/commit/e5e2875e63e1594c461487227150d1f1832cbf3b) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -71,7 +71,7 @@ A automação é de validação e deteção: **não reescreve automaticamente o 
 - Workflow: [validação documental diária](.github/workflows/governanca-diaria.yml).
 - Runbook: [operação diária, evidências e recuperação](GOVERNANCA/runbook-operacao-diaria-recuperacao.md).
 - Evidências recentes: [execução #47 — manifesto válido](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38894368824) e [execução #48 — auditoria limpa](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38894424857).
-- O histórico consultado contém 79 execuções até à revisão desta nota, todas por push; a execução schedule e o ensaio formal de recuperação ainda estão pendentes. G4 não está concluída.
+- O histórico consultado contém 88 execuções até à auditoria #88, todas por push; a execução schedule e o ensaio formal de recuperação ainda estão pendentes. G4 não está concluída.
 
 ## Roadmap
 
