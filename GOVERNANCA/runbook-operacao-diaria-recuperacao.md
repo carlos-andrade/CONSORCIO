@@ -8,8 +8,8 @@
 | **Tipo documental** | RUNBOOK |
 | **Fase** | G4 — Prontidão operacional |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.3 |
-| **SHA-256 (conteúdo canónico)** | dc255bb628fbedd061f9f776135b905f6f5e92d76a5ceb5395c31abdc2379e0d |
+| **Versão** | 1.0.4 |
+| **SHA-256 (conteúdo canónico)** | HASH_PENDENTE |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -89,6 +89,8 @@ Evidência histórica de recuperação documental: a execução [#38](https://gi
 - [Histórico de execuções](https://github.com/carlos-andrade/CONSORCIO/actions/workflows/governanca-diaria.yml)
 - [Execução #38 — falha de auditoria usada como evidência de recuperação](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893724597)
 - [Execução #40 — validação limpa após correção](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893795182)
+- [Execução #95 — falha transitória de sintaxe durante teste de scheduler](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38901961328)
+- [Execução #96 — workflow recuperado após correção](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38902109738)
 - [Roadmap de adoção](roadmap-adocao.md)
 - [Inventário G1 e desvios priorizados](inventario-g1.md)
 
@@ -102,4 +104,4 @@ Procedimento de operação e recuperação documentado. Existe evidência de rec
 
 ## Próxima Ação
 
-Observar uma execução `schedule` bem-sucedida e executar/registar um ensaio controlado de recuperação operacional, preservando a evidência original e o histórico de falhas. A auditoria documental limpa não substitui estes dois controlos.
+Observar uma execução `schedule` bem-sucedida e executar/registar um ensaio controlado de recuperação operacional, preservando a evidência original e o histórico de falhas. A auditoria documental limpa não substitui estes dois controlos. Em 2026-10-16 foi tentada uma verificação controlada do scheduler com cadência temporária de cinco minutos; a primeira alteração teve erro de sintaxe YAML no run [#95](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38901961328), corrigido imediatamente, e o run [#96](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38902109738) passou por `push`. Não surgiu evento `schedule` durante a janela observada; o cron original `25 6 * * *` foi restaurado no commit `35075a126edae261da58ce98116517cdb0ae4b3d`. Este ensaio não satisfaz o critério G4.
