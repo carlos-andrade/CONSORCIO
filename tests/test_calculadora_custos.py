@@ -187,5 +187,23 @@ class CostCalculatorTests(unittest.TestCase):
             ])
 
 
+    def test_comparison_preserves_fact_source_provenance(self):
+        from MODELOS.custos.calculadora_custos import compare_cost_scenarios
+        base = {
+            "as_of_date": "2026-10-16", "source_classification": "FACTO",
+            "source_reference": "https://example.invalid/contract-terms",
+            "source_observed_at": "2026-10-15",
+            "credit_amount": 1000, "installment_count": 10,
+            "administration_fee_rate_total": "0.1", "reserve_fund_rate_total": "0.02",
+            "insurance_total": 0, "other_charges_total": 0,
+        }
+        result = compare_cost_scenarios(scenarios=[
+            {**base, "scenario_id": "A"},
+            {**base, "scenario_id": "B", "administration_fee_rate_total": "0.11"},
+        ])
+        self.assertEqual(result["ranking"][0]["source_reference"], "https://example.invalid/contract-terms")
+        self.assertEqual(result["ranking"][0]["source_observed_at"], "2026-10-15")
+
+
 if __name__ == "__main__":
     unittest.main()
