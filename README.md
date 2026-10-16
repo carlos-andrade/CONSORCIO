@@ -8,8 +8,8 @@
 | **Tipo documental** | README |
 | **Fase** | G0 — Governação e entrada |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | 49bb4787f83a98d7c2f0ccd97a9e5c3bc8dae776648dff2eed646615acab7602 |
+| **Versão** | 1.0.2 |
+| **SHA-256 (conteúdo canónico)** | HASH_PENDING |
 | **Commit de referência (versão anterior)** | [e5e2875e63e1594c461487227150d1f1832cbf3b](https://github.com/carlos-andrade/CONSORCIO/commit/e5e2875e63e1594c461487227150d1f1832cbf3b) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -58,9 +58,9 @@ A automação é de validação e deteção: **não reescreve automaticamente o 
 ## Estado de implementação
 
 - Adoção explícita da governação central: documentada.
-- Cabeçalho do README: normalizado; hash canónico sujeito a auditoria automática após esta alteração.
+- Cabeçalho e hash canónico do README: normalizados e validados na execução #40.
 - Workflow diário: configurado no repositório.
-- Auditoria documental: executada após a revisão G2; a normalização desta versão deve ser confirmada pela execução posterior ao commit.
+- Auditoria documental: execução #40 confirmou 5 documentos PASS, 0 WARN e 0 FAIL; 2 testes unitários passaram.
 - Aprovação formal da conformidade global: pendente de evidência e revisão humana.
 
 ## Roadmap
@@ -70,7 +70,7 @@ A automação é de validação e deteção: **não reescreve automaticamente o 
 | G0 | Definir propósito, autoridade e âmbito | EM_CURSO |
 | G1 | Inventariar documentos, código e dados | EM_REVISAO |
 | G2 | Rever requisitos, arquitetura, dados, privacidade e riscos | EM_REVISAO |
-| G3 | Normalizar documentos e validar alterações | EM_REVISAO |
+| G3 | Normalizar documentos e validar alterações | CONCLUIDO |
 | G4 | Verificar execução diária, relatórios e recuperação | PENDENTE |
 | G5 | Aceitação e autorização explícitas | PENDENTE |
 | G6 | Encerramento documentado quando os critérios forem cumpridos | PENDENTE |
