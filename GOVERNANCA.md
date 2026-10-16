@@ -48,6 +48,10 @@ A política de adoção e o workflow foram adicionados como base operacional. A 
 11. As alterações automatizadas devem ser idempotentes, auditáveis, de escopo mínimo e reversíveis. O workflow diário tem permissões de leitura e não faz commit nem aprovação automática.
 12. A atualização automática verifica as regras publicadas em GOVERNANCA na execução diária. Alterações normativas materiais exigem avaliação de impacto humana antes de serem consideradas conformes.
 
+## Validação
+
+A primeira execução da auditoria estática foi concluída operacionalmente. O relatório identificou quatro avisos não bloqueantes, relacionados com hashes canónicos em falta e algumas secções documentais. A auditoria não prova conformidade integral. A pendência está registada em [issue #1](https://github.com/carlos-andrade/CONSORCIO/issues/1).
+
 ## Evidências e validação
 
 - Fonte normativa: [repositório GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA).
