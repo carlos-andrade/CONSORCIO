@@ -38,6 +38,10 @@ Fixar resultados esperados e validações negativas antes da implementação do 
 | TC-CST-009 | Lance analítico informado | Mostrar separadamente como cenário de liquidez; não executar nem somar automaticamente ao custo contratual | ESPECIFICADO |
 | TC-CST-010 | Comparação com prazo/base de taxas diferentes | Bloquear ranking direto ou exigir normalização explícita | ESPECIFICADO |
 
+## Implementação inicial
+
+Foi adicionada uma bateria de testes unitários em [test_calculadora_custos.py](../tests/test_calculadora_custos.py). O estado de execução só será confirmado após a conclusão bem-sucedida do workflow CI.
+
 ## Critérios de execução
 
 - A especificação dos casos não equivale a testes executados.
