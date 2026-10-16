@@ -1,7 +1,7 @@
 import hashlib
 import unittest
 
-from automation.audit_repository_documents import canonical, parse
+from automation.audit_repository_documents import canonical, parse, STATES
 
 class GovernanceAuditTests(unittest.TestCase):
     def test_canonical_excludes_only_two_control_rows(self):
@@ -9,6 +9,9 @@ class GovernanceAuditTests(unittest.TestCase):
         expected = text.replace('| **SHA-256 (conteúdo canónico)** | placeholder |\n', '').replace('| **Commit de referência (versão anterior)** | commit |\n', '')
         self.assertEqual(canonical(text), expected.encode('utf-8'))
         self.assertEqual(hashlib.sha256(canonical(text)).hexdigest(), hashlib.sha256(expected.encode('utf-8')).hexdigest())
+
+    def test_conditional_approval_state_is_recognized(self):
+        self.assertIn('APROVACAO_CONDICIONAL_REGISTADA', STATES)
 
     def test_parse_required_metadata(self):
         text = '\n'.join([
