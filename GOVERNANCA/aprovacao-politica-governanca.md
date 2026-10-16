@@ -9,7 +9,7 @@
 | **Fase** | G0 — Governação e entrada |
 | **Estado** | APROVADO |
 | **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | 1f9f7fc8a17fc83755f98cf38da5db9d4b3ab13bc97e550ef7e6d60013d50d5a |
+| **SHA-256 (conteúdo canónico)** | 1908cd14691f9a0c3d001a04332661ec7ab672239464764bc4e0f0812a43cee7 |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -49,9 +49,21 @@ Esta decisão não ratifica a Constituição central nem outras propostas no rep
 - [Roadmap de adoção G0–G6](roadmap-adocao.md).
 - [Fonte normativa central GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA).
 
+## Estado
+
+A decisão de aprovação foi recebida explicitamente do proprietário e registada no repositório CONSORCIO. A aprovação é limitada à versão 1.0.2 da política local.
+
+## Validação
+
+A auditoria automatizada verifica a integridade documental, mas não substitui a decisão humana. O resultado da execução posterior ao commit deve ser associado a esta decisão.
+
 ## Resultado
 
-A aprovação formal da política local encontra-se registada. A validação de integridade será feita pelo workflow após commit. A aprovação é evidência para G0, não prova autónoma da conclusão integral do gate.
+A aprovação formal da política local encontra-se registada. Esta decisão é evidência para G0, não prova autónoma da conclusão integral do gate.
+
+## Próxima Ação
+
+Atualizar o roadmap e verificar o resultado da auditoria automática.
 
 ## Histórico de alterações
 
