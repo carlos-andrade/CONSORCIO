@@ -56,6 +56,15 @@ Fixar resultados esperados e validações negativas antes da implementação do 
 | TC-CST-015 | Crédito ou número de parcelas divergente | Bloquear comparação até normalização | ESPECIFICADO |
 | TC-CST-016 | Qualquer custo material desconhecido | Bloquear ranking parcial | ESPECIFICADO |
 
+
+## Casos adicionais — proveniência
+
+| ID | Entrada/condição | Resultado esperado | Estado |
+|---|---|---|---|
+| TC-CST-017 | Data-base inválida | Rejeitar data fora do formato ISO | ESPECIFICADO |
+| TC-CST-018 | Classificação FACTO sem referência e data de observação | Rejeitar proveniência incompleta | ESPECIFICADO |
+| TC-CST-019 | Classificação HIPOTESE sem pressupostos explícitos | Rejeitar hipótese não documentada | ESPECIFICADO |
+
 ## Implementação inicial
 
 Foi adicionada uma bateria de testes unitários em [test_calculadora_custos.py](../tests/test_calculadora_custos.py). O estado de execução só será confirmado após a conclusão bem-sucedida do workflow CI.
