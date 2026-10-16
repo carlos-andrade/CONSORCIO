@@ -118,6 +118,13 @@ A função `project_adjustment_scenario` aplica uma sequência de taxas informad
 
 Exemplo sintético: base de R$ 1.000,00 e taxas de 10% e 5% em dois períodos resultam em R$ 1.100,00 e depois R$ 1.155,00. O exemplo ilustra apenas composição matemática.
 
+
+## 10. Comparação controlada de planos
+
+A função `compare_cost_scenarios` compara cenários apenas quando todos têm custo total completo e coincidem em crédito, número de parcelas, data-base e classificação da fonte. Se algum componente material for desconhecido ou as bases divergirem, a comparação é bloqueada, sem ranking parcial.
+
+Cada cenário deve ter `scenario_id`, `as_of_date`, `source_classification` e todas as entradas do cálculo. O ranking é estritamente matemático por custo total conhecido; não considera qualidade da administradora, probabilidade de contemplação, reajustes contratuais não modelados, liquidez ou adequação individual. Não constitui recomendação financeira.
+
 ## Estado
 
 EM_REVISAO — especificação inicial; não está aprovada para uso decisório.
