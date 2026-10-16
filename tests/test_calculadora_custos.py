@@ -101,5 +101,48 @@ class CostCalculatorTests(unittest.TestCase):
             project_adjustment_scenario(base_total_cost=1000, period_rates=[], installment_count=10)
 
 
+    def test_comparison_ranks_only_equivalent_complete_scenarios(self):
+        from MODELOS.custos.calculadora_custos import compare_cost_scenarios
+        common = {
+            "as_of_date": "2026-10-16", "source_classification": "SINTETICO",
+            "credit_amount": 100000, "installment_count": 100,
+            "reserve_fund_rate_total": "0.02", "insurance_total": 1000,
+            "other_charges_total": 0,
+        }
+        result = compare_cost_scenarios(scenarios=[
+            {**common, "scenario_id": "PLANO-B", "administration_fee_rate_total": "0.15"},
+            {**common, "scenario_id": "PLANO-A", "administration_fee_rate_total": "0.10"},
+        ])
+        self.assertEqual(result["comparison_status"], "COMPARABLE")
+        self.assertEqual([x["scenario_id"] for x in result["ranking"]], ["PLANO-A", "PLANO-B"])
+        self.assertEqual([x["rank"] for x in result["ranking"]], [1, 2])
+
+    def test_comparison_rejects_different_credit_or_term(self):
+        from MODELOS.custos.calculadora_custos import compare_cost_scenarios
+        base = {
+            "scenario_id": "A", "as_of_date": "2026-10-16",
+            "source_classification": "SINTETICO", "credit_amount": 1000,
+            "installment_count": 10, "administration_fee_rate_total": "0.1",
+            "reserve_fund_rate_total": "0.02", "insurance_total": 0, "other_charges_total": 0,
+        }
+        for change in ({"credit_amount": 2000}, {"installment_count": 20}):
+            with self.subTest(change=change), self.assertRaisesRegex(ValueError, "not comparable"):
+                compare_cost_scenarios(scenarios=[base, {**base, "scenario_id": "B", **change}])
+
+    def test_comparison_blocks_unknown_cost_components(self):
+        from MODELOS.custos.calculadora_custos import compare_cost_scenarios
+        base = {
+            "as_of_date": "2026-10-16", "source_classification": "SINTETICO",
+            "credit_amount": 1000, "installment_count": 10,
+            "administration_fee_rate_total": "0.1", "reserve_fund_rate_total": "0.02",
+            "insurance_total": None, "other_charges_total": 0,
+        }
+        with self.assertRaisesRegex(ValueError, "unknown material cost components"):
+            compare_cost_scenarios(scenarios=[
+                {**base, "scenario_id": "A"},
+                {**base, "scenario_id": "B", "insurance_total": 0},
+            ])
+
+
 if __name__ == "__main__":
     unittest.main()
