@@ -104,6 +104,16 @@ Cada execução futura do modelo deve reportar: versão do modelo; entradas e un
 - Distinguir custo total conhecido, parcela média indicativa e cenário de lance.
 - Manter rastreabilidade para cada entrada e impedir afirmações de execução transacional.
 
+## Estado
+
+EM_REVISAO — especificação inicial; não está aprovada para uso decisório.
+
+## Evidências
+
+- [Baseline G2 aprovada](../../GOVERNANCA/decisao-aprovacao-g2.md)
+- [Esquema JSON de custos](../../DADOS/esquemas/consorcio-custo.schema.json)
+- [Casos de referência](../../TESTES/casos-referencia-custos.md)
+
 ## Validação
 
 O documento define fórmulas e limites para revisão. A implementação computacional e os testes automatizados permanecem pendentes; a aprovação G2 não equivale a aprovação deste modelo.
