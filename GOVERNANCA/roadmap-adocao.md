@@ -8,13 +8,13 @@
 | **Tipo documental** | PLANO |
 | **Fase** | G0–G6 |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.0.5 |
-| **SHA-256 (conteúdo canónico)** | 0bbe605a5895fd69b15be0ebfc10dbe7dc9a0145316b61d7c008a4185188bbeb |
+| **Versão** | 1.0.6 |
+| **SHA-256 (conteúdo canónico)** | 09f6c5fe0ff24bf5999870a8cd81c73f2c44915731b63a265bfd2becf5d27cbd |
 | **Commit de referência (versão anterior)** | [5789d1bbad87432e77f3cad7a4a40c4797cb130f](https://github.com/carlos-andrade/CONSORCIO/commit/5789d1bbad87432e77f3cad7a4a40c4797cb130f) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
 | **Responsável** | Responsável pelo projeto CONSORCIO |
-| **Aprovador** | Pendente de registo formal |
+| **Aprovador** | Aprovação condicional de lançamento registada; aprovação dos gates pendente |
 | **Origem** | Adoção da fonte normativa GOVERNANCA |
 | **Autoridade superior** | [GOVERNANCA.md](../GOVERNANCA.md) e [CONSTITUICAO.md](https://github.com/carlos-andrade/GOVERNANCA/blob/main/CONSTITUICAO.md) |
 | **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
@@ -25,11 +25,11 @@ O projeto adotou a governação central através de documentação no repositór
 
 ## Estado
 
-A validação documental está automatizada. A execução [#40](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893795182) confirmou 5 documentos PASS, 0 WARN e 0 FAIL e 2 testes unitários aprovados após a normalização do README e deste roadmap. A aprovação global e os gates permanecem sujeitos a revisão humana.
+A validação documental está automatizada. A execução [#40](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893795182) confirmou 5 documentos PASS, 0 WARN e 0 FAIL e 2 testes unitários aprovados após a normalização do README e deste roadmap. Foi registada a aprovação condicional de lançamento do proprietário; a aprovação global e a conclusão dos gates permanecem sujeitas a evidências e revisão humana.
 
 ## Estado atual
 
-A execução [#35](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893569303) detetou divergência no hash canónico da revisão G2; foi corrigida a secção obrigatória `## Estado` e recalculado o hash. A execução [#36](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893652381) validou a revisão G2. A execução [#40](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893795182) confirmou a normalização do README e do roadmap: 5 PASS, 0 WARN, 0 FAIL e 2 testes unitários aprovados. G2 permanece EM_REVISAO: os requisitos são uma linha de base proposta e DEC-001 a DEC-006 dependem de decisão/validação humana. G0 continua dependente da aprovação formal do proprietário.
+A execução [#35](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893569303) detetou divergência no hash canónico da revisão G2; foi corrigida a secção obrigatória `## Estado` e recalculado o hash. A execução [#36](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893652381) validou a revisão G2. A execução [#40](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893795182) confirmou a normalização do README e do roadmap: 5 PASS, 0 WARN, 0 FAIL e 2 testes unitários aprovados. G2 permanece EM_REVISAO: os requisitos são uma linha de base proposta e DEC-001 a DEC-006 dependem de decisão/validação humana. A aprovação condicional de lançamento foi registada em [CONSORCIO-DEC-G5-001](decisao-aprovacao-condicional-lancamento.md). G0 continua dependente da aprovação formal da política de governação; a decisão condicional não encerra gates.
 
 ## Fases e critérios de saída
 
@@ -40,7 +40,7 @@ A execução [#35](https://github.com/carlos-andrade/CONSORCIO/actions/runs/3889
 | G2 — Desenho | Requisitos, arquitetura, dados, privacidade, riscos e testes | Revisão G2 validada, decisões bloqueadoras resolvidas e critérios aceites | EM_REVISAO |
 | G3 — Construção validada | Normalizar documentação e rever alterações | Diferenças auditáveis, testes concluídos, hashes corretos e auditoria limpa | CONCLUIDO |
 | G4 — Prontidão operacional | Observabilidade, recuperação, segurança e suporte | Execução agendada confirmada, evidências verificadas e recuperação ensaiada | EM_REVISAO |
-| G5 — Lançamento | Autorização explícita e observação | Aprovação humana e evidência de publicação | PENDENTE |
+| G5 — Lançamento | Autorização explícita e observação | Aprovação condicional registada; conclusão dos gates, prontidão operacional e evidência de publicação ainda obrigatórias | PENDENTE |
 | G6 — Encerramento | Aceitação, arquivo, transferência e lições | Critérios finais cumpridos e encerramento registado | PENDENTE |
 
 ## Política de atualização diária
@@ -62,6 +62,9 @@ O workflow não atualiza automaticamente todos os conteúdos, porque uma altera�
 - [Execução #47 — manifesto JSON válido e artefacto de três ficheiros](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38894368824)
 - [Execução #48 — seis documentos PASS, zero avisos/falhas](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38894424857)
 - [Runbook de operação e recuperação](runbook-operacao-diaria-recuperacao.md)
+- [Decisão formal — aprovação condicional de lançamento](decisao-aprovacao-condicional-lancamento.md)
+- [Relatório de fecho — aceitação e evidências](relatorio-fecho-aceitacao-evidencias.md)
+- [Execução #57 — validação após registo da decisão](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38896595277)
 
 ## Validação
 
@@ -69,11 +72,11 @@ A auditoria usa UTF-8, normaliza finais de linha para LF e calcula o SHA-256 can
 
 ## Resultado
 
-G3 está concluída. A operação G4 foi reforçada com manifesto JSON de execução e artefacto de três ficheiros; a execução #48 confirmou 6 PASS, 0 WARN, 0 FAIL e 2 testes unitários aprovados. Todas as execuções recentes observadas foram acionadas por push; ainda não há evidência de evento schedule nem ensaio formal de recuperação. G4 permanece EM_REVISAO e não existe aprovação global.
+G3 está concluída. A execução #57 terminou com sucesso nos testes e na auditoria documental, com manifesto e artefacto registados. Foi recebida e registada a aprovação condicional de lançamento em [CONSORCIO-DEC-G5-001](decisao-aprovacao-condicional-lancamento.md). A decisão não comprova cumprimento das condições: as execuções observadas continuam sem evento schedule comprovado, não há ensaio formal de recuperação registado, e G0/G1/G2/G4 permanecem por fechar. G5 e G6 continuam PENDENTES.
 
 ## Próxima Ação
 
-Observar e registar uma execução schedule bem-sucedida; executar um ensaio de recuperação documentado; verificar artefactos e retenção; depois completar a revisão formal de G4. Resolver DEC-001 a DEC-006 e as aprovações G0/G1/G2 em paralelo, sem declarar conformidade global.
+Resolver DEC-001 a DEC-006 e obter as aprovações G0/G1/G2; observar e registar uma execução schedule bem-sucedida; executar um ensaio de recuperação documentado; verificar artefactos e retenção; concluir a revisão G4. Só depois avaliar o cumprimento das condições de G5 e a aceitação final G6.
 
 ## Histórico de alterações
 
@@ -85,3 +88,4 @@ Observar e registar uma execução schedule bem-sucedida; executar um ensaio de 
 | 1.0.3 | 2026-10-16 | Atualização da auditoria, correção do hash G2 e progresso de normalização documental | Execuções #35 e #36 |
 | 1.0.4 | 2026-10-16 | Registo da normalização final, revisão de diffs e conclusão de G3 | Execução #40 |
 | 1.0.5 | 2026-10-16 | Reforço de evidências e runbook; G4 em validação operacional | Execuções #47 e #48 |
+| 1.0.6 | 2026-10-16 | Registo da aprovação condicional de lançamento sem alterar os estados pendentes dos gates | Decisão CONSORCIO-DEC-G5-001 e execução #57 |
