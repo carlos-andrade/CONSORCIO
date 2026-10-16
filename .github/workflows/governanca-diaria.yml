@@ -21,6 +21,7 @@ concurrency:
 jobs:
   validar-governanca:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout CONSORCIO
         uses: actions/checkout@v4
@@ -37,16 +38,44 @@ jobs:
         with:
           python-version: "3.12"
       - name: Testes unitários do auditor
+        id: tests
         run: python -m unittest discover -s tests -p 'test_*.py' -v
       - name: Auditar documentos
         id: audit
+        if: always()
         run: |
           python automation/audit_repository_documents.py \
             --repo-root . \
             --governance-root .governanca-master \
             --report GOVERNANCA/relatorio-diario.md \
             --json GOVERNANCA/relatorio-diario.json
-      - name: Guardar relatórios da execução
+      - name: Gerar manifesto da execução
+        if: always()
+        env:
+          RUN_ID: ${{ github.run_id }}
+          RUN_NUMBER: ${{ github.run_number }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          EVENT_NAME: ${{ github.event_name }}
+          COMMIT_SHA: ${{ github.sha }}
+          REF_NAME: ${{ github.ref }}
+          ACTOR: ${{ github.actor }}
+          TESTS_OUTCOME: ${{ steps.tests.outcome }}
+          AUDIT_OUTCOME: ${{ steps.audit.outcome }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from datetime import datetime, timezone
+          keys = ['RUN_ID','RUN_NUMBER','RUN_ATTEMPT','EVENT_NAME','COMMIT_SHA','REF_NAME','ACTOR','TESTS_OUTCOME','AUDIT_OUTCOME']
+          payload = {key.lower(): os.environ.get(key, '') for key in keys}
+          payload['generated_at_utc'] = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
+          payload['workflow'] = 'GOVERNANCA — validação documental diária'
+          payload['evidence_scope'] = 'auditoria documental estática; não equivale a aprovação humana'
+          os.makedirs('GOVERNANCA', exist_ok=True)
+          with open('GOVERNANCA/evidencia-execucao.json', 'w', encoding='utf-8') as f:
+              json.dump(payload, f, ensure_ascii=False, indent=2)
+              f.write('\\n')
+          PY
+      - name: Guardar relatórios e manifesto da execução
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -54,5 +83,6 @@ jobs:
           path: |
             GOVERNANCA/relatorio-diario.md
             GOVERNANCA/relatorio-diario.json
-          if-no-files-found: warn
+            GOVERNANCA/evidencia-execucao.json
+          if-no-files-found: error
           retention-days: 90
