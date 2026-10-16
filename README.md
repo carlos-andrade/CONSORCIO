@@ -22,6 +22,10 @@
 | **Objetivo** | Documentar o propósito do projeto e a forma de execução da governação |
 | **Dependências** | Repositório GOVERNANCA e GitHub Actions |
 
+## Estado
+
+O projeto está na fase inicial de adoção da governação. A validação automática está instalada, mas não existe ainda declaração de conformidade integral.
+
 ## Objetivo do projeto
 
 O consórcio no Brasil é uma modalidade de compra baseada na união de pessoas físicas ou jurídicas em grupo para aquisição de bens ou serviços, com contribuições periódicas e regras contratuais próprias. Embora não tenha juros remuneratórios como um empréstimo tradicional, o consórcio pode incluir taxa de administração, fundo de reserva, seguros e outros encargos previstos no contrato. A análise económica deve considerar todos os custos e condições de contemplação.
