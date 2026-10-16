@@ -19,6 +19,10 @@
 | **Autoridade superior** | [Política CONSORCIO](../GOVERNANCA.md) e [GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
 | **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
 
+## Estado
+
+Documento de revisão técnica em estado `EM_REVISAO`. A linha de base é proposta; a aprovação formal depende da resolução das decisões bloqueadoras e dos critérios de aceitação definidos neste documento.
+
 ## 1. Resumo executivo
 
 Esta revisão estabelece uma linha de base inicial para requisitos, arquitetura, dados, privacidade e riscos. O âmbito declarado do CONSORCIO é estudar, documentar e avaliar custos, condições, estratégias e decisões relativas a consórcios com fontes verificáveis e pressupostos explícitos.
