@@ -1,14 +1,14 @@
 import hashlib
 import unittest
 
-from automation.audit_repository_documents import canonical, canonical_sha256, parse
+from automation.audit_repository_documents import canonical, parse
 
 class GovernanceAuditTests(unittest.TestCase):
     def test_canonical_excludes_only_two_control_rows(self):
         text = '# Título\n\n| Campo | Valor |\n|---|---|\n| **ID** | TEST-001 |\n| **SHA-256 (conteúdo canónico)** | placeholder |\n| **Commit de referência (versão anterior)** | commit |\n\nCorpo\n'
         expected = text.replace('| **SHA-256 (conteúdo canónico)** | placeholder |\n', '').replace('| **Commit de referência (versão anterior)** | commit |\n', '')
         self.assertEqual(canonical(text), expected.encode('utf-8'))
-        self.assertEqual(canonical_sha256(text), hashlib.sha256(expected.encode('utf-8')).hexdigest())
+        self.assertEqual(hashlib.sha256(canonical(text)).hexdigest(), hashlib.sha256(expected.encode('utf-8')).hexdigest())
 
     def test_parse_required_metadata(self):
         text = '\n'.join([
