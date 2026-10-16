@@ -103,3 +103,34 @@ def calculate_costs(
         "unknown_components": unknown,
         "note": "Entry/bid scenario is informational only and is not included in contractual cost.",
     }
+
+
+def project_adjustment_scenario(*, base_total_cost: Any, period_rates: list[Any], installment_count: Any) -> dict[str, Any]:
+    """Project explicit hypothetical rates; this is sensitivity analysis, not a contract forecast."""
+    base = _decimal(base_total_cost, "base_total_cost")
+    if base <= 0:
+        raise ValueError("base_total_cost must be > 0")
+    if isinstance(installment_count, bool) or not isinstance(installment_count, int) or installment_count < 1:
+        raise ValueError("installment_count must be a positive integer")
+    if not isinstance(period_rates, list) or not period_rates:
+        raise ValueError("period_rates must be a non-empty list")
+    current = base
+    steps = []
+    for index, raw_rate in enumerate(period_rates, start=1):
+        rate = _decimal(raw_rate, f"period_rates[{index - 1}]")
+        if rate <= Decimal("-1"):
+            raise ValueError(f"period_rates[{index - 1}] must be > -1")
+        current *= Decimal("1") + rate
+        steps.append({"period": index, "rate": str(rate), "projected_total": str(current.quantize(CENT, rounding=ROUND_HALF_UP))})
+    money = lambda value: str(value.quantize(CENT, rounding=ROUND_HALF_UP))
+    return {
+        "scenario_type": "SENSITIVITY_ONLY",
+        "currency": "BRL",
+        "base_total_cost": money(base),
+        "period_count": len(period_rates),
+        "periods": steps,
+        "projected_total_cost": money(current),
+        "average_installment": money(current / installment_count),
+        "installment_count": installment_count,
+        "assumption": "Each explicit rate is compounded on the full base total once per period; this is not a contract forecast.",
+    }
