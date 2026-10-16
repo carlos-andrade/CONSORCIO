@@ -9,7 +9,7 @@
 | **Fase** | G0 — Governação e entrada |
 | **Estado** | EM_CURSO |
 | **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | A calcular na normalização inicial — ver issue #1 |
+| **SHA-256 (conteúdo canónico)** | 4b5d506fbbe184117f3d33e9c33a063f91d08890736ec4e8ef1be61724095a99 |
 | **Commit de referência (versão anterior)** | [6fc6e6accfa675f4b76c122e3471b5c290e4bfbc](https://github.com/carlos-andrade/CONSORCIO/commit/6fc6e6accfa675f4b76c122e3471b5c290e4bfbc) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
