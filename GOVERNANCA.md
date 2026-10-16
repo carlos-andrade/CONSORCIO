@@ -7,15 +7,15 @@
 | **Repositório** | [carlos-andrade/CONSORCIO](https://github.com/carlos-andrade/CONSORCIO) |
 | **Tipo documental** | POLITICA |
 | **Fase** | G0 — Governação e entrada |
-| **Estado** | EM_CURSO |
-| **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | e0fcd397097cb8ced561de21dfb6b693d6d7ea71722e02e6876a47144cb03fee |
+| **Estado** | APROVADO |
+| **Versão** | 1.0.3 |
+| **SHA-256 (conteúdo canónico)** | 904284f2c0f593b9335799104e0523ef58844b493223457c136875ee2ba426a8 |
 | **Commit de referência (versão anterior)** | [6fc6e6accfa675f4b76c122e3471b5c290e4bfbc](https://github.com/carlos-andrade/CONSORCIO/commit/6fc6e6accfa675f4b76c122e3471b5c290e4bfbc) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
 | **Responsável** | Responsável pelo projeto CONSORCIO |
-| **Aprovador** | Pendente de aprovação formal pelo proprietário do projeto |
-| **Origem** | Decisão de adoção da governação central e repositório GOVERNANCA |
+| **Aprovador** | Proprietário do projeto CONSORCIO — aprovação formal registada em 2026-10-16 |
+| **Origem** | Decisão de aprovação formal da política de governação |
 | **Autoridade superior** | Lei aplicável, contratos vinculativos e normas aprovadas em [GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
 | **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
 
@@ -104,22 +104,23 @@ Alterações à fonte normativa central são governadas no repositório GOVERNAN
 - [Workflow diário](.github/workflows/governanca-diaria.yml).
 - [Auditor documental](automation/audit_repository_documents.py).
 - [Issue de remediação documental #1](https://github.com/carlos-andrade/CONSORCIO/issues/1).
+- [Decisão formal de aprovação da política](GOVERNANCA/aprovacao-politica-governanca.md).
 
 ## Estado
 
-G0 foi definido documentalmente: fonte normativa, hierarquia de precedência, papéis, limites de autoridade, gates e evidência estão explicitados. A aprovação formal pelo proprietário do projeto permanece pendente; por isso, este documento não é declarado `APROVADO`.
+O proprietário aprovou formalmente esta política, versão 1.0.2, em 16 de outubro de 2026, conforme decisão registada em [GOVERNANCA/aprovacao-politica-governanca.md](GOVERNANCA/aprovacao-politica-governanca.md). A presente versão 1.0.3 atualiza o estado documental e os metadados dessa aprovação. A aprovação desta política não representa aprovação global do projeto nem conclusão automática dos restantes gates.
 
 ## Validação
 
-A política é coerente com a distinção entre norma aprovada e proposta para revisão na fonte central. A implementação operacional foi validada pelo workflow; os quatro hashes canónicos foram recalculados e confirmados. Permanece um aviso documental residual em tratamento, e a aprovação formal pelo proprietário continua pendente.
+A decisão formal foi recebida explicitamente nesta conversa e é registada como evidência humana. A integridade documental desta atualização será verificada pelo auditor automatizado após o commit. Essa auditoria não substitui a aprovação nem prova, por si só, a conformidade global.
 
 ## Resultado
 
-Política de autoridade e governação definida e registada no repositório. O gate G0 só pode ser considerado formalmente encerrado após a aprovação humana registada e a verificação das evidências exigidas.
+A política local de governação está **APROVADA** pelo proprietário. G0 fica com a aprovação formal da política registada; o fecho de G0 depende da validação dos restantes critérios mínimos de entrada indicados no roadmap. Os estados dos demais gates mantêm-se segundo as respetivas evidências.
 
 ## Próxima Ação
 
-Solicitar ao proprietário do projeto a aprovação explícita desta política; depois, calcular e preencher o SHA-256 canónico conforme a norma mestre e reexecutar a auditoria.
+Validar a integridade documental após o commit, atualizar o roadmap e reavaliar G0 com base na evidência e critérios de saída aplicáveis.
 
 ## Histórico de alterações
 
@@ -127,3 +128,5 @@ Solicitar ao proprietário do projeto a aprovação explícita desta política; 
 |---|---|---|---|
 | 1.0.0 | 2026-10-16 | Política inicial de adoção | Commit anterior identificado no cabeçalho |
 | 1.0.1 | 2026-10-16 | Clarificação de autoridade, papéis, gates e limites da automação | Commit desta atualização |
+| 1.0.2 | 2026-10-16 | Normalização de conteúdo e auditoria documental | Execução de auditoria referenciada no roadmap |
+| 1.0.3 | 2026-10-16 | Registo da aprovação formal do proprietário da política local | Decisão em GOVERNANCA/aprovacao-politica-governanca.md |
