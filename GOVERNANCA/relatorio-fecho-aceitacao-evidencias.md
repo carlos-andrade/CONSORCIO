@@ -8,8 +8,8 @@
 | **Tipo documental** | RELATORIO_DE_ENCERRAMENTO |
 | **Fase** | G6 — Encerramento |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.4 |
-| **SHA-256 (conteúdo canónico)** | 9b94d4e8406f852c9d2225195693f8b0cff160c3b5d52207798bf2a36ee60c21 |
+| **Versão** | 1.0.5 |
+| **SHA-256 (conteúdo canónico)** | HASH_PENDENTE |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -42,7 +42,8 @@ O presente relatório consolida a evidência técnica disponível, identifica la
 | EVD-009 | Integridade documental | Hashes canónicos e auditorias de commits anteriores registados nos documentos de governação | Uma auditoria limpa não substitui aprovação formal, teste de recuperação ou aceitação do produto |
 | EVD-010 | Auditoria documental — execução #72 | `success`; 9 PASS, 0 WARN, 0 FAIL; testes unitários aprovados; manifesto e artefacto gerados | Auditoria estática; não comprova execução `schedule`, ensaio de recuperação, lançamento ou aceitação final |
 | EVD-011 | Inventário G1 — CONSORCIO-INV-G1-001 | Inventário documental/técnico concluído; desvios priorizados; G0/G1 registados como concluídos para o âmbito atual | Não comprova prontidão operacional nem lançamento |
-| EVD-012 | Auditoria documental — execução #82 | `success`; 10 PASS, 0 WARN, 0 FAIL; testes unitários aprovados; manifesto e artefacto gerados | Validou o commit `059d7f664c36718db961df17f193ef679023f8bb`, antes da atualização mais recente do README; a auditoria final após o último commit ainda é necessária |
+| EVD-012 | Auditoria documental — execução #82 | `success`; 10 PASS, 0 WARN, 0 FAIL; testes unitários aprovados; manifesto e artefacto gerados | Evidência histórica; não substitui a auditoria final mais recente |
+| EVD-013 | Auditoria documental — execução #88 | `success`; 10 PASS, 0 WARN, 0 FAIL; testes unitários aprovados; manifesto e artefacto gerados; commit `6b24410b39bbce6e75e648326e78f467cc27f072` | Evento `push`; não comprova execução `schedule`, recuperação operacional, publicação ou aceitação final |
 
 ## 3. Estado dos gates para encerramento
 
@@ -112,11 +113,11 @@ Esta declaração não deve ser preenchida ou atribuída automaticamente. Se os 
 
 ## Resultado
 
-O pacote de evidências disponível está consolidado neste relatório. O estado correto é **APROVAÇÃO CONDICIONAL DE LANÇAMENTO REGISTADA — G4/G5/G6 PENDENTES**. A execução [#82](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38901445077) terminou com 10 PASS, 0 WARN e 0 FAIL, com testes unitários aprovados, incluindo inventário G1 e revisão G2 v1.0.1. Esta auditoria antecede a atualização mais recente do README. O histórico continua sem evento `schedule`; não marcar o CONSORCIO como lançado ou encerrado até que prontidão, publicação, arquivo e aceitação estejam comprovados.
+O pacote de evidências disponível está consolidado neste relatório. O estado correto é **APROVAÇÃO CONDICIONAL DE LANÇAMENTO REGISTADA — G4/G5/G6 PENDENTES**. A execução [#88](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38901648930) terminou com 10 PASS, 0 WARN e 0 FAIL, com testes unitários aprovados e manifesto gerado. O histórico consultado contém 88 execuções, todas por `push`, sem evento `schedule`. Não marcar o CONSORCIO como lançado ou encerrado até que prontidão, publicação, arquivo e aceitação estejam comprovados.
 
 ## Estado
 
-O relatório de encerramento permanece em revisão. A aprovação condicional de lançamento e a aprovação formal da política local estão registadas, mas não equivalem a aceitação final. G0 e G1 estão CONCLUIDOS para o âmbito atual; G2 e G4 permanecem EM_REVISAO; G5 e G6 permanecem PENDENTES.
+O relatório de encerramento permanece em revisão. A aprovação condicional de lançamento e a aprovação formal da política local estão registadas, mas não equivalem a aceitação final. G0 e G1 estão CONCLUIDOS para o âmbito atual; G2 e G4 permanecem EM_REVISAO; G5 e G6 permanecem PENDENTES. A auditoria #88 está limpa, mas os gates operacionais não foram simulados nem aprovados automaticamente.
 
 ## Evidências
 
@@ -144,3 +145,4 @@ Validar formalmente a baseline G2 v1.0.1; comprovar execução agendada e ensaio
 | 1.0.2 | 2026-10-16 | Correção de referências de estado e inclusão das secções de governação exigidas | Auditoria #67 e decisões G0/G5 registadas |
 | 1.0.3 | 2026-10-16 | Atualização da evidência para a auditoria limpa #72 | 9 PASS, 0 WARN, 0 FAIL |
 | 1.0.4 | 2026-10-16 | Atualização de G0/G1, registo da baseline G2 e auditoria limpa #82 | Inventário G1, revisão G2 v1.0.1 e execução #82 |
+| 1.0.5 | 2026-10-16 | Atualização do pacote de evidências para auditoria limpa #88 | Execução #88: 10 PASS, 0 WARN, 0 FAIL |
