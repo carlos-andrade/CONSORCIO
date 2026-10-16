@@ -9,7 +9,7 @@
 | **Fase** | G6 — Encerramento |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.0.4 |
-| **SHA-256 (conteúdo canónico)** | HASH_PENDENTE |
+| **SHA-256 (conteúdo canónico)** | 9b94d4e8406f852c9d2225195693f8b0cff160c3b5d52207798bf2a36ee60c21 |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
