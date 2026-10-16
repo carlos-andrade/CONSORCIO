@@ -8,7 +8,7 @@
 | **Tipo documental** | README |
 | **Fase** | G0 — Governação e entrada |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.0.0 |
+| **Versão** | 1.0.1 |
 | **SHA-256 (conteúdo canónico)** | acb34299f12507d36a2b5dec69ef441d7028782d63659bcb7cc6ef5d12213e3b |
 | **Commit de referência (versão anterior)** | [e5e2875e63e1594c461487227150d1f1832cbf3b](https://github.com/carlos-andrade/CONSORCIO/commit/e5e2875e63e1594c461487227150d1f1832cbf3b) |
 | **Data de criação** | 2026-10-16 |
@@ -24,7 +24,7 @@
 
 ## Estado
 
-O projeto está na fase inicial de adoção da governação. A validação automática está instalada, mas não existe ainda declaração de conformidade integral. A política de autoridade e governação está definida em [GOVERNANCA.md](GOVERNANCA.md); a aprovação formal do proprietário do projeto continua pendente.
+O projeto está na fase de adoção controlada da governação. A auditoria documental automatizada está instalada e a revisão G2 de requisitos, arquitetura, dados, privacidade e riscos foi registada em [GOVERNANCA/revisao-requisitos-arquitetura-dados-privacidade-riscos.md](GOVERNANCA/revisao-requisitos-arquitetura-dados-privacidade-riscos.md). A revisão permanece EM_REVISAO; não existe declaração de conformidade integral e a aprovação formal do proprietário continua pendente.
 
 ## Objetivo do projeto
 
@@ -58,9 +58,9 @@ A automação é de validação e deteção: **não reescreve automaticamente o 
 ## Estado de implementação
 
 - Adoção explícita da governação central: documentada.
-- Cabeçalho normalizado do README: incluído; o hash canónico deve ser confirmado pelo workflow.
+- Cabeçalho do README: normalizado; hash canónico sujeito a auditoria automática após esta alteração.
 - Workflow diário: configurado no repositório.
-- Auditoria integral: depende da execução do workflow e da resolução dos desvios encontrados.
+- Auditoria documental: executada após a revisão G2; a normalização desta versão deve ser confirmada pela execução posterior ao commit.
 - Aprovação formal da conformidade global: pendente de evidência e revisão humana.
 
 ## Roadmap
@@ -68,9 +68,9 @@ A automação é de validação e deteção: **não reescreve automaticamente o 
 | Fase | Atividade | Estado |
 |---|---|---|
 | G0 | Definir propósito, autoridade e âmbito | EM_CURSO |
-| G1 | Inventariar documentos, código e dados | PENDENTE DE AUDITORIA |
-| G2 | Rever requisitos, arquitetura, privacidade e riscos | PENDENTE |
-| G3 | Normalizar documentos e validar alterações | PENDENTE |
+| G1 | Inventariar documentos, código e dados | EM_REVISAO |
+| G2 | Rever requisitos, arquitetura, dados, privacidade e riscos | EM_REVISAO |
+| G3 | Normalizar documentos e validar alterações | EM_REVISAO |
 | G4 | Verificar execução diária, relatórios e recuperação | PENDENTE |
 | G5 | Aceitação e autorização explícitas | PENDENTE |
 | G6 | Encerramento documentado quando os critérios forem cumpridos | PENDENTE |
