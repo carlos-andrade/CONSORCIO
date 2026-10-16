@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/carlos-andrade/CONSORCIO/blob/main/DADOS/esquemas/consorcio-custo.schema.json",
+  "title": "Registo analítico de custos de consórcio",
+  "description": "Esquema para cenários documentais/analíticos; não representa transação nem proposta comercial.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scenario_id",
+    "currency",
+    "credit_amount",
+    "installment_count",
+    "source_classification",
+    "as_of_date",
+    "fees"
+  ],
+  "properties": {
+    "scenario_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Z0-9][A-Z0-9._-]*$"
+    },
+    "currency": {
+      "const": "BRL"
+    },
+    "credit_amount": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "installment_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "administration_fee_rate_total": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Taxa total contratual como fração do crédito; null se desconhecida."
+    },
+    "reserve_fund_rate_total": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Fundo de reserva total como fração do crédito; null se desconhecido."
+    },
+    "insurance_total": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "BRL; null se desconhecido, não zero implícito."
+    },
+    "other_charges_total": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "BRL; null se desconhecido, não zero implícito."
+    },
+    "entry_or_bid_scenario": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "Valor meramente analítico; nunca executar lance."
+    },
+    "source_classification": {
+      "enum": [
+        "FACTO",
+        "HIPOTESE",
+        "SINTETICO"
+      ]
+    },
+    "source_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_observed_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "as_of_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unknown_components": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fees": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "category",
+          "amount",
+          "basis",
+          "classification"
+        ],
+        "properties": {
+          "category": {
+            "type": "string",
+            "minLength": 1
+          },
+          "amount": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "basis": {
+            "type": "string",
+            "minLength": 1
+          },
+          "classification": {
+            "enum": [
+              "FACTO",
+              "HIPOTESE",
+              "SINTETICO"
+            ]
+          },
+          "source_reference": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
