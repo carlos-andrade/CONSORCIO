@@ -80,5 +80,26 @@ class CostCalculatorTests(unittest.TestCase):
             calculate_costs(credit_amount="NaN", installment_count=10)
 
 
+    def test_adjustment_scenario_compounds_explicit_rates(self):
+        from MODELOS.custos.calculadora_custos import project_adjustment_scenario
+        result = project_adjustment_scenario(base_total_cost=1000, period_rates=["0.10", "0.05"], installment_count=10)
+        self.assertEqual(result["periods"][0]["projected_total"], "1100.00")
+        self.assertEqual(result["periods"][1]["projected_total"], "1155.00")
+        self.assertEqual(result["projected_total_cost"], "1155.00")
+        self.assertEqual(result["average_installment"], "115.50")
+        self.assertEqual(result["scenario_type"], "SENSITIVITY_ONLY")
+
+    def test_adjustment_scenario_rejects_rate_at_or_below_minus_one(self):
+        from MODELOS.custos.calculadora_custos import project_adjustment_scenario
+        for rate in ("-1", "-1.01"):
+            with self.subTest(rate=rate), self.assertRaises(ValueError):
+                project_adjustment_scenario(base_total_cost=1000, period_rates=[rate], installment_count=10)
+
+    def test_adjustment_scenario_requires_nonempty_rates(self):
+        from MODELOS.custos.calculadora_custos import project_adjustment_scenario
+        with self.assertRaises(ValueError):
+            project_adjustment_scenario(base_total_cost=1000, period_rates=[], installment_count=10)
+
+
 if __name__ == "__main__":
     unittest.main()
