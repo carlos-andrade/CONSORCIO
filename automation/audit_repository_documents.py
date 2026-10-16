@@ -60,7 +60,10 @@ def audit(path,root):
         if "PROMPTS" not in fields.get("Cadeia de autoridade","") or "CÓDIGO" not in fields.get("Cadeia de autoridade",""): warns.append("Cadeia de autoridade incompleta.")
         if not fields.get("Autoridade superior"): warns.append("Autoridade superior ausente.")
         if not fields.get("Origem"): warns.append("Origem ausente.")
-        body="\n".join(text.splitlines()[1:]); missing=[h for h in ("## Estado","## Evidências","## Validação","## Resultado","## Próxima Ação") if h not in body]
+        body_lines=text.replace("\r\n","\n").replace("\r","\n").splitlines()[1:]
+        headings={line.strip() for line in body_lines if line.startswith("## ")}
+        required_sections={"## Estado","## Evidências","## Validação","## Resultado","## Próxima Ação"}
+        missing=sorted(required_sections-headings)
         if missing: warns.append("Secções não encontradas quando aplicáveis: "+", ".join(missing))
     status="FAIL" if fails else ("WARN" if warns else "PASS")
     return {"path":rel,"id":fields.get("ID",""),"title":(text.splitlines() or [""])[0],"declared_state":fields.get("Estado",""),"sha256_calculated":actual,"status":status,"failures":fails,"warnings":warns}
