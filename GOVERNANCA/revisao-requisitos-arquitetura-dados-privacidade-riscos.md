@@ -7,21 +7,21 @@
 | **Repositório** | [carlos-andrade/CONSORCIO](https://github.com/carlos-andrade/CONSORCIO) |
 | **Tipo documental** | REVISAO_TECNICA |
 | **Fase** | G2 — Desenho |
-| **Estado** | EM_REVISAO |
-| **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | d291128185f8857f91570ef29dd4c8d100a8e8c9fe750400168405fca03cec14 |
+| **Estado** | APROVADO |
+| **Versão** | 1.0.2 |
+| **SHA-256 (conteúdo canónico)** | ca5eb1b2227f2821a176313bfa2f6b6c073d03d2da05a3b5dea2872fb72f8460 |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
 | **Responsável** | Responsável pelo projeto CONSORCIO |
-| **Aprovador** | Pendente de validação formal pelo proprietário |
+| **Aprovador** | Proprietário do projeto CONSORCIO — aprovação formal registada em 2026-10-16 |
 | **Origem** | Revisão G2 do roadmap de adoção da governação |
 | **Autoridade superior** | [Política CONSORCIO](../GOVERNANCA.md) e [GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
 | **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
 
 ## Estado
 
-Documento de revisão técnica em estado `EM_REVISAO`. A linha de base é proposta; a aprovação formal depende da resolução das decisões bloqueadoras e dos critérios de aceitação definidos neste documento.
+Documento de revisão técnica aprovado pelo proprietário em 2026-10-16 através da decisão [CONSORCIO-DEC-G2-001](decisao-aprovacao-g2.md). A aprovação abrange a baseline conservadora documental/analítica e as exclusões expressas na decisão.
 
 ## 1. Resumo executivo
 
@@ -37,7 +37,7 @@ Fora do âmbito até aprovação expressa: contratação, lances ou movimentaç�
 
 ## 3. Requisitos de base
 
-Esta é uma proposta de requisitos, não uma especificação de negócio aprovada.
+Baseline de requisitos aprovada para o âmbito documental/analítico pela decisão CONSORCIO-DEC-G2-001. A aplicação destes requisitos continua sujeita a implementação e testes.
 
 | ID | Requisito | Critério de aceitação | Prioridade |
 |---|---|---|---|
@@ -119,15 +119,15 @@ Risco residual só pode ser reduzido depois de existir evidência de implementa�
 
 ## 8. Critérios de aceitação G2
 
-- [ ] Proprietário confirma objetivo, utilizadores, decisões e exclusões.
-- [ ] Requisitos P0 têm critérios, responsáveis e evidência.
-- [ ] Arquitetura é revista; decisões tecnológicas pendentes estão justificadas.
-- [ ] Dados têm origem, sensibilidade, qualidade, uso permitido e retenção definidos.
-- [ ] Gate impede dados pessoais reais antes dos controlos de privacidade.
-- [ ] Riscos têm dono, mitigação, prazo e risco residual.
-- [ ] Cálculos têm casos de referência e testes antes de suportar decisões.
-- [ ] Operação, incidentes, recuperação e rollback estão definidos proporcionalmente.
-- [ ] Limitações e decisões em aberto permanecem explícitas.
+- [x] Proprietário confirmou objetivo, utilizador inicial, decisões suportadas e exclusões — decisão CONSORCIO-DEC-G2-001.
+- [x] Requisitos P0 e critérios de aceitação aprovados como baseline; evidência de implementação será exigida antes do uso operacional.
+- [x] Arquitetura lógica aprovada; escolhas tecnológicas específicas ficam adiadas até necessidade comprovada.
+- [x] Política-base de dados e proveniência aprovada; cada fonte concreta e qualquer retenção futura exigem validação específica.
+- [x] Gate documental proíbe dados pessoais reais no âmbito inicial.
+- [x] Riscos e mitigações iniciais registados; risco residual de controlos não implementados permanece aberto.
+- [x] Critério aprovado; execução dos testes de cálculo continua condição antes de uso operacional.
+- [x] Critério de operação proporcional aprovado; G4 continua aberto para demonstrar prontidão e recuperação.
+- [x] Limitações, decisões condicionais e exclusões permanecem explícitas.
 
 ## 9. Decisões bloqueadoras
 
@@ -144,7 +144,7 @@ Risco residual só pode ser reduzido depois de existir evidência de implementa�
 
 A revisão inicial cobre requisitos, arquitetura, dados, privacidade e riscos. A recomendação é manter o âmbito documental/analítico e não iniciar transações nem tratar dados pessoais reais sem decisões e controlos prévios.
 
-**G2: EM_REVISAO — não aprovado.** A revisão documental não substitui decisões de negócio ou avaliação jurídica. DEC-001 a DEC-006 e os critérios de aceitação impedem declarar G2 concluído até existirem evidências.
+**G2: APROVADO para a baseline documental/analítica.** A aprovação formal está registada em [CONSORCIO-DEC-G2-001](decisao-aprovacao-g2.md). A aprovação não declara implementados os controlos técnicos, não constitui parecer jurídico e não conclui G4, G5 ou G6.
 
 ## Evidências
 
@@ -161,15 +161,16 @@ Revisão baseada no âmbito declarado no README e na hierarquia local. Entidades
 
 ## Resultado
 
-Linha de base de desenho registada; riscos e decisões em aberto explicitados; G2 permanece em revisão à espera de validação humana.
+Linha de base de desenho aprovada pelo proprietário; riscos residuais e validações técnicas ainda pendentes permanecem explicitados.
 
 ## Próxima Ação
 
-Validar formalmente a linha de base de âmbito/decisões definida na versão 1.0.1; só reabrir DEC-003/005/006 se surgir fonte, integração, dados pessoais ou produto operacional novo.
+Aplicar a baseline aprovada na estrutura inicial; executar testes e auditorias; reabrir DEC-003/005/006 se surgir nova fonte, integração, dados pessoais ou produto operacional.
 
 ## Histórico de alterações
 
 | Versão | Data | Alteração | Evidência |
 |---|---|---|---|
 | 1.0.0 | 2026-10-16 | Criação da revisão G2 de requisitos, arquitetura, dados, privacidade e riscos | Commit inicial deste documento |
-| 1.0.1 | 2026-10-16 | Resolução conservadora das DEC-001–006 para o âmbito documental/analítico; sem expansão de produto ou dados pessoais | Mandato do proprietário para resolver pendências; alterações registadas para validação formal |
+| 1.0.1 | 2026-10-16 | Resolução conservadora das DEC-001–006 para o âmbito documental/analítico; sem expansão de produto ou dados pessoais | Mandato do proprietário para resolver pendências |
+| 1.0.2 | 2026-10-16 | Aprovação formal da baseline G2 e atualização dos critérios de aceitação | CONSORCIO-DEC-G2-001 |
