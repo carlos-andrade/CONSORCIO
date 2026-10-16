@@ -78,6 +78,7 @@ Percentagem de encargos conhecidos face ao crédito:
 3. Seguros e encargos variáveis: distinguir total fixo conhecido de estimativa e de item desconhecido.
 4. Comparações entre planos só são válidas quando crédito, prazo, data-base, base das taxas e itens incluídos são comparáveis.
 5. Não produzir ranking definitivo quando existirem componentes materiais desconhecidos; assinalar a limitação.
+6. O motor distingue subtotal conhecido de custo total completo: se faltar qualquer componente material, `complete_total_cost`, parcela média e percentagem total de encargos ficam desconhecidos; não se apresenta o subtotal como custo total.
 
 ## 6. Exemplo sintético de referência
 
@@ -116,7 +117,7 @@ EM_REVISAO — especificação inicial; não está aprovada para uso decisório.
 
 ## Validação
 
-O documento define fórmulas e limites para revisão. A implementação computacional e os testes automatizados permanecem pendentes; a aprovação G2 não equivale a aprovação deste modelo.
+O documento define fórmulas e limites para revisão. A implementação inicial existe em [calculadora_custos.py](calculadora_custos.py) e os testes unitários estão em [test_calculadora_custos.py](../../tests/test_calculadora_custos.py). A execução CI e a revisão humana deste modelo ainda são necessárias; a aprovação G2 não equivale a aprovação deste modelo.
 
 ## Resultado
 
