@@ -9,7 +9,7 @@
 | **Fase** | G0 — Governação e entrada |
 | **Estado** | EM_CURSO |
 | **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | A calcular na normalização inicial — ver issue #1 |
+| **SHA-256 (conteúdo canónico)** | 4c3d035ca831a59bdf8a2a5928ba0ce8fc6f878b24b4aee153af0c884b23da96 |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
