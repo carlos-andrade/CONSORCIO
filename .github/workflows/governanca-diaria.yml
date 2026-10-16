@@ -36,6 +36,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Testes unitários do auditor
+        run: python -m unittest tests/test_audit_repository_documents.py -v
       - name: Auditar documentos
         id: audit
         run: |
