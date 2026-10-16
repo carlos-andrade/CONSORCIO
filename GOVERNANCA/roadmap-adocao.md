@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO |
 | **Fase** | G0–G6 |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.1.0 |
-| **SHA-256 (conteúdo canónico)** | 8010c899ab9e15c464eabce8f99a31788c181ee28d01517834cfa6f9a875b770 |
+| **Versão** | 1.1.1 |
+| **SHA-256 (conteúdo canónico)** | HASH_PENDENTE |
 | **Commit de referência (versão anterior)** | [5789d1bbad87432e77f3cad7a4a40c4797cb130f](https://github.com/carlos-andrade/CONSORCIO/commit/5789d1bbad87432e77f3cad7a4a40c4797cb130f) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -68,15 +68,17 @@ O workflow não atualiza automaticamente todos os conteúdos, porque uma altera�
 - [Relatório de fecho — aceitação e evidências](relatorio-fecho-aceitacao-evidencias.md)
 - [Execução #57 — validação após registo da decisão de lançamento](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38896595277)
 - [Execução #72 — auditoria limpa após correção dos avisos](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38900452064)
-- [Execução #88 — auditoria final após atualização do inventário, G2, roadmap, README, runbook e relatório de fecho](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38901648930)
+- [Execução #88 — auditoria limpa após atualização do inventário, G2, roadmap, README, runbook e relatório de fecho](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38901648930)
+- [Execução #94 — auditoria limpa da revisão seguinte](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38901886731)
+- [Execuções #95/#96 — teste de scheduler inconclusivo e recuperação da configuração](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38901961328)
 
 ## Validação
 
-A auditoria usa UTF-8, normaliza finais de linha para LF e calcula o SHA-256 canónico excluindo apenas as duas linhas de controlo definidas pela norma mestre. Verifica cabeçalhos, campos obrigatórios, estados, versões, datas, IDs duplicados, hash declarado e secções de governação. Não altera documentos auditados. A execução [#88](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38901648930) validou o commit `6b24410b39bbce6e75e648326e78f467cc27f072`: 10 documentos PASS, 0 WARN, 0 FAIL, testes unitários aprovados e manifesto gerado. O histórico consultado contém 88 execuções, todas acionadas por `push`; não há evento `schedule` comprovado. A auditoria documental está limpa, mas G4/G5/G6 continuam dependentes de evidência operacional, publicação e aceitação.
+A auditoria usa UTF-8, normaliza finais de linha para LF e calcula o SHA-256 canónico excluindo apenas as duas linhas de controlo definidas pela norma mestre. Verifica cabeçalhos, campos obrigatórios, estados, versões, datas, IDs duplicados, hash declarado e secções de governação. Não altera documentos auditados. A execução [#94](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38901886731) validou o commit `fd8d77ece952d4679c5e595ee059e51ff1841326`: 10 documentos PASS, 0 WARN, 0 FAIL, testes unitários aprovados e manifesto gerado. O teste temporário de scheduler em #95/#96 foi inconclusivo e o cron diário original foi restaurado. O histórico consultado não contém evento `schedule`; G4/G5/G6 continuam dependentes de evidência operacional, publicação e aceitação.
 
 ## Resultado
 
-A política local está aprovada; G0 e G1 foram concluídos para o âmbito documental/analítico e o inventário técnico está registado. G2 mantém revisão formal da baseline conservadora; G3 permanece concluído. G4 depende de execução `schedule` e ensaio controlado de recuperação. G5/G6 permanecem pendentes. A auditoria #88 validou o commit corrente com 10 PASS, 0 WARN e 0 FAIL. Esta evidência não substitui execução `schedule`, ensaio de recuperação, publicação ou aceitação final.
+A política local está aprovada; G0 e G1 foram concluídos para o âmbito documental/analítico e o inventário técnico está registado. G2 mantém revisão formal da baseline conservadora; G3 permanece concluído. G4 depende de execução `schedule` e ensaio controlado de recuperação. G5/G6 permanecem pendentes. A auditoria #94 foi limpa com 10 PASS, 0 WARN e 0 FAIL. O teste #95/#96 foi documentado como inconclusivo; o cron diário original está restaurado. Esta evidência não substitui execução `schedule`, ensaio de recuperação, publicação ou aceitação final.
 
 ## Próxima Ação
 
@@ -97,3 +99,4 @@ Validar formalmente a baseline G2 v1.0.1; comprovar uma execução schedule bem-
 | 1.0.8 | 2026-10-16 | Registo da correção dos dois avisos documentais e auditoria limpa | Execução #72: 9 PASS, 0 WARN, 0 FAIL |
 | 1.0.9 | 2026-10-16 | Fecho documental de G0/G1, baseline conservadora G2 e atualização dos bloqueios operacionais | Inventário G1 e revisão G2 v1.0.1 |
 | 1.1.0 | 2026-10-16 | Atualização da evidência para a auditoria limpa #88; estados G0/G1 e bloqueios G2/G4/G5/G6 consolidados | Execução #88: 10 PASS, 0 WARN, 0 FAIL |
+| 1.1.1 | 2026-10-16 | Registo da auditoria #94 e do teste de scheduler inconclusivo, com cron restaurado | Execuções #94–#96 |
