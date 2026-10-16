@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO |
 | **Fase** | G0–G6 |
 | **Estado** | EM_CURSO |
-| **Versão** | 1.1.5 |
-| **SHA-256 (conteúdo canónico)** | c4469c4271fef7831f6698fd1f137bbcd9714ad3c303d46c949016cf48328a0a |
+| **Versão** | 1.1.6 |
+| **SHA-256 (conteúdo canónico)** | HASH_PENDING |
 | **Commit de referência (versão anterior)** | [5789d1bbad87432e77f3cad7a4a40c4797cb130f](https://github.com/carlos-andrade/CONSORCIO/commit/5789d1bbad87432e77f3cad7a4a40c4797cb130f) |
 | **Data de criação** | 2026-10-16 |
 | **Data de atualização** | 2026-10-16 |
@@ -29,7 +29,7 @@ A política local de governação, `GOVERNANCA.md` versão 1.0.2, foi aprovada e
 
 ## Estado atual
 
-G0 foi concluído no âmbito atual: propósito documental/analítico, beneficiário/utilizador-alvo, proprietário, papéis funcionais e política local aprovada estão documentados. G1 foi concluído com inventário e priorização em [CONSORCIO-INV-G1-001](inventario-g1.md). G2 foi aprovado formalmente em 2026-10-16 para a baseline documental/analítica, através da decisão [CONSORCIO-DEC-G2-001](decisao-aprovacao-g2.md) e revisão técnica v1.0.2. A estrutura inicial foi criada e documentada em [ESTRUTURA.md](../ESTRUTURA.md). Em G3 foram adicionados o [modelo analítico de custos](../MODELOS/custos/modelo-custo-consorcio.md), o [esquema JSON](../DADOS/esquemas/consorcio-custo.schema.json) e os [casos de referência](../TESTES/casos-referencia-custos.md); a auditoria pós-alteração permanece pendente até conclusão do workflow. A aprovação não conclui G4, G5 ou G6. G4 permanece em revisão até existir evidência real de evento `schedule` bem-sucedido e de um ensaio controlado de recuperação. A aprovação condicional de lançamento consta em [CONSORCIO-DEC-G5-001](decisao-aprovacao-condicional-lancamento.md), mas não comprova prontidão nem publicação. G5 e G6 permanecem pendentes.
+G0 foi concluído no âmbito atual: propósito documental/analítico, beneficiário/utilizador-alvo, proprietário, papéis funcionais e política local aprovada estão documentados. G1 foi concluído com inventário e priorização em [CONSORCIO-INV-G1-001](inventario-g1.md). G2 foi aprovado formalmente em 2026-10-16 para a baseline documental/analítica, através da decisão [CONSORCIO-DEC-G2-001](decisao-aprovacao-g2.md) e revisão técnica v1.0.2. A estrutura inicial foi criada e documentada em [ESTRUTURA.md](../ESTRUTURA.md). Em G3 foram adicionados o [modelo analítico de custos](../MODELOS/custos/modelo-custo-consorcio.md), o [esquema JSON](../DADOS/esquemas/consorcio-custo.schema.json), os [casos de referência](../TESTES/casos-referencia-custos.md), a [calculadora determinística](../MODELOS/custos/calculadora_custos.py) e a [bateria unitária](../tests/test_calculadora_custos.py). A validação CI desta implementação está em curso. A aprovação não conclui G4, G5 ou G6. G4 permanece em revisão até existir evidência real de evento `schedule` bem-sucedido e de um ensaio controlado de recuperação. A aprovação condicional de lançamento consta em [CONSORCIO-DEC-G5-001](decisao-aprovacao-condicional-lancamento.md), mas não comprova prontidão nem publicação. G5 e G6 permanecem pendentes.
 
 ## Fases e critérios de saída
 
@@ -59,6 +59,8 @@ O workflow não atualiza automaticamente todos os conteúdos, porque uma altera�
 - [Modelo de custos CONSORCIO-MOD-CUSTO-001](../MODELOS/custos/modelo-custo-consorcio.md)
 - [Esquema JSON de custos](../DADOS/esquemas/consorcio-custo.schema.json)
 - [Casos de referência de custos](../TESTES/casos-referencia-custos.md)
+- [Calculadora determinística de custos](../MODELOS/custos/calculadora_custos.py)
+- [Testes unitários da calculadora](../tests/test_calculadora_custos.py)
 - [Workflow de validação](../.github/workflows/governanca-diaria.yml)
 - [Auditor estático](../automation/audit_repository_documents.py)
 - [Execução #35 — deteção da divergência](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38893569303)
@@ -81,11 +83,11 @@ A auditoria usa UTF-8, normaliza finais de linha para LF e calcula o SHA-256 can
 
 ## Resultado
 
-A política local está aprovada; G0 e G1 foram concluídos para o âmbito documental/analítico. G2 foi formalmente aprovado pela decisão CONSORCIO-DEC-G2-001. G3 está em curso para criação e validação da estrutura inicial. G4 depende de execução `schedule` e ensaio controlado de recuperação. G5/G6 permanecem pendentes. A auditoria pós-estrutura [#117](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38906302112) terminou com 12 PASS, 0 WARN e 0 FAIL; os hashes canónicos dos documentos Markdown foram reconciliados e a árvore remota foi verificada. A primeira fatia analítica foi publicada em três artefactos: [modelo de custos v1.0.0](../MODELOS/custos/modelo-custo-consorcio.md), [esquema JSON](../DADOS/esquemas/consorcio-custo.schema.json) e [dez casos de referência especificados](../TESTES/casos-referencia-custos.md). Os primeiros runs #122/#123 falharam na reconciliação inicial dos hashes e os documentos foram corrigidos; a execução #124 e a auditoria deste roadmap ainda precisam de confirmação. O teste #95/#96 foi inconclusivo e o cron diário original está restaurado.
+A política local está aprovada; G0 e G1 foram concluídos para o âmbito documental/analítico. G2 foi formalmente aprovado pela decisão CONSORCIO-DEC-G2-001. G3 está em curso para criação e validação da estrutura inicial. G4 depende de execução `schedule` e ensaio controlado de recuperação. G5/G6 permanecem pendentes. A auditoria pós-estrutura [#117](https://github.com/carlos-andrade/CONSORCIO/actions/runs/38906302112) terminou com 12 PASS, 0 WARN e 0 FAIL; os hashes canónicos dos documentos Markdown foram reconciliados e a árvore remota foi verificada. A primeira fatia analítica inclui modelo de custos, esquema JSON, dez casos de referência, calculadora determinística e testes unitários. Os runs #122–#129 revelaram divergências de hash durante a reconciliação; os hashes documentais foram corrigidos e a execução #130 concluiu com 14 PASS, 0 WARN e 0 FAIL. O motor e os testes foram adicionados depois dessa execução, pelo que a nova validação CI permanece pendente. O teste #95/#96 foi inconclusivo e o cron diário original está restaurado.
 
 ## Próxima Ação
 
-Primeira fatia de G3 publicada: esquema JSON, especificação de custo total e dez casos de referência especificados. Validar hashes e JSON, obter auditoria limpa do workflow pós-commit e, depois, implementar o motor determinístico e executar os casos; não declarar testes de negócio executados nem módulos de negócio concluídos. Em paralelo, comprovar uma execução schedule bem-sucedida e realizar/registar ensaio de recuperação antes de avaliar G5/G6.
+Motor determinístico inicial e bateria unitária adicionados. Obter uma execução CI limpa para confirmar os testes, reconciliar hashes documentais reportados pelo auditor e rever resultados antes de aprovar o modelo. Não declarar o modelo aprovado antes da revisão humana. Em paralelo, comprovar uma execução schedule bem-sucedida e realizar/registar ensaio de recuperação antes de avaliar G5/G6.
 
 ## Histórico de alterações
 
